@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1
+slug: /
 ---
 
-# Tutorial Intro
+# 欢迎使用 FZS
 
-Let's discover **Docusaurus in less than 5 minutes**.
+本手册将帮助您快速上手 FZS。
 
 ## Getting Started
 
