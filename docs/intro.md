@@ -1,47 +1,16 @@
 ---
-sidebar_position: 1
+slug: /
+sidebar_position: 0
 ---
 
-# Tutorial Intro
+# 欢迎使用 FZS
 
-Let's discover **Docusaurus in less than 5 minutes**.
+本文档将帮助您快速上手 FZS。
 
-## Getting Started
+本文档是 FZS 的唯一公开文档，包含产品部署流程、基本功能介绍、支持的数据源端与目标端节点类型，数据节点、数据链路、数据校验的配置、系统管理等相关内容。
 
-Get started by **creating a new site**.
+您可以向 [九桥同步](https://tb-soft.net/) 的业务代表或售前经理提出有关 FZS 其它出版物的请求。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+如有疑问请扫码进群，[九桥同步](https://tb-soft.net/) 的工程师会给予您想要的帮助：
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+![fzs-customer-service-qrcode](/img/fzs-customer-service-qrcode.png)
