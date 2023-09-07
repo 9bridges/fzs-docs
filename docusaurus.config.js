@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'FZS 使用指南',
+  title: 'FZS 产品文档',
   // tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -47,9 +47,9 @@ const config = {
         },
         blog: false,
         pages: false,
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
+        // theme: {
+        //   customCss: require.resolve('./custom.css'),
+        // },
       }),
     ],
   ],
@@ -60,19 +60,12 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'FZS 使用指南',
+        title: 'FZS 产品文档',
         // logo: {
         //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
+        //   src: 'img/brand.png',
         // },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          // { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/tb-soft/fzs-docs',
             label: 'GitHub',
