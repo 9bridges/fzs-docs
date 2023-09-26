@@ -24,7 +24,8 @@ FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux�
 #### oracle 同步
 
 - 在 oracle 所在机器上创建和 oracle 或者 grid 用户(ASM存储环境上一般有 grid 用户)同组的用户,执行下面脚本创建 fzs (可任意修改用户名) 用户，web-server 需要部署在这个新创建的系统用户下
- ```bash
+
+```bash
 #!/bin/sh
 echo "please input system username to create(default:fzs):"
 read sysuser
@@ -106,8 +107,10 @@ fi
 chown -R $sysuser /home/$sysuser/.$env_file
 echo "ulimit -c unlimited" >>/home/$sysuser/.$env_file
 su - $sysuser
-````
+```
+
 - 创建 oracle 数据库用户并授权
+
 ```sql
 ### 源端
 create or replace view XKCCLE as select * from sys.x$kccle;
@@ -225,6 +228,7 @@ grant select on sys.v_$log  to fzs2;
 grant select on sys.v_$logfile  to fzs2; 
 grant select on sys.gv_$logfile  to fzs2;
 ```
+
 ### 解压 web-server 对应安装包
 
 - 以 fzsweb.a39731c-0.1.2-Linux.tar.gz 软件包为例
