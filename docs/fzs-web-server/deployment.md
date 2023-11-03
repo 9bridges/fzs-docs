@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 
-# FZS Web Server 部署
+# 部署方式
 
 FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
 

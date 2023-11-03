@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# FZS Web 部署
+# 部署方式
 
 FZS Web 提供基于 Docker 容器的部署方式，可以在任何支持 Docker 的平台上部署。
 
