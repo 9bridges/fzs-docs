@@ -11,6 +11,8 @@ sidebar_position: 0
 
 您可以向 [九桥同步](https://tb-soft.net/) 的业务代表或售前经理提出有关 FZS 其它出版物的请求。
 
-如有疑问请扫码进群，[九桥同步](https://tb-soft.net/) 的工程师会给予您想要的帮助：
+:::info
+© 2023 北京九桥同步软件有限公司
+:::
 
-![fzs-customer-service-qrcode](/img/fzs-customer-service-qrcode.png)
+如有任何疑问与建议请联络：contact@tb-soft.net
