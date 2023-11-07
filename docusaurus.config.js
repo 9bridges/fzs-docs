@@ -16,13 +16,6 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'tb-soft', // Usually your GitHub org/user name.
-  projectName: 'fzs-docs', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
