@@ -45,9 +45,9 @@ const config = {
         },
         blog: false,
         pages: false,
-        // theme: {
-        //   customCss: require.resolve('./custom.css'),
-        // },
+        theme: {
+          customCss: require.resolve('./custom.css'),
+        },
       }),
     ],
   ],
