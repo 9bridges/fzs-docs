@@ -9,16 +9,18 @@ sidebar_position: 1
 链路的界面及交互也是非常的复杂及重要的，下面将会对链路的界面及交互进行详细的介绍。
 
 ### 链路管理
-- [添加链路](/add.mdx)
-- [编辑链路](./edit)
-- [复制链路](./copy)
-- [切换链路](./switch)
-- [删除链路](./delete)
+
+- [添加链路](add.md)
+- [编辑链路](edit.md)
+- [复制链路](copy.md)
+- [切换链路](switch.md)
+- [删除链路](delete.md)
 
 ### 链路操作
-- [创建链路](./create)
-- [启动链路](./start)
-- [停止链路](./stop)
-- [修复链路](./fix)
-- [重置链路](./reset)
-- [销毁链路](./cancel)
+
+- [创建链路](create.md)
+- [启动链路](start.md)
+- [停止链路](stop.md)
+- [修复链路](fix.md)
+- [重置链路](reset.md)
+- [销毁链路](cancel.md)
