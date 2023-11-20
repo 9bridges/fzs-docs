@@ -16,7 +16,7 @@ sidebar_position: 0
 - `tidb`
 - `gaussdb`
 - `opengauss`
-- `dm`
+- [`dm`](./db-support/dm)
 - `kingbase`
 - `gbase`
 - `tdsql`
