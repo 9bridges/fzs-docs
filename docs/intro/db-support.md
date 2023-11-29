@@ -21,6 +21,7 @@ sidebar_position: 0
 | `opengauss` | **openGauss**             |              | ✅           |
 | `tdsql`     | **TDSQL**                 |              | ✅           |
 | `dm`        | **武汉达梦 DM**           |              | ✅           |
+| `kingbase`  | **人大金仓 Kingbase**     |              | ✅           |
 | `gbase`     | **南大通用 GBASE**        |              | ✅           |
 | `goldendb`  | **中兴通讯 GoldenDB**     |              | ✅           |
 | `antdb`     | **亚信科技 AntDB**        |              | ✅           |
