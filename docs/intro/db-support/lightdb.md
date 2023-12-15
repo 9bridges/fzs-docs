@@ -6,8 +6,8 @@ LightDB 是恒生电子股份有限公司研发并将长期支持的一款同时
 
 ### 同步功能支持
 
-| Oracle 对象               | FZS 软件功能支持与否                                                                                           |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Oracle 对象               | FZS 是否支持                                                                                                   |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------- |
 | 表                        | 支持                                                                                                           |
 | 分区表（1、2 级别分区表） | 支持（但 1、2 级分区操作：合并、拆分、交换、移动分区、重建分区索引、哈希分区表添加分区、表空间的指定暂不支持） |
 | 临时表（事务、会话级）    | 支持                                                                                                           |
@@ -26,32 +26,32 @@ LightDB 是恒生电子股份有限公司研发并将长期支持的一款同时
 
 ### 数据类型映射
 
-| ORACLE 数据类型                | LIGHTDB 数据类型（括号内为 lightdb 内部数据类型转换） |
-| :----------------------------- | :---------------------------------------------------- |
-| `TIMESTAMP(1) WITH TIME ZONE`  | `TIMESTAMP(1) WITH TIME ZONE (TIMESTAMPTZ(1))`        |
-| `INTERVAL YEAR(4) TO MONTH`    | `INTERVAL YEAR TO MONTH`                              |
-| `BFILE`                        | `BYTEA`                                               |
-| `NCLOB`                        | `TEXT`                                                |
-| `INTERVAL DAY(n) TO SECOND(n)` | `INTERVAL DAY TO SECOND(6)`                           |
-| `LONG RAW `                    | `BYTEA`                                               |
-| `BINARY_FLOAT`                 | `REAL (FLOAT4)`                                       |
-| `NCHAR`                        | `CHAR (BPCHAR)`                                       |
-| `UROWID`                       | `OID`                                                 |
-| `TIMESTAMP(n)`                 | `TIMESTAMP(n)`                                        |
-| `BINARY_DOUBLE`                | `DOUBLE PRECISION (FLOAT8)`                           |
-| `FLOAT`                        | `FLOAT8`                                              |
-| `TIMESTAMP(n) WITH TIME ZONE`  | `TIMESTAMP(n) WITH TIME ZONE (TIMESTAAMPTZ)`          |
-| `NVARCHAR2`                    | `NVARCHAR2`                                           |
-| `ROWID`                        | `TID`                                                 |
-| `XMLTYPE`                      | `BYTEA`                                               |
-| `BLOB`                         | `BYTEA`                                               |
-| `LONG`                         | `TEXT`                                                |
-| `CLOB`                         | `TEXT`                                                |
-| `RAW`                          | `BYTEA`                                               |
-| `DATE`                         | `DATE`                                                |
-| `CHAR`                         | `CHAR (BPCHAR)`                                       |
-| `VARCHAR2`                     | `VARCHAR2`                                            |
-| `NUMBER`                       | `NUMERIC`                                             |
-| `INT`                          | `BIGINT (INT8)`                                       |
+| Oracle 数据类型                | LightDB 数据类型（LightDB 内部数据类型转换）   |
+| :----------------------------- | :--------------------------------------------- |
+| `TIMESTAMP(1) WITH TIME ZONE`  | `TIMESTAMP(1) WITH TIME ZONE (TIMESTAMPTZ(1))` |
+| `INTERVAL YEAR(4) TO MONTH`    | `INTERVAL YEAR TO MONTH`                       |
+| `BFILE`                        | `BYTEA`                                        |
+| `NCLOB`                        | `TEXT`                                         |
+| `INTERVAL DAY(n) TO SECOND(n)` | `INTERVAL DAY TO SECOND(6)`                    |
+| `LONG RAW `                    | `BYTEA`                                        |
+| `BINARY_FLOAT`                 | `REAL (FLOAT4)`                                |
+| `NCHAR`                        | `CHAR (BPCHAR)`                                |
+| `UROWID`                       | `OID`                                          |
+| `TIMESTAMP(n)`                 | `TIMESTAMP(n)`                                 |
+| `BINARY_DOUBLE`                | `DOUBLE PRECISION (FLOAT8)`                    |
+| `FLOAT`                        | `FLOAT8`                                       |
+| `TIMESTAMP(n) WITH TIME ZONE`  | `TIMESTAMP(n) WITH TIME ZONE (TIMESTAAMPTZ)`   |
+| `NVARCHAR2`                    | `NVARCHAR2`                                    |
+| `ROWID`                        | `TID`                                          |
+| `XMLTYPE`                      | `BYTEA`                                        |
+| `BLOB`                         | `BYTEA`                                        |
+| `LONG`                         | `TEXT`                                         |
+| `CLOB`                         | `TEXT`                                         |
+| `RAW`                          | `BYTEA`                                        |
+| `DATE`                         | `DATE`                                         |
+| `CHAR`                         | `CHAR (BPCHAR)`                                |
+| `VARCHAR2`                     | `VARCHAR2`                                     |
+| `NUMBER`                       | `NUMERIC`                                      |
+| `INT`                          | `BIGINT (INT8)`                                |
 
 ## LightDB 到 LightDB 链路适配
