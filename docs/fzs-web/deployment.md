@@ -30,13 +30,13 @@ FZS Web 提供基于 Docker 容器的部署方式，可以在任何支持 Docker
 1. 拉取 `fzs-web` 镜像：
 
 ```bash
-docker pull synjq/fzs-web:latest
+docker pull 9bridges/fzs-web:latest
 ```
 
 2. 拉取 `fzs-daemon` 镜像：
 
 ```bash
-docker pull synjq/fzs-daemon:latest
+docker pull 9bridges/fzs-daemon:latest
 ```
 
 ### 配置 `docker-compose.yml`
@@ -54,7 +54,7 @@ version: '3'
 name: fzs
 services:
   web:
-    image: synjq/fzs-web
+    image: 9bridges/fzs-web
     ports:
       - 80:8080
     volumes:
@@ -64,12 +64,10 @@ services:
       - web-fzs-config:/fzs-web/public/fzs-config
     restart: unless-stopped
     environment:
-      - DAEMON_URL=http://daemon:3333
       - SESSION_SECRET=fzs-is-the-best
-      ## SESSION_SECRET 每个客户环境都要不一样，比如：zhaoshang / changjiang
 
   daemon:
-    image: synjq/fzs-daemon
+    image: 9bridges/fzs-daemon
     restart: unless-stopped
     environment:
       - WEB_URL=http://web:8080
