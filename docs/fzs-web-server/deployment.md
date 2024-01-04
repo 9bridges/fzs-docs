@@ -113,10 +113,15 @@ su - $sysuser
 
 ```sql
 ### 源端
+/* 由于权限问题，普通用户无法直接查询下面几个表，因此需要创建视图来代替 */ 
+/* 数据库增量相关，fzs 通过下面两个视图判断当前的增量位点信息 */
 create or replace view XKCCLE as select * from sys.x$kccle;
 create or replace view XKCCCP as select * from sys.x$kcccp;
+/* redo 格式相关，不同的 redo 格式，需要不同的解析方法 */
 create or replace view FZS_XKSPPI as select * from X$KSPPI;
 create or replace view FZS_XKSPPSV as select * from X$KSPPSV;
+
+/* 补全日志信息 */
 alter database force logging;
 alter database add supplemental log data;
 alter database add supplemental log data (primary key, unique index) columns;
@@ -125,11 +130,15 @@ create role fzs_role identified by fzs_role;
 grant connect,lock any table,select any table,select any dictionary,alter system,execute any type to fzs_role,fzs1;
 grant fzs_role to fzs1;
 grant execute on dbms_flashback to fzs_role,fzs1;
+/* fzs 查询数据需要使用一些表空间，这里给 fzs1 用户分配 2M 的表空间 */
 alter user  fzs1 quota 2m on users;
+/* rac 多节点环境下，fzs 会定期向 fzstemp 表写入数据，非 rac 环境可以不创建 */
 create table fzs1.fzstemp (f1 int);
 
 ## 12c 以上版本源端还需要执行以下授权
+/* 创建 fzs_pdbs 表用于查询 PDB 信息 */
 create table sys.fzs_pdbs as select * from sys.v$pdbs;
+/* 由于 12c 以上的数据库权限管理方式改变，select any table 权限不足以查询一些系统表，因此需要单独赋权 */
 grant create session to fzs1;
 grant select on sys.ts$ to fzs1;
 grant select on sys.tabsubpart$ to fzs1;
@@ -177,13 +186,16 @@ grant select on sys.gv_$logfile  to fzs1;
 
 
 ## 目标端
+/* 备端需要写入数据，因此需要的权限比较大 */
 create user fzs2 identified by fzs2;
 grant dba to fzs2;
+/* 用于对 sequence 的同步 */
 grant all on sys.seq$ to fzs2;
 create or replace directory fzs_lobdir as '/tmp';
 grant read,write on directory fzs_lobdir to fzs2;
 
 ### 12c 以上版本目标端还需要执行以下授权
+/* 由于 12c 以上的数据库权限管理方式改变，select any table 权限不足以查询一些系统表，因此需要单独赋权 */
 grant create session to fzs2;
 grant all on sys.user$ to fzs2;
 grant select on sys.ts$ to fzs2;
