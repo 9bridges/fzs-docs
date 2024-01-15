@@ -8,7 +8,7 @@ sidebar_position: 4
 
 ## 0.3.3（2023-12-29）
 
-:::tip
+:::caution
 此版本需要 FZS Web Server 0.3.3 及以上版本配合使用。
 :::
 
