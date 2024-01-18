@@ -81,7 +81,7 @@ const config = {
 
         // Public API key: it is safe to commit it
         apiKey: 'd328ec667f30577e8088b69a5294df27',
-        indexName: 'fzs-docs',
+        indexName: '9bridges',
       },
     }),
 }
