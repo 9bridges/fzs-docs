@@ -2,9 +2,15 @@
 sidebar_position: 1
 ---
 
-# 技术架构
+# 系统架构
 
-下图以数据流转的角度，展示了 FZS 的技术架构：
+下图以数据流转的角度，展示了 FZS 的系统架构与核心组件：
+
+:::note
+* 实线表示数据流转方向
+* 虚线箭头表示 API 交互方向
+* 虚线圆头表示触发事件
+:::
 
 ```mermaid
 flowchart BT
@@ -19,8 +25,10 @@ flowchart BT
       source-web-server -. 资源调度 .-> source-agent
     end
   end
-  subgraph 管理端
-    fzs-daemon(FZS Daemon 预警管理) -. 告警触发 .-> fzs-web(FZS Web 同步管理)
+  subgraph FZS 管理端
+    fzs-daemon(FZS Daemon 预警管理)
+    fzs-web(FZS Web 同步管理)
+    fzs-daemon -. 触发告警 .-o fzs-web
   end
   subgraph 数据备端
     sink-agent -- 装载数据 --> sink-db[(数据库 T)]
@@ -31,7 +39,6 @@ flowchart BT
     end
   end
 ```
-
 ### FZS Agent
 
 FZS 的核心组件，负责数据源端抽取、数据高速传输与数据备端装载。
@@ -42,7 +49,7 @@ FZS Agent 与 FZS Web 的服务中间件，对外输出 Restful API 服务。
 
 ### FZS Web
 
-FZS 的管理平台，通过对接 FZS Web Server 的 Restful API，实现了数据同步链路的创建、启动、停止、监控等功能。
+FZS 的管理平台，通过对接 FZS Web Server 的 Restful API，实现了数据同步链路的创建、启动、停止、监控等运维功能。
 
 ### FZS Daemon
 
