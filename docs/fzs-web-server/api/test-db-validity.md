@@ -40,7 +40,7 @@ sidebar_position: 2
 | **`host`**                                 | `STRING` 类型，格式：`IP`/`端口`。 |
 | **`userName`**                             | `STRING` 类型，数据库用户名。      |
 | **`passWord`**                             | `STRING` 类型，数据库登录密码。    |
-| [**`dbType`**](/intro/db-support/index.md) | `STRING` 类型，数据库类型。        |
+| [**`dbType`**](/intro/appendix/db-support/index.md) | `STRING` 类型，数据库类型。        |
 
 ### 使用样例
 

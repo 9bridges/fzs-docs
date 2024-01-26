@@ -93,7 +93,7 @@ sidebar_position: 4
 | **`host`**                                 | `STRING` 类型，格式：`IP`/`端口`。 |
 | **`userName`**                             | `STRING` 类型，数据库用户名。      |
 | **`passWord`**                             | `STRING` 类型，数据库登录密码。    |
-| [**`dbType`**](/intro/db-support/index.md) | `STRING` 类型，数据库类型。        |
+| [**`dbType`**](/intro/appendix/db-support/index.md) | `STRING` 类型，数据库类型。        |
 
 `sourceConfig` 参数说明如下：
 
@@ -134,7 +134,7 @@ sidebar_position: 4
 
 `extraConfig` 参数说明如下：
 
-[点我查看](/intro/agent-config.md)
+[点我查看](/intro/appendix/agent-config.md)
 
 ### 使用样例 {#create-usage}
 
