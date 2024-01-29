@@ -10,6 +10,10 @@ FZS Web 提供基于 Docker 容器的部署方式，可以在任何支持 Docker
 
 部署前，请确保已经安装了 [Docker Engine](https://docs.docker.com/engine/install/) 以及 [Docker Compose](https://docs.docker.com/compose/install/)，并且已经启动了 Docker 服务。
 
+:::info
+请确认 FZS Web 与 FZS Web Server 的各自宿主机系统时间一致，否则可能会导致同步链路监控数据异常。
+:::
+
 ### 支持架构
 
 - x86_64
