@@ -30,15 +30,13 @@ sidebar_position: 18
 
 ### 使用样例
 
-以下请求将为 ID `8AouMB` 的 Agent 更新一个 `agent.tar.gz` 软件包，更新成功会返回相应信息。
+以下请求将为 ID `rtORekZe` 的 Agent 更新一个 `0131.oracle.afb6e5a2.fzs.linux.11g.web.tar.gz` 软件包，更新成功会返回相应信息。
 
 ```shell
 curl -i -X POST \
    -H "Content-Type:multipart/form-data" \
-   -F "name=8AouMB" \
-   -F "filename=fzs_orc_11g" \
-   -F "file=@\"./fzs_orc_11g.tar.gz\";type=application/x-gzip;filename=\"fzs_orc_11g.tar.gz\"" \
- 'http://172.21.16.4:35081/upload-agent'
+   -F "rtORekZe=@/tmp/0131.oracle.afb6e5a2.fzs.linux.11g.web.tar.gz" \
+ 'http://172.21.16.4:8981/upload-agent'
 ```
 
 ### 响应体格式
