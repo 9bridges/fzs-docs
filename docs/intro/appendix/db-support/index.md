@@ -25,7 +25,7 @@ sidebar_position: 0
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
 | `goldendb`  | **中兴通讯 GoldenDB**                                |              | ✅           |
 | `antdb`     | **亚信科技 AntDB**                                   |              | ✅           |
-| `lightdb`   | [**恒生电子 LightDB**](/intro/appendix/db-support/lightdb.md) |              | ✅           |
+| [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |              | ✅           |
 | `sundb`     | **科蓝软件 SUNDB**                                   | ✅           | ✅           |
 | `kaiwudb`   | **浪潮 KaiwuDB**                                     |              | ✅           |
 | `yashandb`  | **YashanDB**                                         |              | ✅           |
