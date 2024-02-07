@@ -9,30 +9,18 @@ sidebar_position: 1
 ```mermaid
 flowchart BT
   source-agent -- 发送数据 --> sink-agent
-  fzs-web <-. API 交互 .-> source-web-server
-  fzs-web <-. API 交互 .-> sink-web-server
-  user-ex([示例用户]) -. UI 交互 .-> fzs-web
-  subgraph 数据源端
-    source-db[(数据库 S)] -- 抽取数据 --> source-agent
-    subgraph fzs-source [FZS 源端]
-      source-web-server(FZS Web Server)
-      source-agent(FZS Agent 源端)
-      source-web-server -. 资源调度 .-> source-agent
-    end
-  end
-  subgraph FZS 管理端
-    fzs-daemon(FZS Daemon 预警管理)
-    fzs-web(FZS Web 同步管理)
-    fzs-daemon -. 触发告警 .-o fzs-web
-  end
-  subgraph 数据备端
-    sink-agent -- 装载数据 --> sink-db[(数据库 T)]
-    subgraph fzs-sink [FZS 备端]
-      sink-web-server(FZS Web Server)
-      sink-agent(FZS Agent 备端)
-      sink-web-server -. 资源调度 .-> sink-agent
-    end
-  end
+  fzs-web <-. API 交互 .-> web-server
+  user-ex((示例用户)) -. UI 交互 .-> fzs-web
+  source-db[(数据库 S)] -- 抽取数据 --> source-agent
+  web-server(FZS Web Server)
+  source-agent(FZS Agent 源端)
+  web-server -. 资源调度 .-> source-agent
+  fzs-daemon(FZS Daemon 预警管理)
+  fzs-web(FZS Web 同步管理)
+  fzs-daemon -. 触发告警 .-o fzs-web
+  sink-agent -- 装载数据 --> sink-db[(数据库 T)]
+  sink-agent(FZS Agent 备端)
+  web-server -. 资源调度 .-> sink-agent
 ```
 
 如上图所示，示例用户在 FZS Web 上创建同步链路后，FZS Web 会通过与 FZS Web Server 的 API 交互，将同步链路的配置信息下发到源备端各自的 FZS Agent，FZS Agent 源端会根据配置信息，从数据源端抽取数据，经过数据高速传输至 FZS Agent 备端，最后将数据装载到数据备端。
