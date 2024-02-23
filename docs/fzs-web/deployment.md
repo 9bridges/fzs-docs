@@ -65,12 +65,12 @@ services:
       - web-data:/data
       - web-agent:/fzs-web/public/fzs-agent
       - web-license:/fzs-web/public/license
-      - web-fzs-config:/fzs-web/public/fzs-config
       - web-server:/fzs-web/public/fzs-web-server
     restart: unless-stopped
     environment:
       - QUERY_URL=http://query:8888
       - SESSION_SECRET=fzs-is-the-best
+        ## SESSION_SECRET 每个客户环境都要不一样，比如：zhaoshang / changjiang
 
   daemon:
     image: 9bridges/fzs-daemon
@@ -90,8 +90,8 @@ volumes:
   web-data:
   web-agent:
   web-license:
-  web-fzs-config:
   web-server:
+
 ```
 
 ### 启动容器
