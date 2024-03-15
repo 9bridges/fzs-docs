@@ -49,6 +49,10 @@ FLUSH PRIVILEGES;
 
  - 重启 MySQL 服务
 
+  :::danger
+  重启 MySQL 服务会导致数据库服务中断，需要谨慎操作。
+  :::
+
   ```bash
   systemctl restart mysql
   ```
