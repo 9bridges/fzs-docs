@@ -85,6 +85,8 @@ services:
     depends_on:
       - web
     restart: unless-stopped
+    environment:
+      - WEB_URL=http://web:8080
 
 volumes:
   web-data:
