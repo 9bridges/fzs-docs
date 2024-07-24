@@ -10,7 +10,7 @@ sidebar_position: 0
 | :---------- | :--------------------------------------------------- | :----------- | :----------- |
 | `oracle`    | **Oracle**                                           | ✅           | ✅           |
 | `mysql`     | **MySQL**                                            | ✅           | ✅           |
-| `postgres`  | **PostgreSQL**                                       |              | ✅           |
+| `postgres`  | **PostgreSQL**                                       |     ✅         | ✅           |
 | `sqlserver` | **Microsoft SQL Server**                             |              | ✅           |
 | `db2`       | **IBM Db2**                                          |              | ✅           |
 | `ob-oracle` | **OceanBase Oracle 模式**                            | ✅           | ✅           |
@@ -24,14 +24,8 @@ sidebar_position: 0
 | `kingbase`  | **人大金仓 Kingbase**                                |              | ✅           |
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
 | `goldendb`  | **中兴通讯 GoldenDB**                                |              | ✅           |
-| `antdb`     | **亚信科技 AntDB**                                   |              | ✅           |
-| [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |              | ✅           |
+| [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
-| `kaiwudb`   | **浪潮 KaiwuDB**                                     |              | ✅           |
-| `yashandb`  | **YashanDB**                                         |              | ✅           |
-| `mogdb`     | **云和恩墨 MogDB**                                   |              | ✅           |
-| `shentong`  | **神通数据库**                                       |              | ✅           |
-| `teledb`    | **天翼云 TeleDB**                                    |              | ✅           |
-| `greatdb`   | **万里 GreatDB**                                     |              | ✅           |
-| `oushudb`   | **偶数科技 OushuDB**                                 |              | ✅           |
-| `qianbase`  | **易鲸捷 QianBase**                                  |              | ✅           |
+| `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |              | ✅           |
+| `kafka`    | **Apache Kafka**                                            |            | ✅ |
+| `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
