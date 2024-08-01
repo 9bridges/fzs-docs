@@ -17,8 +17,8 @@ sidebar_position: 0
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
 | `polardb`   | **PolarDB**                                          |              | ✅           |
 | `tidb`      | **TiDB**                                             |              | ✅           |
-| `gaussdb`   | **GaussDB**                                          |              | ✅           |
-| `opengauss` | **openGauss**                                        |              | ✅           |
+| `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
+| `opengauss` | **openGauss**                                        |    ✅           | ✅           |
 | `tdsql`     | **TDSQL**                                            |              | ✅           |
 | `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
 | `kingbase`  | **人大金仓 Kingbase**                                |              | ✅           |
@@ -26,6 +26,6 @@ sidebar_position: 0
 | `goldendb`  | **中兴通讯 GoldenDB**                                |              | ✅           |
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
-| `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |              | ✅           |
+| `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |        ✅       | ✅           |
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
