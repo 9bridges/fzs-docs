@@ -19,7 +19,7 @@ sidebar_position: 0
 | `tidb`      | **TiDB**                                             |              | ✅           |
 | `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
 | `opengauss` | **openGauss**                                        |    ✅           | ✅           |
-| `tdsql`     | **TDSQL**                                            |              | ✅           |
+| `tdsql`     | **TDSQL**                                            |      ✅        | ✅           |
 | `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
 | `kingbase`  | **人大金仓 Kingbase**                                |              | ✅           |
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
