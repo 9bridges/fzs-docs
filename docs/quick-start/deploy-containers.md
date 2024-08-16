@@ -48,12 +48,12 @@ docker ps
 
 ```
 CONTAINER ID   IMAGE                                                                     COMMAND                  CREATED          STATUS             PORTS                                                                              NAMES
-3a0da025e1de   106.37.100.106:880/9bridges/fzs-web-server:0.4.0                          "./start.sh -f"          27 seconds ago   Up 26 seconds                                                                                         fzs-web-server-1
+3a0da025e1de   192.168.0.198:880/9bridges/fzs-web-server:0.4.0                          "./start.sh -f"          27 seconds ago   Up 26 seconds                                                                                         fzs-web-server-1
 73a1648c3409   9bridges/fzs-daemon:0.2.2-beta.2-node                                     "node index.js"          2 hours ago      Up About an hour                                                                                      fzs-daemon-1
-8ca3c3460a0e   106.37.100.106:880/9bridges/synjq-query:0.3.4                             "/usr/local/s2i/run"     2 hours ago      Up 2 hours         8080/tcp, 8443/tcp, 0.0.0.0:8082->8888/tcp, :::8082->8888/tcp                      fzs-query-1
+8ca3c3460a0e   192.168.0.198:880/9bridges/synjq-query:0.3.4                             "/usr/local/s2i/run"     2 hours ago      Up 2 hours         8080/tcp, 8443/tcp, 0.0.0.0:8082->8888/tcp, :::8082->8888/tcp                      fzs-query-1
 0e7a6d8d0000   9bridges/fzs-web:0.5.1-rc.2                                               "./start.sh"             2 hours ago      Up About an hour   0.0.0.0:5555->5555/tcp, :::5555->5555/tcp, 0.0.0.0:80->8080/tcp, :::80->8080/tcp   fzs-web-1
 56c5b25fc7b2   provectuslabs/kafka-ui:latest                                             "/bin/sh -c 'java --…"   3 hours ago      Up 3 hours         0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                          kafka-ui
-391e8bd349c8   106.37.100.106:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4   "/docker-entrypoint.…"   3 hours ago      Up 3 hours         8778/tcp, 9092/tcp, 0.0.0.0:18083->8083/tcp, :::18083->8083/tcp                    root-connect-1
+391e8bd349c8   192.168.0.198:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4   "/docker-entrypoint.…"   3 hours ago      Up 3 hours         8778/tcp, 9092/tcp, 0.0.0.0:18083->8083/tcp, :::18083->8083/tcp                    root-connect-1
 88e7fa4f48b9   bitnami/kafka:3.6                                                         "/opt/bitnami/script…"   3 hours ago      Up 3 hours         0.0.0.0:9092-9094->9092-9094/tcp, :::9092-9094->9092-9094/tcp                      root-kafka-1
 ```
 
