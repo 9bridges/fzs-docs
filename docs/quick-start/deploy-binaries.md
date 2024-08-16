@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 软件包部署
 
-FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
+对于 oracle 的同步链路，由于需要直接读取 redo 文件，因此 FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
 
 ## 部署条件
 
@@ -20,12 +20,6 @@ FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux�
 ## 部署流程
 
 ### 创建系统用户 (Linux 系统)
-
-#### 非 oracle 同步环境
-
-- web-server 可以部署在任意可访问到数据库的任意用户下，不需要特殊的系统用户
-
-#### oracle 同步
 
 - 在 oracle 所在机器上创建和 oracle 或者 grid 用户(ASM 存储环境上一般有 grid 用户)同组的用户,执行下面脚本创建 fzs (可任意修改用户名) 用户，web-server 需要部署在这个新创建的系统用户下
 
@@ -247,7 +241,7 @@ grant select on sys.gv_$logfile  to fzs2;
 
 ### 解压 web-server 对应安装包
 
-- 以 fzsweb.a39731c-0.1.2-Linux.tar.gz 软件包为例
+- 以 fzsweb.a39731c-0.1.2-Linux.tar.gz 软件包为例，在上一步创建的系统用户下解压安装包
 
 ```bash
 $ tar -xvf fzsweb.a39731c-0.1.2-Linux.tar.gz
