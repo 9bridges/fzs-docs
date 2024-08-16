@@ -1,44 +1,62 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # 快速上手
 
-### 登录 FZS Web
-
----
+## 登录 FZS Web
 
 ![login](/img/quick/login.png)
 
-### 添加 Web Server
+## 添加 Web Server
 
---- 
+:::info
+当 FZS 使用容器化部署时，已默认添加 `web-server:8081`，此步骤可省略。
+:::
 
-![webserver](/img/quick/webserver.png)
+![add-web-server](/img/add-web-server.jpg)
 
-点击已部署 Web Server，输入 Web Server 的地址和端口，点击提交
+![submit-web-server](/img/submit-web-server.jpg)
 
-![webserver1](/img/quick/add-webserver.png)
+## 添加授权
 
-### 添加数据节点
+:::info
+FZS 数据同步平台需要给予有效授权才能正常使用。
+:::
+
+### 获取授权
 
 ---
+
+FZS 的授权需要联系 FZS 的产品团队获取，获取到的授权文件为 `license.txt`。
+
+![qrcode](/img/fzs-customer-service-qrcode.png)
+
+### 上传授权
+
+---
+
+![upload-license](/img/upload-license.jpg)
+
+### 绑定授权
+
+---
+
+![bind-license](/img/bind-license.jpg)
+
+## 添加数据节点
 
 选中源备端对应的webserver配置（注意ip和端口），添加数据节点名称，选择数据库的类型，添加数据库的连接串及fzs的数据库连接用户，点击提交
 
 ![data-node](/img/quick/add-node.png)
 
-### 添加数据链路
-
----
+## 添加数据链路
 
 点击添加链路，填写链路名称，选择源备端的数据节点，选择目标端的数据节点，点击提交
 
 ![data-link](/img/quick/add-link.png)
 
-### 创建及启动数据链路
-
----
+## 创建及启动数据链路
 
 首先选中要创建的链路，点击创建,链路创建后，创建按钮置灰
 
@@ -48,9 +66,7 @@ sidebar_position: 2
 
 ![start-link](/img/quick/start-link.png)
 
-### 日常运维
-
----
+## 日常运维
 
 - **重新全同步**
     - 点击停止按钮，停止链路，链路状态变为暂停
