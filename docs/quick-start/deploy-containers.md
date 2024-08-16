@@ -47,14 +47,14 @@ docker ps
 如果 `web` 与 `daemon` 的容器状态类似以下输出，说明容器启动成功：
 
 ```
-CONTAINER ID   IMAGE                                                                     COMMAND                  CREATED          STATUS             PORTS                                                                              NAMES
-3a0da025e1de   192.168.0.198:880/9bridges/fzs-web-server:0.4.0                          "./start.sh -f"          27 seconds ago   Up 26 seconds                                                                                         fzs-web-server-1
-73a1648c3409   9bridges/fzs-daemon:0.2.2-beta.2-node                                     "node index.js"          2 hours ago      Up About an hour                                                                                      fzs-daemon-1
-8ca3c3460a0e   192.168.0.198:880/9bridges/synjq-query:0.3.4                             "/usr/local/s2i/run"     2 hours ago      Up 2 hours         8080/tcp, 8443/tcp, 0.0.0.0:8082->8888/tcp, :::8082->8888/tcp                      fzs-query-1
-0e7a6d8d0000   9bridges/fzs-web:0.5.1-rc.2                                               "./start.sh"             2 hours ago      Up About an hour   0.0.0.0:5555->5555/tcp, :::5555->5555/tcp, 0.0.0.0:80->8080/tcp, :::80->8080/tcp   fzs-web-1
-56c5b25fc7b2   provectuslabs/kafka-ui:latest                                             "/bin/sh -c 'java --…"   3 hours ago      Up 3 hours         0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                          kafka-ui
-391e8bd349c8   192.168.0.198:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4   "/docker-entrypoint.…"   3 hours ago      Up 3 hours         8778/tcp, 9092/tcp, 0.0.0.0:18083->8083/tcp, :::18083->8083/tcp                    root-connect-1
-88e7fa4f48b9   bitnami/kafka:3.6                                                         "/opt/bitnami/script…"   3 hours ago      Up 3 hours         0.0.0.0:9092-9094->9092-9094/tcp, :::9092-9094->9092-9094/tcp                      root-kafka-1
+[root@jiuqiao ~/fzy/web]#docker ps |grep fzs
+bf734fcaad73   192.168.0.198:880/9bridges/provectuslabs/kafka-ui:v0.7.2                 "/bin/sh -c 'java --…"   9 seconds ago   Up 7 seconds                    0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   fzs-kafka-ui-1
+c33c43070300   192.168.0.198:880/9bridges/synjq-query:0.3.6                             "/usr/local/s2i/run"      9 seconds ago   Up Less than a second           8080/tcp, 8443/tcp, 8888/tcp                fzs-query-1
+a4a4b2070329   192.168.0.198:880/9bridges/fzs-daemon:0.2.2                              "/usr/local/bin/dock…"   9 seconds ago   Up 5 seconds                                                                fzs-daemon-1
+b51f4440c567   192.168.0.198:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4   "/docker-entrypoint.…"   9 seconds ago   Up 8 seconds                    8083/tcp, 8778/tcp, 9092/tcp                fzs-connect-1
+a7667b7485d6   192.168.0.198:880/9bridges/fzs-web:0.5.0                                 "./start.sh"              9 seconds ago   Up 8 seconds                    0.0.0.0:80->8080/tcp, :::80->8080/tcp       fzs-web-1
+ec58e80ad048   192.168.0.198:880/9bridges/bitnami/kafka:3.6                             "/opt/bitnami/script…"   9 seconds ago   Up 8 seconds                    9092/tcp                                    fzs-kafka-1
+dcb96163dd8a   192.168.0.198:880/9bridges/fzs-web-server:0.4.1                          "./start.sh -f"           9 seconds ago   Up 8 seconds                    8081/tcp                                    fzs-web-server-1
 ```
 
 ## 开始体验
