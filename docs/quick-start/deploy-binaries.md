@@ -292,7 +292,7 @@ $./start.sh
 $./start.sh -o
 ```
 
-检查容器是否启动成功：
+检查进程是否启动成功：
 
 ```bash
 $ps x
@@ -301,15 +301,13 @@ $ps x
 如果 web-server 启动成功，会有以下进程状态打印：
 
 ```bash
-#Oracle数据库环境
 PID   TTY     STAT    TIME COMMAND
 72372 pts/0    S      0:00 ../bin/fzsweb-exe
 72373 pts/0    Sl     0:00 ../bin/fzsweb-exe
-#ob数据库环境
-PID   TTY     STAT    TIME COMMAND
-72432 pts/0    S      0:00 ../bin/fzsweb-exe-ob
-72433 pts/0    Sl     0:00 ../bin/fzsweb-exe-ob
 ```
+
+### 添加 web-server 到 FZS Web
+参照 [添加 web-server](/fzs-web-server/index.md#添加源端) 添加 web-server 到 FZS Web
 
 ### 停止 web-server
 
