@@ -23,7 +23,7 @@ sidebar_position: 2
 ### 添加授权
 
 ---
-联系厂商获取软件授权，为 FZS Web Server 添加授权
+1. 联系厂商获取软件授权
 ```shell
 # 容器版本的 Web Server 请在运行容器的机器上执行下面命令, 非容器版本的 Web Server 请在 Web Server 机器上执行下面命令
 
@@ -36,8 +36,8 @@ sidebar_position: 2
 [root@dcb96163dd8a run]# uname -m
 x86_64
 [root@dcb96163dd8a run]# 
-
 ```
+2. 厂商提供授权文件后，上传授权文件
 
 ### 添加数据节点
 
