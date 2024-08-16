@@ -1,3 +1,7 @@
+---
+sidebar_position: 0
+---
+
 # MySQL
 
 以下是部署 MySQL 相关数据链路的一些注意事项。

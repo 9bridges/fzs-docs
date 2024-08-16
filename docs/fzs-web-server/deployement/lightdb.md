@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # 恒生电子 LightDB
 
 ## 修改数据库参数，使其支持逻辑复制

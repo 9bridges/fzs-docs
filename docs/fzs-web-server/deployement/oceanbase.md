@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # OceanBase
 
 创建 OceanBase 数据库用户
