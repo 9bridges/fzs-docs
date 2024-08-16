@@ -306,9 +306,6 @@ PID   TTY     STAT    TIME COMMAND
 72373 pts/0    Sl     0:00 ../bin/fzsweb-exe
 ```
 
-### 添加 web-server 到 FZS Web
-参照 [添加 web-server](/fzs-web-server/index.md#添加源端) 添加 web-server 到 FZS Web
-
 ### 停止 web-server
 
 ```bash

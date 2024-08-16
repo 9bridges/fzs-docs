@@ -10,15 +10,34 @@ sidebar_position: 2
 
 ![login](/img/quick/login.png)
 
-### 添加 Web Server
+### 添加 Web Server (非 oracle 同步可忽略此步骤，会自动添加容器版本的 Web Server)
 
 --- 
 
 ![webserver](/img/quick/webserver.png)
 
-点击已部署 Web Server，输入 Web Server 的地址和端口，点击提交
+点击已部署 Web Server，输入运行 Web Server 机器的 ip 地址和端口，点击提交
 
 ![webserver1](/img/quick/add-webserver.png)
+
+### 添加授权
+
+---
+联系厂商获取软件授权，为 FZS Web Server 添加授权
+```shell
+# 容器版本的 Web Server 请在运行容器的机器上执行下面命令, 非容器版本的 Web Server 请在 Web Server 机器上执行下面命令
+
+# 1. 进入 Web Server 容器内部, 非容器版本的 Web Server 请忽略此步骤
+[root@jiuqiao ~/fzy/web]#docker exec -it fzs-web-server-1 bash
+
+# 2. 执行下面命令，获取 hostid 和机器架构信息, 并提供给厂商获取授权
+[root@dcb96163dd8a run]# hostid
+18ac0300
+[root@dcb96163dd8a run]# uname -m
+x86_64
+[root@dcb96163dd8a run]# 
+
+```
 
 ### 添加数据节点
 
