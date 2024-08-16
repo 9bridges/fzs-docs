@@ -1,63 +1,62 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # 快速上手
 
-### 登录 FZS Web
-
----
+## 登录 FZS Web
 
 ![login](/img/quick/login.png)
 
-### 添加 Web Server (非 oracle 同步可忽略此步骤，会自动添加容器版本的 Web Server)
+## 添加 Web Server
 
---- 
+:::info
+当 FZS 使用容器化部署时，已默认添加 `web-server:8081`，此步骤可省略。
+:::
 
-![webserver](/img/quick/webserver.png)
+![add-web-server](/img/add-web-server.jpg)
 
-点击已部署 Web Server，输入运行 Web Server 机器的 ip 地址和端口，点击提交
+![submit-web-server](/img/submit-web-server.jpg)
 
-![webserver1](/img/quick/add-webserver.png)
+## 添加授权
 
-### 添加授权
+:::info
+FZS 数据同步平台需要给予有效授权才能正常使用。
+:::
 
----
-1. 联系厂商获取软件授权
-```shell
-# 容器版本的 Web Server 请在运行容器的机器上执行下面命令, 非容器版本的 Web Server 请在 Web Server 机器上执行下面命令
-
-# 1. 进入 Web Server 容器内部, 非容器版本的 Web Server 请忽略此步骤
-[root@jiuqiao ~/fzy/web]#docker exec -it fzs-web-server-1 bash
-
-# 2. 执行下面命令，获取 hostid 和机器架构信息, 并提供给厂商获取授权
-[root@dcb96163dd8a run]# hostid
-18ac0300
-[root@dcb96163dd8a run]# uname -m
-x86_64
-[root@dcb96163dd8a run]# 
-```
-2. 厂商提供授权文件后，上传授权文件
-
-### 添加数据节点
+### 获取授权
 
 ---
+
+FZS 的授权需要联系 FZS 的产品团队获取，获取到的授权文件为 `license.txt`。
+
+![qrcode](/img/fzs-customer-service-qrcode.png)
+
+### 上传授权
+
+---
+
+![upload-license](/img/upload-license.jpg)
+
+### 绑定授权
+
+---
+
+![bind-license](/img/bind-license.jpg)
+
+## 添加数据节点
 
 选中源备端对应的webserver配置（注意ip和端口），添加数据节点名称，选择数据库的类型，添加数据库的连接串及fzs的数据库连接用户，点击提交
 
 ![data-node](/img/quick/add-node.png)
 
-### 添加数据链路
-
----
+## 添加数据链路
 
 点击添加链路，填写链路名称，选择源备端的数据节点，选择目标端的数据节点，点击提交
 
 ![data-link](/img/quick/add-link.png)
 
-### 创建及启动数据链路
-
----
+## 创建及启动数据链路
 
 首先选中要创建的链路，点击创建,链路创建后，创建按钮置灰
 
@@ -67,9 +66,7 @@ x86_64
 
 ![start-link](/img/quick/start-link.png)
 
-### 日常运维
-
----
+## 日常运维
 
 - **重新全同步**
     - 点击停止按钮，停止链路，链路状态变为暂停

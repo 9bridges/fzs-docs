@@ -56,9 +56,3 @@ CONTAINER ID   IMAGE                                                            
 391e8bd349c8   192.168.0.198:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4   "/docker-entrypoint.…"   3 hours ago      Up 3 hours         8778/tcp, 9092/tcp, 0.0.0.0:18083->8083/tcp, :::18083->8083/tcp                    root-connect-1
 88e7fa4f48b9   bitnami/kafka:3.6                                                         "/opt/bitnami/script…"   3 hours ago      Up 3 hours         0.0.0.0:9092-9094->9092-9094/tcp, :::9092-9094->9092-9094/tcp                      root-kafka-1
 ```
-
-## 开始体验
-
-访问 `http://${your_machine_ip}`，如果能够正常访问以下页面，说明 FZS 部署成功。
-
-![login-page](/img/screenshots/login.jpg)
