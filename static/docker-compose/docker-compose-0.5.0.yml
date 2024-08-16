@@ -1,0 +1,111 @@
+version: '3'
+name: fzs
+services:
+  web:
+    image: 192.168.0.198:880/9bridges/fzs-web:0.5.0
+    ports:
+      - 80:8080
+    volumes:
+      - ./web-data:/data
+      - ./web-agent:/fzs-web/public/fzs-agent
+      - ./web-license:/fzs-web/public/license
+      - ./web-server:/fzs-web/public/fzs-web-server
+    restart: unless-stopped
+    depends_on:
+      - web-server
+    environment:
+      - QUERY_URL=http://query:8888
+      - SESSION_SECRET=fzs-is-the-best
+      - DEFAULT_WEB_SERVER_IP=web-server
+      - DEFAULT_WEB_SERVER_PORT=8081
+    networks:
+      - fzs
+          
+  daemon:
+    image: 192.168.0.198:880/9bridges/fzs-daemon:0.2.2
+    restart: unless-stopped
+    depends_on:
+      - web
+    environment:
+      - WEB_URL=http://web:8080
+    networks:
+      - fzs
+
+  query:
+    image: 192.168.0.198:880/9bridges/synjq-query:0.3.4
+    depends_on:
+      - web
+    restart: unless-stopped
+    environment:
+      - WEB_URL=http://web:8080
+    networks:
+      - fzs
+          
+  web-server:
+    image: 192.168.0.198:880/9bridges/fzs-web-server:0.4.1
+    privileged: true
+    environment:
+      - FZS_WEB_PORT=8081
+      - PG_SERIES_DRIVER=opengauss # postgres 系列数据库使用的驱动，支持 lightdb/gaussdb/opengauss 选项，请按照实际数据库类型来进行配置
+     # 如果需要多个 web-server 之间网络互通，请配置端口映射 
+#    ports:
+#      - "8203-8503:8203:8503"
+    volumes:
+      - ./fzs:/opt/fzsweb/run/fzs
+    networks:
+      - fzs
+          
+  kafka:
+    image: 192.168.0.198:880/9bridges/bitnami/kafka:3.6
+    environment:
+     - KAFKA_CFG_NODE_ID=0
+     - KAFKA_CFG_PROCESS_ROLES=controller,broker
+     - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+     # Listeners
+     - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+     - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
+     - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+     - KAFKA_CFG_MESSAGE_MAX_BYTES=134217728
+     - KAFKA_CFG_REPLICA_FETCH_MAX_BYTES=134217728
+     - KAFKA_CFG_SOCKET_SEND_BUFFER_BYTES=262144
+     - KAFKA_CFG_SOCKET_RECEIVE_BUFFER_BYTES=262144
+     - KAFKA_CFG_SOCKET_REQUEST_MAX_BYTES=134217728
+    networks:
+      - fzs
+          
+  connect:
+    image: 192.168.0.198:880/9bridges/fzs-source-connector:2.6.1.Final.86f50f.2.4
+    links:
+     - kafka
+    environment:
+     - BOOTSTRAP_SERVERS=kafka:9092
+     - GROUP_ID=1
+     - CONFIG_STORAGE_TOPIC=fzs_connect_configs
+     - OFFSET_STORAGE_TOPIC=fzs_connect_offsets
+     - STATUS_STORAGE_TOPIC=fzs_connect_statuses
+     - CONNECT_PRODUCER_MAX_REQUEST_SIZE=104857600
+    networks:
+      - fzs
+          
+  kafka-ui:
+    image: 192.168.0.198:880/9bridges/provectuslabs/kafka-ui:v0.7.2
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+      - connect
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://connect:8083
+      DYNAMIC_CONFIG_ENABLED: true
+    networks:
+      - fzs
+          
+networks:
+  fzs:
+    driver: bridge
+

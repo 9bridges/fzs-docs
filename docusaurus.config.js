@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'FZS 产品文档',
+  title: '九桥同步 FZS 文档中心',
   // tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -64,11 +64,11 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'FZS 产品文档',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/brand.png',
-        // },
+        title: '九桥同步 FZS 文档中心',
+        logo: {
+          alt: 'My Site Logo',
+          src: 'img/favicon.ico',
+        },
         items: [
           {
             href: 'https://github.com/tb-soft/fzs-docs',
