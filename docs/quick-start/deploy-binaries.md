@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 软件包部署
 
-对于 oracle 的同步链路，由于需要直接读取 redo 文件，因此 FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
+对于 oracle 的同步链路，由于需要直接读取 redo 文件，因此除了需要启动容器化部署中的组件外， FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
 
 ## 部署条件
 
