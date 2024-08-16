@@ -10,9 +10,9 @@ sidebar_position: 1
 
 ## 添加 Web Server
 
-:::info
+<!-- :::info
 当 FZS 使用容器化部署时，已默认添加 `web-server:8081`，此步骤可省略。
-:::
+::: -->
 
 ![add-web-server](/img/add-web-server.jpg)
 
@@ -21,7 +21,7 @@ sidebar_position: 1
 ## 添加授权
 
 :::info
-FZS 数据同步平台需要给予有效授权才能正常使用。
+FZS 数据同步平台的正常使用，需要配合有效的授权文件。
 :::
 
 ### 获取授权
