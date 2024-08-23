@@ -9,7 +9,7 @@ sidebar_position: 5
 ## 0.5.0（2024-08-12）
 
 :::important
-Docker Compose 文件下载：<a target="_blank" href="/docker-compose/docker-compose-0.5.0.yml" download="docker-compose-0.5.0.yml">docker-compose-0.5.0.yml</a>
+FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.sh">gen.sh</a>
 :::
 :::caution
 当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.1/webserver-0.4.1.gz" download="webserver-0.4.1.gz">webserver-0.4.1.gz</a>
