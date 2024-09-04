@@ -16,8 +16,8 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 ### 功能优化
 
-- 可以通过环境变量在启动的时候默认添加 web server
-- 优化了首页展示CPU和内存使用率的展示，更加直观地查看系统的运行状态。
+- 可以通过配置环境变量 `WEB_DATA_PORT_START` 与 `WEB_DATA_PORT_END`，在启动的时默认添加 web server
+- 优化了首页展示 CPU 和内存使用率的展示，更加直观地查看系统的运行状态。
 - 优化了系统日志请求过多的问题。
 - 优化了部分UI的展示及交互。
 
