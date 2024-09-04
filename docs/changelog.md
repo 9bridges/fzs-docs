@@ -4,16 +4,30 @@ sidebar_position: 5
 
 # 版本发布
 
-此页记录了 FZS 自 `v0.3.0` 以来的的版本发布更新日志。
-
-## 0.5.0（2024-08-12）
-
 :::important
 FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.sh">gen.sh</a>
 :::
 :::caution
 当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.1/webserver-0.4.1.gz" download="webserver-0.4.1.gz">webserver-0.4.1.gz</a>
 :::
+
+
+## 0.5.1（2024-08-28）
+
+### 功能优化
+
+- 可以通过环境变量在启动的时候默认添加 web server
+- 优化了首页展示CPU和内存使用率的展示，更加直观地查看系统的运行状态。
+- 优化了系统日志请求过多的问题。
+- 优化了部分UI的展示及交互。
+
+### 功能修复
+
+- 修复了添加其他配置项时，无法添加的问题。
+- 修复了链路切换失败的问题。
+- 修复 asm 配置 placeholder 的问题。
+
+## 0.5.0（2024-08-12）
 
 ### 新增功能
 
