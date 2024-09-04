@@ -22,9 +22,10 @@ sidebar_position: 0
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
 | `polardb`   | **PolarDB**                                          |              | ✅           |
 | `tidb`      | **TiDB**                                             |              | ✅           |
-| `gaussdb`   | **GaussDB**                                          |   :construction:           | ✅           |
+| `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
 | `opengauss` | **openGauss**                                        |    ✅           | ✅           |
-| `tdsql`     | **TDSQL**                                            |      :construction:        | ✅           |
+| `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
+| `tdsql-pg`     | **TDSQL PostgreSQL**                       |                      |✅|
 | `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
 | `kingbase`  | **人大金仓 Kingbase**                                |              | ✅           |
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
