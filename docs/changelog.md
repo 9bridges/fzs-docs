@@ -11,6 +11,16 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.3/webserver-0.4.3-Linux.gz" download="webserver-0.4.3-Linux.gz">webserver-0.4.3-Linux.gz</a>
 :::
 
+## 0.5.2 (2024-09-14)
+
+### 功能优化
+
+- **数据节点图片新增**：新增了 `SQL Server`、`DB2` 与 `Informix` 数据库的 svg 图标
+- **滚动效果全新升级**：得益于 `Lenis`，FZS 的滚动效果得到了全新的升级，为用户提供更加流畅的滚动体验 
+
+### 功能修复
+
+修复了其他已知问题。
 
 ## 0.5.1（2024-08-28）
 
