@@ -11,6 +11,18 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.1/webserver-0.4.1.gz" download="webserver-0.4.1.gz">webserver-0.4.1.gz</a>
 :::
 
+## 0.5.2（2024-09-09）
+
+### 功能优化
+
+- 移除脚标，新增关于我们页面，更加直观的展示关于我们的信息。
+- 优化了滚动条效果，让滚动更加顺滑
+- 优化了部分 UI 的展示及交互
+
+### 功能修复
+
+- 修复了数据校验显示错误的bug。
+- 修复了已知问题。
 
 ## 0.5.1（2024-08-28）
 
