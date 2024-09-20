@@ -8,7 +8,7 @@ sidebar_position: 5
 FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.sh">gen.sh</a>
 :::
 :::caution
-当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.3/webserver-0.4.3-Linux.gz" download="webserver-0.4.3-Linux.gz">webserver-0.4.3-Linux.gz</a>
+当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.4/webserver-0.4.4.gz" download="webserver-0.4.4.gz">webserver-0.4.4.gz</a>
 :::
 
 ## 0.5.2 (2024-09-14)
