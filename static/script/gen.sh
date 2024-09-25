@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # 设置镜像版本
-WEB_VERSION=0.5.1
-DAEMON_VERSION=0.2.2
-QUERY_VERSION=0.3.6
-WEB_SERVER_VERSION=0.4.1
-CONNECT_VERSION=2.6.1.Final.86f50f.2.4
+WEB_VERSION=0.5.2
+DAEMON_VERSION=0.2.3
+QUERY_VERSION=0.4.16
+WEB_SERVER_VERSION=0.4.4
+CONNECT_VERSION=3.0.0
 
 # 设置 web 登录端口
 WEB_PORT=80
@@ -20,7 +20,7 @@ WEB_DATA_PORT_START=8203
 WEB_DATA_PORT_END=8303
 
 # postgres 系列数据库使用的驱动，支持 lightdb/gaussdb/opengauss 选项，请按照实际数据库类型来进行配置
-PG_SERIES_DRIVER=opengauss
+PG_SERIES_DRIVER=gaussdb
 
 # 设置 kafka 可视化界面的端口
 KAFKA_UI_PORT=8080
@@ -30,21 +30,30 @@ TAR_NAME=fzs.${WEB_VERSION}
 # 镜像仓库地址
 REPOSITORY=192.168.0.198:880
 
+
+# 脚本内部参数，不需要修改
+PLATFORM=
+TAR=
+FOR_ORACLE=
+
 tar_image() {
     images=(
         "${REPOSITORY}/9bridges/fzs-web:${WEB_VERSION}"
         "${REPOSITORY}/9bridges/fzs-daemon:${DAEMON_VERSION}"
         "${REPOSITORY}/9bridges/synjq-query:${QUERY_VERSION}"
         "${REPOSITORY}/9bridges/fzs-web-server:${WEB_SERVER_VERSION}"
-        "${REPOSITORY}/9bridges/fzs-source-connector:${CONNECT_VERSION}"
-        "${REPOSITORY}/9bridges/provectuslabs/kafka-ui:v0.7.2"
-        "${REPOSITORY}/9bridges/bitnami/kafka:3.6"
     )
-
+    if [ -z "$FOR_ORACLE" ]; then
+        images+=(
+            "${REPOSITORY}/9bridges/bitnami/kafka:3.6"
+            "${REPOSITORY}/9bridges/fzs-source-connector:${CONNECT_VERSION}"
+            "${REPOSITORY}/9bridges/provectuslabs/kafka-ui:v0.7.2"
+        )
+    fi
     echo "开始拉取镜像..."
     for image in "${images[@]}"; do
         echo "拉取镜像: $image"
-        if docker pull "$image"; then
+        if docker pull ${PLATFORM} "$image"; then
             echo "成功拉取镜像: $image"
         else
             echo "拉取镜像失败: $image" >&2
@@ -77,13 +86,15 @@ Options:
   -s PORT                Set the web server port for the service.
   -r START               Set the starting port for web data.
   -e END                 Set the ending port for web data.
-  -d DRIVER              Set the PostgreSQL series driver.
+  -d DRIVER              Set the PostgreSQL series driver. (opengauss/gaussdb/lightdb)
   -k PORT                Set the Kafka UI port.
   -t                     Tar the images.
+  -a                     Set tar platform to arm64.
+  -o                     Oracle tar no need kafka/kafka-ui/connect.
 EOF
 }
 
-while getopts ":p:m:h:s:r:b:e:d:k:t" opt; do
+while getopts ":p:m:h:s:r:b:e:d:k:tao" opt; do
     case ${opt} in
         p)
             WEB_PORT=${OPTARG}
@@ -107,9 +118,14 @@ while getopts ":p:m:h:s:r:b:e:d:k:t" opt; do
             KAFKA_UI_PORT=${OPTARG}
             ;;
         t)
-            tar_image ${TAR_NAME}
-            exit 0
-            ;;			
+            TAR=true
+            ;;
+        a)
+            PLATFORM="--platform linux/arm64"
+            ;;
+        o)
+            FOR_ORACLE=true
+            ;;
         \?)
             echo "Invalid option: -${OPTARG}" >&2
             usage
@@ -122,6 +138,11 @@ while getopts ":p:m:h:s:r:b:e:d:k:t" opt; do
             ;;
     esac
 done
+
+if [ -n "$TAR" ]; then
+    tar_image "$TAR_NAME"
+    exit 0
+fi
 
 if [ -z "$WEB_SERVER_HOST" ]; then
     echo ""
@@ -198,7 +219,9 @@ cat <<EOF >> docker-compose.yml
       - ./fzs:/opt/fzsweb/run/fzs
     networks:
       - fzs
-
+EOF
+if [ -z "$FOR_ORACLE" ]; then
+    cat <<EOF >> docker-compose.yml
   kafka:
     image: ${REPOSITORY}/9bridges/bitnami/kafka:3.6
     environment:
@@ -229,6 +252,7 @@ cat <<EOF >> docker-compose.yml
      - OFFSET_STORAGE_TOPIC=fzs_connect_offsets
      - STATUS_STORAGE_TOPIC=fzs_connect_statuses
      - CONNECT_PRODUCER_MAX_REQUEST_SIZE=104857600
+     - PG_SERIES_DRIVER=${PG_SERIES_DRIVER}
     networks:
       - fzs
 
@@ -247,7 +271,10 @@ cat <<EOF >> docker-compose.yml
       DYNAMIC_CONFIG_ENABLED: true
     networks:
       - fzs
+EOF
+fi
 
+cat <<EOF >> docker-compose.yml
 networks:
   fzs:
     driver: bridge

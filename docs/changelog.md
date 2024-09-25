@@ -8,21 +8,27 @@ sidebar_position: 5
 FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.sh">gen.sh</a>
 :::
 :::caution
-当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.1/webserver-0.4.1.gz" download="webserver-0.4.1.gz">webserver-0.4.1.gz</a>
+当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.4/webserver-0.4.4.gz" download="webserver-0.4.4.gz">webserver-0.4.4.gz</a>
 :::
 
-## 0.5.2（2024-09-09）
+## 0.5.2 (2024-09-27)
+
+### 新增功能
+
+- **延时告警**：新增了延时告警功能，当链路延时超过预设值时，系统会自动发送告警通知。
+- **空闲告警**：新增了空闲告警功能，当链路增量空闲超过预设值时，系统会自动发送告警通知。
 
 ### 功能优化
 
-- 移除脚标，新增关于我们页面，更加直观的展示关于我们的信息。
-- 优化了滚动条效果，让滚动更加顺滑
-- 优化了部分 UI 的展示及交互
+- **Webhook 配置优化**：移除 `monaco-editor`，改为 `textarea`，优化了 webhook 配置的体验
+- **Webhook 告警去重**：优化了 webhook 告警的去重逻辑，避免了告警频繁发送
+- **数据节点图片新增**：新增了 `SQL Server`、`DB2` 与 `Informix` 数据库的 svg 图标
+- **滚动效果全新升级**：得益于 `Lenis`，FZS 的滚动效果得到了全新的升级，为用户提供更加流畅的滚动体验 
 
-### 功能修复
+### 缺陷修复
 
-- 修复了数据校验显示错误的bug。
-- 修复了已知问题。
+- **Webhook 告警双引号转义**：修复了 webhook 告警时双引号转义的问题
+- **SSH 部署 Web Server 环境变量缺失**：修复了通过 SSH 一键部署 Web Server 时，无法获取当前用户环境变量的问题
 
 ## 0.5.1（2024-08-28）
 
