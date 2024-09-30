@@ -11,7 +11,11 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 当链路源端为 Oracle 时，部署 Web Server 需要使用其二进制版本，软件包下载：<a target="_blank" href="http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/0.4.4/webserver-0.4.4.gz" download="webserver-0.4.4.gz">webserver-0.4.4.gz</a>
 :::
 
-## 0.5.2 (2024-09-27)
+此页记录自 `v0.3.0` 以来 FZS 的版本发布信息，包括新增功能、功能优化、功能修复等。
+
+## 0.5.2
+
+日期：2024-09-30
 
 ### 新增功能
 
@@ -30,7 +34,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - **Webhook 告警双引号转义**：修复了 webhook 告警时双引号转义的问题
 - **SSH 部署 Web Server 环境变量缺失**：修复了通过 SSH 一键部署 Web Server 时，无法获取当前用户环境变量的问题
 
-## 0.5.1（2024-08-28）
+## 0.5.1
+
+日期：2024-08-28
 
 ### 功能优化
 
@@ -45,7 +51,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复了链路切换失败的问题。
 - 修复 asm 配置 placeholder 的问题。
 
-## 0.5.0（2024-08-12）
+## 0.5.0
+
+日期：2024-08-12
 
 ### 新增功能
 
@@ -78,7 +86,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复了数据节点验证时多提示框，切换页面提示框不消失的问题。
 - 修复了部分已知问题。
 
-## 0.4.4（2024-06-07）
+## 0.4.4
+
+日期：2024-06-07
 
 ### 新增功能
 
@@ -102,7 +112,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复校验模块下载文件名为中文无法下载的 bug。
 - 修复了部分已知问题。
 
-## 0.4.3（2024-05-11）
+## 0.4.3
+
+日期：2024-05-11
 
 ### 新增功能
 
@@ -126,7 +138,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复了数据校验任务无法删除的bug。
 - 修复了部分已知问题。
 
-## 0.4.2（2024-04-19）
+## 0.4.2
+
+日期：2024-04-19
 
 ### 新增功能
 
@@ -144,7 +158,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复了数据比对屏幕过小无法滚动的问题。
 - 修复了部分已知问题。
 
-## 0.4.1（2024-04-02）
+## 0.4.1
+
+日期：2024-04-02
 
 ### 新增功能
 
@@ -163,7 +179,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 链路中其他配置问题。
 - 修复了部分已知问题。
 
-## 0.4.0（2024-03-15）
+## 0.4.0
+
+日期：2024-03-15
 
 ### 新增功能
 
@@ -185,11 +203,13 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复普通用户可删除 ROOT 用户的问题。
 - 修复了部分已知问题。
 
-## 0.3.5（2024-02-04）
+## 0.3.5
 
 :::info
 此版本需要 FZS Daemon 0.1.1 及以上版本配合使用。
 :::
+
+日期：2024-02-04
 
 ### 新增功能
 
@@ -206,7 +226,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复数据比对在报错情况下，数据遗留的问题。
 - 修复了部分已知问题。
 
-## 0.3.4（2024-01-19）
+## 0.3.4
+
+日期：2024-01-19
 
 ### 新增功能
 
@@ -230,11 +252,13 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复链路在创建后
 - 修复了部分已知问题。
 
-## 0.3.3（2023-12-29）
+## 0.3.3
 
 :::info
 此版本需要 FZS Web Server 0.3.3 及以上版本配合使用。
 :::
+
+日期：2023-12-29
 
 ### 新增功能
 
@@ -253,7 +277,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 - 修复了部分已知问题。
 
-## 0.3.2（2023-12-15）
+## 0.3.2
+
+日期：2023-12-15
 
 ### 新增功能
 
@@ -271,7 +297,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - 修复了日志自动滚动影响页面的 bug。
 - 修复了部分已知问题。
 
-## 0.3.1（2023-12-04）
+## 0.3.1
+
+日期：2023-12-04
 
 ### 新增功能
 
@@ -289,7 +317,9 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 - 修复了部分已知问题
 
-## 0.3.0（2023-11-24）
+## 0.3.0
+
+日期：2023-11-24
 
 ### 新增功能
 
