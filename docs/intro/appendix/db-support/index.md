@@ -16,7 +16,7 @@ sidebar_position: 0
 | `oracle`    | **Oracle**                                           | ✅           | ✅           |
 | `mysql`     | **MySQL**                                            | ✅           | ✅           |
 | `postgres`  | **PostgreSQL**                                       |     ✅         | ✅           |
-| `sqlserver` | **Microsoft SQL Server**                             |     :construction:         | ✅           |
+| `sqlserver` | **Microsoft SQL Server**                             |     ✅        | ✅           |
 | `db2`       | **IBM Db2**                                          |              | ✅           |
 | `ob-oracle` | **OceanBase Oracle 模式**                            | ✅           | ✅           |
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
@@ -34,4 +34,5 @@ sidebar_position: 0
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
 | `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |        ✅       | ✅           |
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
+| `hive`    | **Apache Hive**                                            |            | :construction: |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
