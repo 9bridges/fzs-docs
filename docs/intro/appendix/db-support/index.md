@@ -35,4 +35,5 @@ sidebar_position: 0
 | `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |        ✅       | ✅           |
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
 | `hive`    | **Apache Hive**                                            |            | :construction: |
+| `doris`    | **Apache Doris**                                            |            | :construction: |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
