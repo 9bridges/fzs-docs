@@ -36,4 +36,5 @@ sidebar_position: 0
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
 | `hive`    | **Apache Hive**                                            |            | :construction: |
 | `doris`    | **Apache Doris**                                            |            | :construction: |
+| `starrocks`    | **StarRocks**                                            |            | :construction: |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
