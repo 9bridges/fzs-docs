@@ -27,14 +27,14 @@ sidebar_position: 0
 | `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
 | `tdsql-pg`     | **TDSQL PostgreSQL**                       |                      |✅|
 | `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
-| `kingbase`  | **人大金仓 Kingbase**                                |              | ✅           |
+| `kingbase`  | **电科金仓 Kingbase**                                |  ✅            | ✅           |
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
-| `goldendb`  | **中兴通讯 GoldenDB**                                |              | ✅           |
+| `goldendb`  | **金篆信科 GoldenDB**                                |              | ✅           |
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
 | `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |        ✅       | ✅           |
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
 | `hive`    | **Apache Hive**                                            |            | :construction: |
-| `doris`    | **Apache Doris**                                            |            | :construction: |
-| `starrocks`    | **StarRocks**                                            |            | :construction: |
+| `doris`    | **Apache Doris**                                            |            | ✅  |
+| `starrocks`    | **StarRocks**                                            |            | ✅  |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
