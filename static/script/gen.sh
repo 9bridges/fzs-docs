@@ -4,8 +4,8 @@
 WEB_VERSION=0.5.6
 DAEMON_VERSION=0.2.5
 QUERY_VERSION=0.4.16
-WEB_SERVER_VERSION=0.4.10
-CONNECT_VERSION=3.0.0
+WEB_SERVER_VERSION=0.4.17
+CONNECT_VERSION=3.4.0
 
 # 设置 web 登录端口
 WEB_PORT=80
@@ -49,6 +49,8 @@ tar_image() {
             "${REPOSITORY}/9bridges/fzs-source-connector:${CONNECT_VERSION}"
             "${REPOSITORY}/9bridges/provectuslabs/kafka-ui:v0.7.2"
         )
+    else
+        wget http://192.168.0.198:1721/repository/maven-releases/fzs/Linux/webserver/${WEB_SERVER_VERSION}/webserver-${WEB_SERVER_VERSION}.gz
     fi
     echo "开始拉取镜像..."
     for image in "${images[@]}"; do
@@ -67,6 +69,7 @@ tar_image() {
     if docker save "${images[@]}" -o "fzs.image.tar"; then
         if tar -czf "$1.tar.gz" "fzs.image.tar" "gen.sh"; then
             echo "镜像文件压缩成功: $1.tar.gz"
+			rm -rf fzs.image.tar
         else
             echo "镜像文件压缩失败" >&2
         fi
