@@ -27,7 +27,7 @@ sidebar_position: 0
 | `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
 | `tdsql-pg`     | **TDSQL PostgreSQL**                       |                      |✅|
 | `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
-| `kingbase`  | **电科金仓 Kingbase**                                |  ✅            | ✅           |
+| `kingbase`  | **电科金仓 Kingbase**                                |  :construction:           | ✅           |
 | `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
 | `goldendb`  | **金篆信科 GoldenDB**                                |              | ✅           |
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
