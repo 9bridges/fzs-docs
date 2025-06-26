@@ -21,7 +21,7 @@ sidebar_position: 0
 | `ob-oracle` | **OceanBase Oracle 模式**                            | ✅           | ✅           |
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
 | `polardb`   | **PolarDB**                                          |              | ✅           |
-| `tidb`      | **TiDB**                                             |              | ✅           |
+| `tidb`      | **TiDB**                                             |      :construction:          | ✅           |
 | `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
 | `opengauss` | **openGauss**                                        |    ✅           | ✅           |
 | `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
@@ -33,8 +33,10 @@ sidebar_position: 0
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
 | `mogdb`     | [**云和恩墨 MogDB**](https://www.mogdb.io/)                                   |        ✅       | ✅           |
+| `yashandb`     | [**崖山数据库**](https://www.yashandb.com/)                                   |      :construction:     | ✅           |
 | `kafka`    | **Apache Kafka**                                            |            | ✅ |
-| `hive`    | **Apache Hive**                                            |            | :construction: |
+| `hive`    | **Apache Hive**                                            |       ✅     | ✅ |
+| `inceptor`    | **星环 Inceptor**                                            |       ✅     | ✅ |
 | `doris`    | **Apache Doris**                                            |            | ✅  |
 | `starrocks`    | **StarRocks**                                            |            | ✅  |
 | `gaussdb-dws`    | [**GaussDB (DWS)**](https://www.huaweicloud.com/product/dws.html)                                            |            | ✅ |
