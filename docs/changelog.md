@@ -15,7 +15,7 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 ## 0.6.0
 
-日期：2025-05-05
+日期：2025-06-26
 
 ### 新增功能
 
@@ -26,7 +26,7 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 - **适配 `FZS` 高可用部署**：适配 `FZS` 多节点高可用部署模式，当某条数据链路因为节点宕机而停止时，系统会自动切换到其他节点继续同步数据，保证数据业务的连续性。
 - **新增 `Apache Hive` 源备端支持**：新增 `Apache Hive` 源备端支持，用户可通过配置 `Apache Hive` 作为源端或备端进行数据同步。
 - **新增星环科技 `Inceptor` 源备端支持**：新增星环科技 `Inceptor` 源备端支持，用户可通过配置星环科技 `Inceptor` 作为源端或备端进行数据同步。
-- **新增崖山数据库 `YashanDB` 源备端支持**：新增崖山数据库 `YashanDB` 源备端支持，用户可通过配置崖山数据库 `YashanDB` 作为源端或备端进行数据同步。
+- **新增崖山数据库 `YashanDB` 备端支持**：新增崖山数据库 `YashanDB` 备端支持，用户可通过配置崖山数据库 `YashanDB` 作为备端进行数据同步。
 - **支持 `https` 服务**：用户可通过配置 `cert` 和 `key` 文件，来启用 `https` 服务，保证数据传输的安全性。
 
 ### 功能修复
