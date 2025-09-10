@@ -20,15 +20,16 @@ sidebar_position: 0
 | `db2`       | **IBM Db2**                                          |              | ✅           |
 | `ob-oracle` | **OceanBase Oracle 模式**                            | ✅           | ✅           |
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
-| `polardb`   | **PolarDB**                                          |              | ✅           |
+| `polardb-mysql`   | **PolarDB MySQL**                                          |              | ✅           |
+| `polardb-postgres`   | **PolarDB PostgreSQL**                                          |               | ✅           |
 | `tidb`      | **TiDB**                                             |      :construction:          | ✅           |
 | `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
 | `opengauss` | **openGauss**                                        |    ✅           | ✅           |
 | `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
 | `tdsql-pg`     | **TDSQL PostgreSQL**                       |                      |✅|
-| `dm`        | **武汉达梦 DM**                                      | ✅           | ✅           |
+| `dm`        | **武汉达梦 DM8**                                      | ✅           | ✅           |
 | `kingbase`  | **电科金仓 Kingbase**                                |  :construction:           | ✅           |
-| `gbase`     | **南大通用 GBASE**                                   |              | ✅           |
+| `gbase`     | **南大通用 GBase 8s**                                   |    :construction:           | ✅           |
 | `goldendb`  | **金篆信科 GoldenDB**                                |              | ✅           |
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
