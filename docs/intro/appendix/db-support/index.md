@@ -22,14 +22,14 @@ sidebar_position: 0
 | `ob-mysql`  | **OceanBase MySQL 模式**                             | ✅           | ✅           |
 | `polardb-mysql`   | **PolarDB MySQL**                                          |              | ✅           |
 | `polardb-postgres`   | **PolarDB PostgreSQL**                                          |               | ✅           |
-| `tidb`      | **TiDB**                                             |      :construction:          | ✅           |
+| `tidb`      | **TiDB**                                             |     ✅         | ✅           |
 | `gaussdb`   | **GaussDB**                                          |   ✅            | ✅           |
 | `opengauss` | **openGauss**                                        |    ✅           | ✅           |
 | `tdsql-mysql`     | **TDSQL MySQL**                                  |      ✅                 |✅  |
 | `tdsql-pg`     | **TDSQL PostgreSQL**                       |                      |✅|
 | `dm`        | **武汉达梦 DM8**                                      | ✅           | ✅           |
 | `kingbase`  | **电科金仓 Kingbase**                                |  :construction:           | ✅           |
-| `gbase`     | **南大通用 GBase 8s**                                   |    :construction:           | ✅           |
+| `gbase`     | **南大通用 GBase 8s**                                   |    ✅          | ✅           |
 | `goldendb`  | **金篆信科 GoldenDB**                                |              | ✅           |
 | [`lightdb`](/intro/appendix/db-support/lightdb.md)   | [**恒生电子 LightDB**](https://www.light-pg.com/) |      ✅         | ✅           |
 | `sundb`     | [**科蓝软件 SUNDB**](http://www.csii.com.cn/sundb.html)                                   | ✅           | ✅           |
