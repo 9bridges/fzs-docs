@@ -13,6 +13,77 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 此页记录自 `v0.3.0` 以来 FZS 的版本发布信息，包括新增功能、功能优化、功能修复等。
 
+## 0.6.2 版本更新日志 (Changelog)
+> 发布日期：2026-01-16
+
+### ✨ 新增功能 (Features)
+
+*   **TiDB 深度支持**
+    *   新增 TiCDC 主机参数配置，增强对 TiDB 数据库的同步支持。
+*   **高级参数配置 (Extra Configs)**
+    *   新增增量数据抽取的批次延迟参数 (Batch Delay)。
+    *   新增 `load.urp2irp` 配置项以优化加载效率。
+    *   扩展了加载 (Load) 和导出 (Export) 流程的配置参数，并完善了字段描述。
+*   **同步对象管理**
+    *   集成 `SyncObjectViewer` 组件，提供更详细的对象查看视图。
+    *   在数据链路修改流程中增加了同步对象的验证逻辑。
+    *   数据字典转换支持 `as_primary` 字段配置。
+*   **系统与体验优化**
+    *   **链路控制**：新增启动数据链路时的确认弹窗，提升操作安全性。
+    *   **图表展示**：`CountChart` 组件增加数字格式化支持。
+    *   **导入功能**：支持在导入过程中将节点与链路关联至虚拟 Web Server。
+    *   **网络可靠性**：新增 Axios 请求重试机制。
+
+### ♻️ 优化与重构 (Refactor & Improvements)
+
+*   **代码清理**：移除了 `ConfirmAlert` 组件及未使用的数据库超时配置。
+*   **逻辑优化**：重构了同步对象的过滤与校验逻辑，提升代码可读性与执行效率。
+*   **依赖升级**：Prisma ORM 升级至 `v6.19.1`。
+
+### 🐛 问题修复 (Bug Fixes)
+
+*   **UI 修复**：修复了 `BigSelector` 组件中多余的样式类导致的显示问题。
+*   **逻辑修复**：修正了 `convertUserDefinedDict` 中的条件映射与 Schema 数据处理时的错误反馈机制。
+
+## 0.6.1 版本更新日志 (Changelog)
+
+> 发布日期：2025-11-06
+
+### ✨ 新增功能 (Features)
+
+*   **数据源与节点支持**
+    *   **PolarDB**: 支持 PolarDB 的 MySQL 和 PostgreSQL 变体，并增加了对应图标。
+    *   **GBase 8s**: 新增 GBase 8s 节点类型支持 (`gbase8sServer` 字段)，更新了相关表单与 Payload 处理。
+    *   **StarRocks**: 在链路配置中增加了 StarRocks 源端支持。
+    *   **Kafka**: 消息结构字段 (`kafkaMessageStruct`) 添加至 SinkConfig；支持增量同步模式配置；强制 Sink-only 模式。
+*   **同步与链路增强**
+    *   **交易日轮询 (Trading Date)**: 实现了基于交易日文件的轮询策略，支持 CSV 解析与上一交易日逻辑。
+    *   **DDL 同步**: 数据链路新增 `onlySyncDDL`（仅同步 DDL）选项及状态徽标展示。
+    *   **双活配置**: 支持源端和目标端的双数据库 (Dual Database) 配置。
+    *   **数据校验**: 恢复了导入/导出操作中的数据校验逻辑。
+*   **大宽表与列选择 (BigSelector)**
+    *   **列管理**: 新增列选择器 (`ColumnSelector`)，支持列的添加、编辑及批量管理。
+    *   **默认值增强**: 默认值配置改用 `CustomizedSelector`，支持当前时间 (`current timestamp`) 及交易日变量。
+    *   **性能优化**: 重构了行/列选择逻辑，优化了 Schema 和表数据的处理性能。
+*   **系统功能**
+    *   **大文件上传**: 将文件上传的最大限制提升至 500MB。
+    *   **Schema 获取**: 获取 Schema 和 Table 数据时改用 POST 请求，以支持更复杂的查询参数。
+    *   **进度展示**: `FullSync` 组件支持显示归属于特定数据任务的进度。
+
+### ♻️ 优化与重构 (Refactor & Improvements)
+
+*   **依赖升级**: 升级 Prisma 及 Remix 相关依赖至最新版本（Prisma v6.12.0+）。
+*   **Docker 优化**: 重构 Dockerfile 构建阶段，精简依赖安装；生产环境镜像增加 `prisma.config.js`。
+*   **状态管理**: 优化了数据链路在停止任务前的暂停状态更新逻辑。
+*   **时间处理**: 重构了 Dayjs 的初始化逻辑，移除冗余时区设置，统一在 Root 组件中处理。
+*   **UI/UX**: 图表可视化由 `natural` 曲线改为 `bump` 类型；优化了数据任务与链路的关联选择界面。
+
+### 🐛 问题修复 (Bug Fixes)
+
+*   **数据库类型修正**: 修正了 TDSQL, Vastbase, GBase, StarRocks 等数据库类型的 `sinkOnly` 属性配置。
+*   **逻辑修复**: 修复了 `separateDatanodes` 函数中的判断逻辑；修复了 `upsert` 操作时的 Payload 清理问题。
+*   **验证逻辑**: 修复了 `validateMapData` 对空数据的处理；修复了交易日文件的选择与校验逻辑。
+
 ## 0.6.0
 
 日期：2025-06-27
