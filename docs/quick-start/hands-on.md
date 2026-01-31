@@ -2,13 +2,21 @@
 sidebar_position: 1
 ---
 
-# 快速上手
+# 快速上手指南
 
-## 登录 FZS Web
+本指南将演示如何从零开始配置 FZS 系统。请确保您已完成前置的 [FZS 部署](./deploy-fzs/index.mdx) 步骤。
+
+## 1. 登录 FZS Web
+
+在浏览器中输入 FZS Web 的访问地址（默认为 `http://<IP>:8080`），使用系统默认账号登录。
 
 ![login](/img/quick/login.png)
 
-## 添加 Web Server
+## 2. 注册 Web Server
+
+首次登录后，需要将 FZS Web Server 注册到管理平台中，以便进行通信。
+
+点击菜单栏的 **Web Server 管理**，然后点击 **添加**。输入 Web Server 的地址和端口（默认为 `8081`）。
 
 <!-- :::info
 当 FZS 使用容器化部署时，已默认添加 `web-server:8081`，此步骤可省略。
@@ -16,15 +24,23 @@ sidebar_position: 1
 
 ![add-web-server](/img/add-web-server.jpg)
 
+确认无误后，点击提交。
+
 ![submit-web-server](/img/submit-web-server.jpg)
 
-## 添加授权
+## 3. 激活产品授权
 
-:::info
-FZS 数据同步平台的正常使用，需要配合有效的授权文件。
+:::info 重要提示
+FZS 数据同步平台需要有效的授权文件（License）才能正常运行同步任务。
 :::
 
 ### 获取授权
+
+请联系九桥同步商务人员获取试用或正式授权文件。
+
+### 上传授权
+
+进入 **系统设置 > 授权管理**，点击 **上传授权**，选择您的 License 文件进行激活。
 
 ---
 
