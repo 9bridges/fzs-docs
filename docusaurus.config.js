@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { themes } = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,7 +19,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'tb-soft', // Usually your GitHub org/user name.
+  organizationName: '9bridges', // Usually your GitHub org/user name.
   projectName: 'fzs-docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
@@ -88,7 +89,7 @@ const config = {
         },
         items: [
           {
-            href: 'https://github.com/tb-soft/fzs-docs',
+            href: 'https://github.com/9bridges/fzs-docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -119,7 +120,7 @@ const config = {
             items: [
               {
                 label: '公司官网',
-                href: 'https://tb-soft.net/',
+                href: 'https://9bridges.cn/',
               },
               {
                 label: '联系我们',
@@ -132,7 +133,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/tb-soft/fzs-docs',
+                href: 'https://github.com/9bridges/fzs-docs',
               },
             ],
           },

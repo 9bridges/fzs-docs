@@ -18,7 +18,7 @@ sidebar_position: 0
 * **[支持列表](/intro/appendix/db-support/index.md)**：查询 FZS 支持的源端与目标端数据库类型。
 
 :::info 获取更多帮助
-如果您在本中心未找到所需信息，或有定制化需求，请联系 [九桥同步](https://tb-soft.net/) 的客户经理。
+如果您在本中心未找到所需信息，或有定制化需求，请联系 [九桥同步](https://9bridges.cn/) 的客户经理。
 
 如有任何技术疑问或建议，欢迎发送邮件至 **contact@tb-soft.net** 或扫描下方二维码加入 FZS 产品服务群。
 :::
