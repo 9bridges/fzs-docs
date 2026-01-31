@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '九桥同步 FZS 文档中心',
-  // tagline: 'Dinosaurs are cool',
+  tagline: '专业级数据同步与灾备解决方案',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -48,12 +48,15 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          breadcrumbs: true,
         },
         blog: false,
         pages: false,
-        // theme: {
-        //   customCss: require.resolve('./custom.css'),
-        // },
+        theme: {
+          customCss: require.resolve('./custom.css'),
+        },
       }),
     ],
   ],
@@ -61,12 +64,26 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        { name: 'keywords', content: '数据同步, 容灾备份, 异构数据库, FZS, CDC, 九桥同步' },
+        { name: 'description', content: '九桥同步 FZS 数据同步平台官方文档 - 提供产品部署、操作指南及 API 参考。' }
+      ],
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
+      },
       navbar: {
         title: '九桥同步 FZS 文档中心',
+        hideOnScroll: true,
         logo: {
-          alt: 'My Site Logo',
+          alt: 'FZS',
           src: 'img/favicon.ico',
         },
         items: [
@@ -76,6 +93,51 @@ const config = {
             position: 'right',
           },
         ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: '产品文档',
+            items: [
+              {
+                label: '快速开始',
+                to: '/quick-start',
+              },
+              {
+                label: '用户手册',
+                to: '/fzs-web',
+              },
+              {
+                label: '支持列表',
+                to: '/intro/appendix/db-support',
+              },
+            ],
+          },
+          {
+            title: '资源与支持',
+            items: [
+              {
+                label: '公司官网',
+                href: 'https://tb-soft.net/',
+              },
+              {
+                label: '联系我们',
+                href: 'mailto:contact@tb-soft.net',
+              },
+            ],
+          },
+          {
+            title: '更多',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/tb-soft/fzs-docs',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} 北京九桥同步软件有限公司 Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
