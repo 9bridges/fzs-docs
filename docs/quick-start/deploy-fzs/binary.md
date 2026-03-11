@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # 软件包部署
 
-对于 oracle 的同步链路，由于需要直接读取 redo 文件，因此除了需要启动容器化部署中的组件外， FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 aix 的多种操作系统部署）
+对于 Oracle 的同步链路，由于需要直接读取 redo 文件，因此除了需要启动容器化部署中的组件外， FZS Web Server 需要部署在装有数据库的**本地**环境（支持 Linux、Windows（还在研发中）以及 AIX 多种操作系统）。
 
 ## 部署条件
 
-- 硬件配置：单条链路磁盘预留空间至少为数据库中同步数据量的 1/3，内存与 cpu 无特定要求（机器性能与软件运行效率成正比）
+- 硬件配置：单条链路磁盘预留空间至少为数据库中同步数据量的 1/3，内存与 CPU 无特定要求（机器性能与软件运行效率成正比）
 - 网络端口：
   - 默认对外开放 8081 端口，用于 HTTP 访问
   - 对内开放所有端口，用于内部通信
@@ -21,7 +21,7 @@ sidebar_position: 1
 
 ### 创建系统用户 (Linux 系统)
 
-- 在 oracle 所在机器上创建和 oracle 或者 grid 用户(ASM 存储环境上一般有 grid 用户)同组的用户,执行下面脚本创建 fzs (可任意修改用户名) 用户，web-server 需要部署在这个新创建的系统用户下
+- 在 Oracle 所在机器上创建和 Oracle 或者 grid 用户（ASM 存储环境上一般有 grid 用户）同组的用户，执行下面脚本创建 fzs（可任意修改用户名）用户，Web Server 需要部署在这个新创建的系统用户下
 
 ```bash
 #!/bin/sh
@@ -249,7 +249,7 @@ $ tar -xvf fzsweb.a39731c-0.1.2-Linux.tar.gz
 
 - 解压目录预览：
 
-![Decompress——images](/img/screenshots/Decompress_images.png)
+![解压后的 FZS 软件包目录结构预览](/img/screenshots/Decompress_images.png)
 
 ### 启动 web-server
 

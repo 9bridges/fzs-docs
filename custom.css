@@ -19,7 +19,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Typography Enhancements */
-  --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ifm-heading-font-weight: 600;
   --ifm-font-weight-semibold: 600;
 
@@ -58,9 +58,28 @@
 
 /* 3. Image Styling (Screenshots) */
 article img {
+  max-width: 100%;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--ifm-color-emphasis-200);
+  /* content-shift prevention: images are block-level by default in article */
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Hover lift — respects reduced-motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  article img {
+    transition: box-shadow 0.2s ease;
+  }
+  article img:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+[data-theme='dark'] article img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 /* 4. Table Styling */
@@ -69,6 +88,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
+  /* Contain table layout so changes don't reflow the whole page */
+  contain: layout style;
 }
 
 table th {
@@ -87,4 +108,190 @@ table td {
 .hero__title {
   font-weight: 800;
   letter-spacing: -0.5px;
+}
+
+/* 6. Performance: skip rendering off-screen content */
+.theme-doc-markdown {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ============================================================
+   9. Text Overflow Hardening
+   ============================================================ */
+
+/*
+ * Inline code (parameter names like export.param_sync_java, URLs, etc.)
+ * Let them wrap rather than punching out of the container.
+ */
+p code,
+li code,
+td code,
+th code {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/*
+ * Long hyperlinks: URLs in running text wrap naturally.
+ */
+article a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/*
+ * CJK body text: allow breaks at character boundaries as a fallback
+ * but prefer the standard strict (don't break before/after punctuation).
+ */
+.theme-doc-markdown {
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/*
+ * Sidebar navigation items: long page titles must wrap, not overflow.
+ */
+.menu__link {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/*
+ * Table cells: raw text (not just code) should also wrap gracefully.
+ */
+table td,
+table th {
+  overflow-wrap: break-word;
+}
+
+/* ============================================================
+   10. Keyboard Navigation — Focus Visibility
+   ============================================================ */
+
+/*
+ * Docusaurus inherits the browser default outline on focus, which can be
+ * invisible on some background colors. Explicitly show a branded ring
+ * for keyboard navigation while suppressing it for mouse clicks.
+ */
+:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================================
+   7. Responsive Adaptations
+   ============================================================ */
+
+/* --- 7a. Mobile (≤768px): tables scroll horizontally --- */
+/*
+ * Docusaurus's default table styles don't handle overflow.
+ * Switching to display:block lets the element scroll while
+ * inner tr/td/th rows still render as a proper table grid.
+ */
+@media (max-width: 768px) {
+  .theme-doc-markdown table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+    contain: none; /* reset layout containment — only applies to tables */
+  }
+
+  table th,
+  table td {
+    padding: 8px 10px; /* tighter cells on narrow screens */
+    min-width: 4.5rem; /* prevent columns from collapsing too narrow */
+  }
+
+  /* Long parameter names in code-formatted cells */
+  table td code,
+  table th code {
+    word-break: break-all;
+  }
+}
+
+/* --- 7b. Touch-friendly momentum scrolling for code blocks --- */
+pre code,
+.prism-code {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- 7c. Mobile: center standalone images --- */
+@media (max-width: 768px) {
+  article img {
+    margin-inline: auto;
+  }
+}
+
+/* ============================================================
+   8. Print Styles
+   ============================================================ */
+@media print {
+  /* Hide interactive chrome */
+  .navbar,
+  .footer,
+  .theme-doc-sidebar-container,
+  .pagination-nav,
+  .theme-doc-toc-desktop,
+  .theme-edit-this-page,
+  .theme-last-update,
+  .breadcrumbs__item--active .breadcrumbs__link,
+  .medium-zoom-overlay {
+    display: none !important;
+  }
+
+  /* Full-width reading area */
+  .main-wrapper,
+  article {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Clean images for print — remove screen-only decoration */
+  article img {
+    box-shadow: none !important;
+    border-color: #ccc !important;
+    cursor: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Restore normal table display (overrides the mobile block rule) */
+  .theme-doc-markdown table {
+    display: table !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  /* Keep headings with their following content */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  /* Keep blocks together where possible */
+  pre, blockquote, table {
+    page-break-inside: avoid;
+  }
+
+  /* Wrap long code lines instead of scrolling */
+  pre, code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Show destination URL after external links */
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.78em;
+    color: #555;
+  }
+
+  @page {
+    margin: 2cm;
+  }
 }

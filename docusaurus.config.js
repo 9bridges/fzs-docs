@@ -25,7 +25,6 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -36,10 +35,23 @@ const config = {
   },
 
   markdown: {
-    mermaid: true
+    mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
+
+  plugins: ['docusaurus-plugin-image-zoom'],
+
+  headTags: [
+    // Preconnect to Algolia search API (eliminates TCP+TLS setup delay on first search)
+    {
+      tagName: 'link',
+      attributes: { rel: 'preconnect', href: 'https://DJ0WND5D5M-dsn.algolia.net', crossorigin: 'anonymous' },
+    },
+  ],
 
   presets: [
     [
@@ -54,7 +66,7 @@ const config = {
           breadcrumbs: true,
         },
         blog: false,
-        pages: false,
+        pages: {},
         theme: {
           customCss: require.resolve('./custom.css'),
         },
@@ -151,6 +163,18 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: 'd328ec667f30577e8088b69a5294df27',
         indexName: '9bridges',
+      },
+      zoom: {
+        selector: 'article img',
+        background: {
+          light: 'rgba(0, 0, 0, 0.6)',
+          dark: 'rgba(0, 0, 0, 0.8)',
+        },
+        config: {
+          // Options passed directly to medium-zoom
+          margin: 24,
+          scrollOffset: 100,
+        },
       },
     }),
 }

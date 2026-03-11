@@ -13,7 +13,37 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 此页记录自 `v0.3.0` 以来 FZS 的版本发布信息，包括新增功能、功能优化、功能修复等。
 
+## 0.6.3
+
+> 日期：2026-03-11
+
+### 新功能
+
+- **定时停止支持**：数据链路新增支持通过 Cron 表达式配置定时停止任务
+- **轮询重置控制**：DataLink 模型新增 `pollingResetEnabled` 字段，支持更精细的同步重置控制
+- **备用连接支持**：DataNode 模型新增 `connectionBackup` 字段，支持配置备用连接以提升连接可靠性
+- **链路重置与修复**：API 及路由层新增数据链路的重置（reset）和修复（fix）操作接口
+- **全屏日志面板**：ErrorQueue 组件集成 LogPanel，支持全屏切换和多标签页管理
+
+### 优化与改进
+
+- **轮询逻辑增强**：定期轮询（createPeriodicPolling）新增同步模式检查和全量同步校验，结束逻辑更完善，并增强相关日志输出
+- **停止逻辑增强**：数据链路停止流程加入同步模式判断，新增日志记录
+- **列类型映射优化**：列类型转换函数引入 `sourceType` 参数，数据类型映射更准确
+- **错误边界**：多个路由页面新增错误边界（Error Boundary），提升异常情况下的用户体验和数据加载健壮性
+- **API 统一化**：重构 API 调用，统一使用 query server 方法，移除废弃接口
+- **加载骨架屏**：多个组件新增加载骨架屏（Loading Skeleton），改善页面加载视觉体验
+- **Toast 通知升级**：使用 [Sonner](https://sonner.emilkowal.ski/) 替换自定义 Toast 实现，通知交互体验更流畅
+- **主题管理重构**：实现自定义 ThemeProvider，替换 next-themes，统一主题切换逻辑
+- **组件样式优化**：Select、Table 等 UI 组件样式和功能增强，组件导入与样式结构整体重构
+- **状态管理改善**：ErrorQueue 和 SyncIntervalSelector 组件错误处理逻辑和状态管理优化
+
+### 依赖更新
+
+- 升级项目依赖至最新版本，引入 shadcn/ui 组件库依赖
+
 ## 0.6.2 版本更新日志 (Changelog)
+
 > 发布日期：2026-01-16
 
 ### ✨ 新增功能 (Features)

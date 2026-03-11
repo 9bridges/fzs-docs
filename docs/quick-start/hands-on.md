@@ -10,7 +10,7 @@ sidebar_position: 1
 
 在浏览器中输入 FZS Web 的访问地址（默认为 `http://<IP>:8080`），使用系统默认账号登录。
 
-![login](/img/quick/login.png)
+![FZS Web 登录界面](/img/quick/login.png)
 
 ## 2. 注册 Web Server
 
@@ -18,15 +18,11 @@ sidebar_position: 1
 
 点击菜单栏的 **Web Server 管理**，然后点击 **添加**。输入 Web Server 的地址和端口（默认为 `8081`）。
 
-<!-- :::info
-当 FZS 使用容器化部署时，已默认添加 `web-server:8081`，此步骤可省略。
-::: -->
-
-![add-web-server](/img/add-web-server.jpg)
+![添加 Web Server 填写地址与端口的表单界面](/img/add-web-server.jpg)
 
 确认无误后，点击提交。
 
-![submit-web-server](/img/submit-web-server.jpg)
+![确认提交 Web Server 信息的确认弹窗](/img/submit-web-server.jpg)
 
 ## 3. 激活产品授权
 
@@ -36,88 +32,78 @@ FZS 数据同步平台需要有效的授权文件（License）才能正常运行
 
 ### 获取授权
 
-请联系九桥同步商务人员获取试用或正式授权文件。
+请联系九桥同步商务人员获取试用或正式授权文件（文件名为 `license.txt`）。可扫描下方二维码联系服务团队。
+
+![九桥同步客服微信二维码](/img/fzs-customer-service-qrcode.png)
 
 ### 上传授权
 
 进入 **系统设置 > 授权管理**，点击 **上传授权**，选择您的 License 文件进行激活。
 
----
-
-FZS 的授权需要联系 FZS 的产品团队获取，获取到的授权文件为 `license.txt`。
-
-![qrcode](/img/fzs-customer-service-qrcode.png)
-
-### 上传授权
-
----
-
-![upload-license](/img/upload-license.jpg)
+![上传 License 授权文件操作界面](/img/upload-license.jpg)
 
 ### 绑定授权
 
----
+![绑定 License 授权至 Web Server 的操作界面](/img/bind-license.jpg)
 
-![bind-license](/img/bind-license.jpg)
+## 4. 添加数据节点
 
-## 添加数据节点
+选中 Web Server 并切换至对应配置（注意 IP 和端口），填写数据节点名称，选择数据库类型，填入数据库连接串及 FZS 数据库连接用户，点击 **提交**。
 
-选中源备端对应的webserver配置（注意ip和端口），添加数据节点名称，选择数据库的类型，添加数据库的连接串及fzs的数据库连接用户，点击提交
+![添加数据节点并填写数据库连接信息的配置界面](/img/quick/add-node.png)
 
-![data-node](/img/quick/add-node.png)
+## 5. 添加数据链路
 
-## 添加数据链路
+点击 **添加链路**，填写链路名称，选择源备端数据节点及目标端数据节点，点击 **提交**。
 
-点击添加链路，填写链路名称，选择源备端的数据节点，选择目标端的数据节点，点击提交
+![添加数据链路并选择源备端节点的配置界面](/img/quick/add-link.png)
 
-![data-link](/img/quick/add-link.png)
+## 6. 创建及启动数据链路
 
-## 创建及启动数据链路
+选中要创建的链路，点击 **创建**。链路创建后，「创建」按钮置灰。
 
-首先选中要创建的链路，点击创建,链路创建后，创建按钮置灰
+![点击创建按钮初始化数据链路的操作界面](/img/quick/create-link.png)
 
-![create-link](/img/quick/create-link.png)
+之后点击 **启动** 按钮。链路启动后，状态从「闲置」变为「运行」。
 
-之后点击启动按钮，启动链路。链路启动后，链路状态从闲置变为运行
+![启动链路后状态从闲置变为运行的界面](/img/quick/start-link.png)
 
-![start-link](/img/quick/start-link.png)
-
-## 日常运维
+## 7. 日常运维
 
 - **重新全同步**
     - 点击停止按钮，停止链路，链路状态变为暂停
   
-      ![stop-link](/img/quick/stop-link.png)
-    - 点击 链路操作-重置，重置链路，清除上次同步产生文件和日志。
+      ![点击停止按钮将链路置为暂停状态的界面](/img/quick/stop-link.png)
+    - 点击 **链路操作 > 重置**，重置链路，清除上次同步产生文件和日志。
   
-      ![reset-link](/img/quick/reset-link.png)
+      ![通过链路操作菜单执行重置的界面](/img/quick/reset-link.png)
     - 点击启动按钮，启动链路，链路状态变为运行，链路开始同步
   
-      ![start-link](/img/quick/start-link.png)
+      ![重新启动链路开始全量同步的界面](/img/quick/start-link.png)
 - **查看同步日志**
     - 选中对应链路，点击源备端分别查看日志
   
-      ![log](/img/quick/log.png)
+      ![选中链路后查看源备端同步日志的界面](/img/quick/log.png)
 - **全同步完成标志**
     - 备端出现装载结束时间，说明全同步完成
   
-      ![full-sync](/img/quick/full-sync.png)
+      ![全量同步完成时备端出现装载结束时间的标志界面](/img/quick/full-sync.png)
 - **查看增量同步的状态**
     - 选中对应链路，点击源备端查看增量同步状态
   
-      ![incremental-sync](/img/quick/incremental-sync.png)
+      ![查看增量同步状态与延时信息的界面](/img/quick/incremental-sync.png)
 - **数据比对**
     - 在链路详情页最下方数据比对卡片，点击比对，如果显示数据一致，则代表同步正常
   
-      ![data-compare](/img/quick/data-compare.png)
+      ![数据比对卡片显示各表数据一致的结果界面](/img/quick/data-compare.png)
     - 如果显示数据不一致，可点击卡片右上角修复，对数据不一致的表进行修复
       :::warning
       修复操作需要在备端没有延迟和非业务期间进行
       :::
-      ![data-compare-fix](/img/quick/fix.png)
+      ![数据比对发现不一致后执行修复操作的界面](/img/quick/fix.png)
     - 点击卡片右上角全部数据，查看所有表的数据比对情况
   
-      ![all-data-compare](/img/quick/all-data-compare.png)
+      ![查看全部表数据比对总览结果的界面](/img/quick/all-data-compare.png)
 
 
 

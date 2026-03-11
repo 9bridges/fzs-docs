@@ -44,22 +44,22 @@ FZS Agent 支持四种私有部署方式：
 
 通过 [FZS Web](/fzs-web/index.md)，用户可以通过一键部署功能，快速部署 [FZS Web Server](/fzs-web-server/index.md)，实现源备端的数据同步。
 
-![quick-deploy-demo](/img/intro/quick-deploy-demo.png)
+![FZS Web 一键部署功能演示截图](/img/intro/quick-deploy-demo.png)
 
 ### 配置链路
 
 通过 [FZS Web](/fzs-web/index.md)，用户可以通过配置链路功能，快速配置源备端的数据同步链路。
 
-![datalink-config-demo](/img/intro/datalink-config-demo.png)
+![FZS Web 数据链路配置界面演示截图](/img/intro/datalink-config-demo.png)
 
 ### 链路监控
 
 通过 [FZS Web](/fzs-web/index.md) 的仪表盘大屏，用户可以实时监控多条数据同步链路的同步计数、增量延时、链路状态等数据。
 
-![monitor-demo](/img/intro/monitor-demo.png)
+![FZS Web 仪表盘链路监控大屏截图](/img/intro/monitor-demo.png)
 
 ### 告警平台
 
 通过 [FZS Web](/fzs-web/index.md) 的告警平台，用户可以实时监控多条数据同步链路的告警信息，并通过邮件、短信、Webhook 等方式通知管理员用户。
 
-![alert-demo](/img/intro/alert-demo.png)
+![FZS Web 告警平台界面截图](/img/intro/alert-demo.png)

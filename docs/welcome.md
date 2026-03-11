@@ -23,7 +23,7 @@ sidebar_position: 0
 如有任何技术疑问或建议，欢迎发送邮件至 **contact@tb-soft.net** 或扫描下方二维码加入 FZS 产品服务群。
 :::
 
-![qrcode](/img/fzs-customer-service-qrcode.png)
+![九桥同步客服微信二维码](/img/fzs-customer-service-qrcode.png)
 
 :::note 版权声明
 © 2026 北京九桥同步软件有限公司。保留所有权利。
