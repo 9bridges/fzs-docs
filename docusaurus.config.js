@@ -132,7 +132,7 @@ const config = {
           { to: '/about', label: '关于', position: 'left' },
           { to: '/contact', label: '联系我们', position: 'left' },
           {
-            href: 'https://github.com/9bridges/fzs-docs',
+            href: 'https://github.com/9bridges',
             label: 'GitHub',
             position: 'right',
           },
@@ -162,7 +162,7 @@ const config = {
             items: [
               { label: '关于我们', to: '/about' },
               { label: '联系我们', to: '/contact' },
-              { label: 'GitHub', href: 'https://github.com/9bridges/fzs-docs' },
+              { label: 'GitHub', href: 'https://github.com/9bridges' },
             ],
           },
         ],
