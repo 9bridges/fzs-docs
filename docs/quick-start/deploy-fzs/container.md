@@ -27,7 +27,7 @@ FZS 提供基于 Docker Compose 的容器化部署方式，可以做到真正意
 
 ### 获取 `gen.sh` 自动化脚本
 
-前往 [FZS Release](/changelog) 页面，获取最新版本的 `gen.sh` 文件。
+前往 [FZS Release](/docs/changelog) 页面，获取最新版本的 `gen.sh` 文件。
 
 ### 生成 `docker-compose.yml` 文件
 

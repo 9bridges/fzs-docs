@@ -1,0 +1,142 @@
+/* ============================================================
+   Contact Page Styles
+   ============================================================ */
+
+.hero {
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(168deg, #f0f9ff 0%, #e0f2fe 40%, #fff 100%);
+}
+
+[data-theme='dark'] .hero {
+  background: linear-gradient(168deg, #0c1929 0%, #0f2942 40%, #111827 100%);
+}
+
+.heroInner { max-width: 48rem; margin: 0 auto; }
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+/* --- Shared --- */
+.sectionInner { max-width: 52rem; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 4.5rem 2rem; }
+.sectionBg { padding: 4.5rem 2rem; background: var(--ifm-color-emphasis-100); }
+
+/* --- Channel Cards --- */
+.channelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .channelGrid { grid-template-columns: 1fr; }
+}
+
+.channelCard {
+  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  text-align: center;
+}
+
+.channelTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.channelDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.channelAction {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* --- QR Code --- */
+.qrSection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .qrSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+.qrText { max-width: 26rem; }
+
+.qrTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.qrDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.qrImageWrap { flex-shrink: 0; }
+
+.qrImage {
+  border-radius: 12px;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* --- Company Info --- */
+.companyTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.infoList {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.infoItem {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.infoItem dt {
+  font-weight: 600;
+  min-width: 5rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
+
+.infoItem dd {
+  margin: 0;
+  font-size: 0.95rem;
+}

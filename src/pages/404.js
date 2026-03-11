@@ -33,7 +33,7 @@ export default function NotFound() {
             返回首页
           </Link>
           <Link
-            to="/quick-start"
+            to="/docs/quick-start"
             className="button button--secondary button--lg"
           >
             快速开始

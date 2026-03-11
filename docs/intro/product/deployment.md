@@ -63,7 +63,7 @@ flowchart BT
 
 对于追求高性能、低时延的用户，我们建议使用点对点部署方式。点对点部署方式下，源端和备端直接通信，不存在任何数据中途流转的环节，数据传输效率高，适用于对数据传输性能要求较高的场景。
 
-为了达到最佳的性能，[FZS Web Server](/fzs-web-server/index.md) 源端和备端需要分别部署在源端和备端主机上，以便对各自的 FZS Agent 进行管理与资源调度，数据库源端和备端之间需要直接通信。
+为了达到最佳的性能，[FZS Web Server](/docs/fzs-web-server/index.md) 源端和备端需要分别部署在源端和备端主机上，以便对各自的 FZS Agent 进行管理与资源调度，数据库源端和备端之间需要直接通信。
 
 ### 中间机 {#security-first}
 
@@ -94,7 +94,7 @@ flowchart BT
   end
 ```
 
-为了达到最佳的安全性与最低的业务侵入性，只需一个 [FZS Web Server](/fzs-web-server/index.md) 部署在中间机上，它便可以对源端和备端的 FZS Agent 进行管理与资源调度，实现数据的远程抽取与装载，数据库源端和备端之间不直接通信。
+为了达到最佳的安全性与最低的业务侵入性，只需一个 [FZS Web Server](/docs/fzs-web-server/index.md) 部署在中间机上，它便可以对源端和备端的 FZS Agent 进行管理与资源调度，实现数据的远程抽取与装载，数据库源端和备端之间不直接通信。
 
 :::note
 使用中间机部署方式时，FZS 暂不支持配置以 `Oracle` 或者 `SUNDB` 作为源端的同步链路。

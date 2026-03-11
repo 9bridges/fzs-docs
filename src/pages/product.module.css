@@ -1,0 +1,231 @@
+/* ============================================================
+   Product Page Styles
+   ============================================================ */
+
+/* --- Hero --- */
+.hero {
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(168deg, #f0f9ff 0%, #e0f2fe 40%, #fff 100%);
+}
+
+[data-theme='dark'] .hero {
+  background: linear-gradient(168deg, #0c1929 0%, #0f2942 40%, #111827 100%);
+}
+
+.heroInner {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+/* --- Shared --- */
+.sectionInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1.05rem;
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+}
+
+/* --- Capabilities --- */
+.capabilities {
+  padding: 5rem 2rem;
+}
+
+.capGroup {
+  margin-bottom: 3rem;
+}
+
+.capGroupTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+.capGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 996px) {
+  .capGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .capGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.capCard {
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+}
+
+.capCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.capCardDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Architecture --- */
+.architecture {
+  padding: 5rem 2rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.archGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .archGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.archCard {
+  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+}
+
+.archTag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme='dark'] .archTag {
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.archName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.archDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.archCta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.textLink {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* --- Bottom CTA --- */
+.bottomCTA {
+  padding: 5rem 2rem;
+}
+
+.ctaCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ctaCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ctaCard {
+  display: block;
+  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  color: inherit;
+  text-decoration: none;
+}
+
+.ctaCard:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.ctaCardIcon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.ctaCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.ctaCard p {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}

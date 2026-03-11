@@ -7,12 +7,12 @@ const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '九桥同步 FZS 文档中心',
+  title: '九桥同步',
   tagline: '专业级数据同步与灾备解决方案',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.9bridges.cn/',
+  url: 'https://9bridges.cn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -43,7 +43,23 @@ const config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
-  plugins: ['docusaurus-plugin-image-zoom'],
+  plugins: [
+    'docusaurus-plugin-image-zoom',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Old docs-at-root paths → new /docs prefix
+          { from: '/quick-start', to: '/docs/quick-start' },
+          { from: '/fzs-web', to: '/docs/fzs-web' },
+          { from: '/fzs-web-server', to: '/docs/fzs-web-server' },
+          { from: '/intro', to: '/docs/intro' },
+          { from: '/intro/appendix/db-support', to: '/docs/intro/appendix/db-support' },
+          { from: '/changelog', to: '/docs/changelog' },
+        ],
+      },
+    ],
+  ],
 
   headTags: [
     // Preconnect to Algolia search API (eliminates TCP+TLS setup delay on first search)
@@ -59,7 +75,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -78,8 +94,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        { name: 'keywords', content: '数据同步, 容灾备份, 异构数据库, FZS, CDC, 九桥同步' },
-        { name: 'description', content: '九桥同步 FZS 数据同步平台官方文档 - 提供产品部署、操作指南及 API 参考。' }
+        { name: 'keywords', content: '九桥同步, 数据同步, 容灾备份, 异构数据库, FZS, CDC, 数据库迁移' },
+        { name: 'description', content: '九桥同步 — 专业级实时数据同步与灾备解决方案。支持 Oracle、MySQL、PostgreSQL 等 30+ 数据库的全增量异构同步。' }
       ],
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
@@ -93,13 +109,23 @@ const config = {
         maxHeadingLevel: 4,
       },
       navbar: {
-        title: '九桥同步 FZS 文档中心',
+        title: '九桥同步',
         hideOnScroll: true,
         logo: {
-          alt: 'FZS',
+          alt: '九桥同步 FZS',
           src: 'img/favicon.ico',
         },
         items: [
+          { to: '/product', label: '产品', position: 'left' },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            label: '文档',
+            position: 'left',
+          },
+          { to: '/cases', label: '案例', position: 'left' },
+          { to: '/about', label: '关于', position: 'left' },
+          { to: '/contact', label: '联系我们', position: 'left' },
           {
             href: 'https://github.com/9bridges/fzs-docs',
             label: 'GitHub',
@@ -111,46 +137,31 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '产品文档',
+            title: '产品',
             items: [
-              {
-                label: '快速开始',
-                to: '/quick-start',
-              },
-              {
-                label: '用户手册',
-                to: '/fzs-web',
-              },
-              {
-                label: '支持列表',
-                to: '/intro/appendix/db-support',
-              },
+              { label: '产品介绍', to: '/product' },
+              { label: '支持数据库', to: '/docs/intro/appendix/db-support' },
+              { label: '客户案例', to: '/cases' },
             ],
           },
           {
-            title: '资源与支持',
+            title: '文档',
             items: [
-              {
-                label: '公司官网',
-                href: 'https://9bridges.cn/',
-              },
-              {
-                label: '联系我们',
-                href: 'mailto:contact@tb-soft.net',
-              },
+              { label: '快速开始', to: '/docs/quick-start' },
+              { label: '用户手册', to: '/docs/fzs-web' },
+              { label: 'API 参考', to: '/docs/fzs-web-server' },
             ],
           },
           {
-            title: '更多',
+            title: '公司',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/9bridges/fzs-docs',
-              },
+              { label: '关于我们', to: '/about' },
+              { label: '联系我们', to: '/contact' },
+              { label: 'GitHub', href: 'https://github.com/9bridges/fzs-docs' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 北京九桥同步软件有限公司 Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} 北京九桥同步软件有限公司`,
       },
       prism: {
         theme: lightCodeTheme,

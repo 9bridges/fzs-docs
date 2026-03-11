@@ -1,0 +1,120 @@
+/* ============================================================
+   Case Studies Page Styles
+   ============================================================ */
+
+.hero {
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(168deg, #f0f9ff 0%, #e0f2fe 40%, #fff 100%);
+}
+
+[data-theme='dark'] .hero {
+  background: linear-gradient(168deg, #0c1929 0%, #0f2942 40%, #111827 100%);
+}
+
+.heroInner { max-width: 48rem; margin: 0 auto; }
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+/* --- Shared --- */
+.sectionInner { max-width: 56rem; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 4.5rem 2rem; }
+.sectionBg { padding: 4.5rem 2rem; background: var(--ifm-color-emphasis-100); }
+
+/* --- Case Cards --- */
+.caseList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.caseCard {
+  padding: 2.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+}
+
+.caseTag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme='dark'] .caseTag {
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.caseTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.caseBody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .caseBody {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.caseBlock h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.35rem;
+}
+
+.caseBlock p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ifm-color-emphasis-800);
+  margin: 0;
+}
+
+/* --- Bottom CTA --- */
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ctaDesc {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
