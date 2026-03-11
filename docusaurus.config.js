@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '九桥同步',
-  tagline: '专业级数据同步与灾备解决方案',
+  tagline: '国内领先的数据同步方案供应商',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -97,8 +97,6 @@ const config = {
         { name: 'keywords', content: '九桥同步, 数据同步, 容灾备份, 异构数据库, FZS, CDC, 数据库迁移' },
         { name: 'description', content: '九桥同步 — 专业级实时数据同步与灾备解决方案。支持 Oracle、MySQL、PostgreSQL 等 30+ 数据库的全增量异构同步。' }
       ],
-      // Replace with your project's social card
-      // image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
@@ -109,11 +107,12 @@ const config = {
         maxHeadingLevel: 4,
       },
       navbar: {
-        title: '九桥同步',
+        title: '',
         hideOnScroll: true,
         logo: {
-          alt: '九桥同步 FZS',
-          src: 'img/favicon.ico',
+          alt: '九桥同步',
+          src: 'img/brand.png',
+          style: { height: '28px' },
         },
         items: [
           { to: '/product', label: '产品', position: 'left' },
@@ -161,6 +160,12 @@ const config = {
             ],
           },
         ],
+        logo: {
+          alt: '九桥同步',
+          src: 'img/brand.png',
+          href: '/',
+          width: 140,
+        },
         copyright: `Copyright © ${new Date().getFullYear()} 北京九桥同步软件有限公司`,
       },
       prism: {

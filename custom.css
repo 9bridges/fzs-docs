@@ -295,3 +295,23 @@ pre code,
     margin: 2cm;
   }
 }
+
+/* ============================================================
+   §11 — Brand Logo in Footer & Navbar
+   ============================================================ */
+
+/* Footer logo: invert for dark footer background */
+.footer__logo {
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+}
+
+/* Navbar brand logo sizing */
+.navbar__logo img {
+  height: 28px;
+  width: auto;
+}
+
+[data-theme='dark'] .navbar__logo img {
+  filter: brightness(0) invert(1);
+}

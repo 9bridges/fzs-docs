@@ -6,14 +6,14 @@ import styles from './contact.module.css';
 const CHANNELS = [
   {
     title: '商务咨询',
-    desc: '获取试用授权、报价方案或合作洽谈',
+    desc: '咨询试用、报价方案或合作事宜',
     action: 'mailto:contact@tb-soft.net',
     actionLabel: 'contact@tb-soft.net',
     type: 'email',
   },
   {
     title: '技术支持',
-    desc: '产品部署、运维、故障排查等技术问题',
+    desc: '咨询部署、运维和故障排查等技术问题',
     action: 'mailto:contact@tb-soft.net',
     actionLabel: 'contact@tb-soft.net',
     type: 'email',
@@ -37,7 +37,7 @@ export default function ContactPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>联系我们</h1>
           <p className={styles.heroSubtitle}>
-            无论是试用申请、技术咨询还是商务合作，我们期待与您的每一次对话
+            无论您想申请试用、咨询技术问题，还是洽谈合作，都可以在这里找到联系渠道
           </p>
         </div>
       </header>
@@ -71,7 +71,7 @@ export default function ContactPage() {
               <div className={styles.qrText}>
                 <h2 className={styles.qrTitle}>扫码联系客服</h2>
                 <p className={styles.qrDesc}>
-                  扫描下方二维码添加 FZS 产品服务群，获取试用授权或与技术团队直接沟通。
+                  扫描二维码，加入 FZS 产品服务群，申请试用或直接联系技术团队。
                 </p>
               </div>
               <div className={styles.qrImageWrap}>

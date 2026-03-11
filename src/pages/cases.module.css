@@ -33,6 +33,15 @@
 .section { padding: 4.5rem 2rem; }
 .sectionBg { padding: 4.5rem 2rem; background: var(--ifm-color-emphasis-100); }
 
+.caseIntro {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 /* --- Case Cards --- */
 .caseList {
   display: flex;
@@ -45,6 +54,12 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   background: var(--ifm-background-surface-color);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.caseCard:hover {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 35%, var(--ifm-color-emphasis-200));
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
 }
 
 .caseTag {
@@ -100,6 +115,13 @@
 }
 
 /* --- Bottom CTA --- */
+.ctaInner {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
 .ctaTitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
@@ -117,4 +139,10 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caseCard {
+    transition: none;
+  }
 }

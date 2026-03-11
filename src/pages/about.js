@@ -28,31 +28,34 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <Layout
-      title="关于九桥同步"
+      title="关于我们"
       description="北京九桥同步软件有限公司 — 专注于数据同步与灾备领域的企业级软件服务商。"
     >
       <header className={styles.hero}>
         <div className={styles.heroInner}>
-          <h1 className={styles.heroTitle}>关于九桥同步</h1>
+          <img
+            src="/img/brand.png"
+            alt="九桥同步"
+            className={styles.heroBrand}
+          />
+          <h1 className={styles.heroTitle}>关于我们</h1>
           <p className={styles.heroSubtitle}>
-            北京九桥同步软件有限公司 — 专注于数据同步、数据容灾与数据集成领域的企业级软件服务商。
+            北京九桥同步软件有限公司，专注于数据同步、容灾和数据集成。
           </p>
         </div>
       </header>
 
       <main>
-        {/* Mission */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>我们的使命</h2>
             <p className={styles.missionText}>
               让企业数据流转<strong>安全、可靠、实时</strong>。
-              九桥同步致力于为金融、政企、能源等行业客户提供高性能、低侵入、易运维的数据同步基础设施，助力业务系统的灾备保障与数据资产的高效整合。
+              我们为金融、政企、能源等行业客户提供高性能、低侵入、易运维的数据同步基础设施，帮助关键业务保持连续、让数据更高效地流转。
             </p>
           </div>
         </section>
 
-        {/* Values */}
         <section className={styles.sectionBg}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>核心理念</h2>
@@ -67,7 +70,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Milestones */}
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>发展历程</h2>
@@ -82,7 +84,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team placeholder */}
         <section className={styles.sectionBg}>
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>团队</h2>

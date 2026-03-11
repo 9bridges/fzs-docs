@@ -23,7 +23,7 @@ export default function NotFound() {
           页面未找到
         </h2>
         <p style={{ maxWidth: '36rem', color: 'var(--ifm-color-emphasis-600)', marginBottom: '2rem' }}>
-          您访问的页面不存在或已被移动。请检查链接是否正确，或从以下入口重新导航。
+          您访问的页面不存在，或者链接已经更新。您可以返回首页，或从快速开始重新进入文档。
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           <Link

@@ -58,7 +58,7 @@ function CapabilitySection() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle}>产品能力</h2>
         <p className={styles.sectionSubtitle}>
-          从数据搬运到运维管理，覆盖企业数据同步的完整生命周期
+          从数据迁移到运行维护，覆盖企业数据同步的核心环节
         </p>
         {CAPABILITIES.map(({ category, items }) => (
           <div key={category} className={styles.capGroup}>
@@ -84,7 +84,7 @@ function ArchitectureSection() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle}>部署架构</h2>
         <p className={styles.sectionSubtitle}>
-          三种部署模式，满足不同企业 IT 架构与安全合规要求
+          三种部署方式，适配不同的 IT 架构与安全要求
         </p>
         <div className={styles.archGrid}>
           {ARCHITECTURES.map(({ name, tag, desc }) => (
@@ -97,7 +97,7 @@ function ArchitectureSection() {
         </div>
         <div className={styles.archCta}>
           <Link to="/docs/intro/product/deployment" className={styles.textLink}>
-            查看详细架构图与方案对比 →
+            查看架构图和方案对比 →
           </Link>
         </div>
       </div>
@@ -114,17 +114,17 @@ function BottomCTA() {
           <Link to="/docs/quick-start" className={styles.ctaCard}>
             <span className={styles.ctaCardIcon}>⚡</span>
             <h3>快速开始</h3>
-            <p>5 分钟部署，手把手完成第一条同步链路</p>
+            <p>按步骤完成部署，快速搭建第一条同步链路</p>
           </Link>
           <Link to="/docs/intro/appendix/db-support" className={styles.ctaCard}>
             <span className={styles.ctaCardIcon}>🔗</span>
             <h3>支持列表</h3>
-            <p>查看 30+ 已适配的数据库类型</p>
+            <p>查看当前已适配的数据库和平台</p>
           </Link>
           <Link to="/contact" className={styles.ctaCard}>
             <span className={styles.ctaCardIcon}>💬</span>
             <h3>联系我们</h3>
-            <p>获取试用授权或技术咨询</p>
+            <p>咨询试用、采购方案或技术支持</p>
           </Link>
         </div>
       </div>
@@ -142,7 +142,7 @@ export default function ProductPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>FZS 数据同步平台</h1>
           <p className={styles.heroSubtitle}>
-            基于日志捕获的全增量一体数据同步引擎，实现 Oracle、MySQL、PostgreSQL 等 30+ 数据库之间的实时异构同步。
+            基于日志捕获的全量加增量一体化引擎，支持 30+ 数据库之间的实时异构同步。
           </p>
         </div>
       </header>

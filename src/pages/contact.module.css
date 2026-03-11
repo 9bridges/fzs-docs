@@ -50,6 +50,13 @@
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
   text-align: center;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.channelCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
 .channelTitle {
@@ -68,6 +75,20 @@
 .channelAction {
   font-weight: 600;
   font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  transition: color 180ms ease;
+}
+
+.channelAction:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+.channelAction:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 40%, white);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 /* --- QR Code --- */
@@ -129,6 +150,13 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
+@media (max-width: 576px) {
+  .infoItem {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
 .infoItem dt {
   font-weight: 600;
   min-width: 5rem;
@@ -139,4 +167,11 @@
 .infoItem dd {
   margin: 0;
   font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .channelCard,
+  .channelAction {
+    transition: none;
+  }
 }

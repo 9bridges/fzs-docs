@@ -1,74 +1,87 @@
 import React from 'react';
 import clsx from 'clsx';
+import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './index.module.css';
 
-const FEATURES = [
+const STATS = [
+  { value: '30+', label: '支持数据库' },
+  { value: '10+', label: '年深耕经验' },
+  { value: '亚秒级', label: '同步延迟' },
+  { value: '7×24', label: '技术支持' },
+];
+
+const VERTICALS = [
   {
-    title: '30+ 数据库支持',
-    description:
-      '覆盖 Oracle、MySQL、PostgreSQL、SQL Server 等主流数据库，以及达梦、金仓、OceanBase 等国产信创数据库。',
-    icon: '🔗',
+    icon: '🏦',
+    title: '金融',
+    desc: '灾备容灾、双活数据中心、监管数据报送',
   },
   {
-    title: '全增量一体',
-    description:
-      '全量迁移与增量实时同步一体化，基于 Redo Log 捕获，确保数据零丢失、低延迟。',
+    icon: '🏛️',
+    title: '政企',
+    desc: '信创数据库迁移、异构系统数据打通',
+  },
+  {
     icon: '⚡',
+    title: '能源',
+    desc: '多系统数据集成、实时数据湖构建',
   },
   {
-    title: '异构同步',
-    description:
-      '支持异构数据库之间的实时流转，打破数据孤岛，满足信创迁移与数据集成需求。',
-    icon: '🔄',
-  },
-  {
-    title: '灾备切换',
-    description:
-      '内置灾备切换能力，一键完成源备端角色互换，保障业务连续性。',
-    icon: '🛡️',
-  },
-  {
-    title: '可视化管理',
-    description:
-      '通过 FZS Web 实现链路配置、监控、告警的全流程可视化操作，显著降低运维成本。',
-    icon: '📊',
-  },
-  {
-    title: '灵活部署',
-    description:
-      '支持点对点、中间机和容器化等多种部署模式，适配各类企业 IT 架构。',
-    icon: '🏗️',
+    icon: '🏥',
+    title: '医疗',
+    desc: '业务连续性保障、跨院区数据同步',
   },
 ];
 
-const DB_LOGOS = [
-  'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'OceanBase',
-  'GaussDB', 'TiDB', 'DM8', 'Kingbase', 'openGauss',
-  'LightDB', 'MogDB', 'Kafka', 'Hive', 'Doris',
+const NAVIGATIONS = [
+  {
+    icon: '🚀',
+    title: '产品介绍',
+    desc: '查看 FZS 的核心能力、部署方式和适用场景',
+    to: '/product',
+  },
+  {
+    icon: '📖',
+    title: '技术文档',
+    desc: '查看部署指南、操作手册和 API 参考，快速上手',
+    to: '/docs/quick-start',
+  },
+  {
+    icon: '💼',
+    title: '客户案例',
+    desc: '了解金融灾备、信创迁移和数据集成等典型场景',
+    to: '/cases',
+  },
+  {
+    icon: '📞',
+    title: '联系我们',
+    desc: '获取试用授权、技术支持或商务合作',
+    to: '/contact',
+  },
 ];
 
 function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroInner}>
+        <img
+          src="/img/brand.png"
+          alt="九桥同步"
+          className={styles.heroBrand}
+        />
         <h1 className={styles.heroTitle}>
-          让数据流转
+          让企业数据流转
           <br />
           <span className={styles.heroAccent}>安全、可靠、实时</span>
         </h1>
-        <p className={styles.heroSubtitle}>
-          FZS 数据同步平台 — 基于日志捕获的全增量一体、异构数据库实时同步解决方案。
-          <br />
-          支持 30+ 数据库，覆盖灾备、迁移与集成全场景。
-        </p>
         <div className={styles.heroCTA}>
-          <Link className={clsx('button button--lg', styles.ctaPrimary)} to="/docs/quick-start">
-            快速开始
-          </Link>
-          <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/product">
+          <Link className={clsx('button button--lg', styles.ctaPrimary)} to="/product">
             了解产品
+          </Link>
+          <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/contact">
+            联系我们
           </Link>
         </div>
       </div>
@@ -76,20 +89,15 @@ function Hero() {
   );
 }
 
-function Features() {
+function Stats() {
   return (
-    <section className={styles.features}>
+    <section className={styles.stats}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>核心能力</h2>
-        <p className={styles.sectionSubtitle}>
-          企业级数据同步，从全量迁移到实时增量，一个平台全部搞定
-        </p>
-        <div className={styles.featureGrid}>
-          {FEATURES.map(({ title, description, icon }) => (
-            <div key={title} className={styles.featureCard}>
-              <span className={styles.featureIcon}>{icon}</span>
-              <h3 className={styles.featureTitle}>{title}</h3>
-              <p className={styles.featureDesc}>{description}</p>
+        <div className={styles.statGrid}>
+          {STATS.map(({ value, label }) => (
+            <div key={label} className={styles.statItem}>
+              <span className={styles.statValue}>{value}</span>
+              <span className={styles.statLabel}>{label}</span>
             </div>
           ))}
         </div>
@@ -98,42 +106,71 @@ function Features() {
   );
 }
 
-function DatabaseSupport() {
+function WhatWeDo() {
   return (
-    <section className={styles.databases}>
+    <section className={styles.whatWeDo}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>广泛的数据库支持</h2>
+        <h2 className={styles.sectionTitle}>我们做什么</h2>
         <p className={styles.sectionSubtitle}>
-          兼容主流关系型数据库和国产信创数据库，并持续扩展
+          围绕数据同步、容灾和迁移需求，提供企业级数据流转基础设施
         </p>
-        <div className={styles.dbGrid}>
-          {DB_LOGOS.map((name) => (
-            <span key={name} className={styles.dbBadge}>{name}</span>
-          ))}
-          <Link to="/docs/intro/appendix/db-support" className={styles.dbBadgeMore}>
-            查看全部 →
-          </Link>
+        <div className={styles.whatWeDoGrid}>
+          <div className={styles.whatWeDoCard}>
+            <h3>数据同步</h3>
+            <p>基于日志捕获的全量＋增量一体化同步，支持 30+ 主流与国产数据库之间的异构实时流转。</p>
+          </div>
+          <div className={styles.whatWeDoCard}>
+            <h3>容灾备份</h3>
+            <p>内置灾备切换能力，一键完成源备端角色互换，保障业务系统的连续性与数据零丢失。</p>
+          </div>
+          <div className={styles.whatWeDoCard}>
+            <h3>信创迁移</h3>
+            <p>深度适配达梦、金仓、OceanBase 等国产数据库，助力企业平滑完成信创替代。</p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function CTA() {
+function Industries() {
   return (
-    <section className={styles.ctaSection}>
+    <section className={styles.industries}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.ctaSectionTitle}>准备好开始了吗？</h2>
-        <p className={styles.ctaSectionDesc}>
-          5 分钟完成部署，立即体验 FZS 数据同步平台的强大能力
+        <h2 className={styles.sectionTitle}>服务领域</h2>
+        <p className={styles.sectionSubtitle}>
+          面向关键业务场景，为行业客户提供稳定可靠的数据同步能力
         </p>
-        <div className={styles.heroCTA}>
-          <Link className={clsx('button button--lg', styles.ctaPrimary)} to="/docs/quick-start">
-            阅读部署指南
-          </Link>
-          <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/contact">
-            联系销售团队
-          </Link>
+        <div className={styles.industryGrid}>
+          {VERTICALS.map(({ icon, title, desc }) => (
+            <div key={title} className={styles.industryCard}>
+              <span className={styles.industryIcon}>{icon}</span>
+              <h3 className={styles.industryTitle}>{title}</h3>
+              <p className={styles.industryDesc}>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Explore() {
+  return (
+    <section className={styles.explore}>
+      <div className={styles.sectionInner}>
+        <h2 className={styles.sectionTitle}>深入了解</h2>
+        <p className={styles.sectionSubtitle}>
+          从产品信息到实施资料，选择您现在最需要的内容
+        </p>
+        <div className={styles.navGrid}>
+          {NAVIGATIONS.map(({ icon, title, desc, to }) => (
+            <Link key={title} to={to} className={styles.navCard}>
+              <span className={styles.navIcon}>{icon}</span>
+              <h3 className={styles.navTitle}>{title}</h3>
+              <p className={styles.navDesc}>{desc}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
@@ -143,14 +180,18 @@ function CTA() {
 export default function Home() {
   return (
     <Layout
-      title="专业级数据同步与灾备解决方案"
-      description="九桥同步 FZS 数据同步平台 — 支持 30+ 数据库的全增量异构实时同步解决方案。覆盖灾备、迁移与集成全场景。"
+      title="国内领先的数据同步方案供应商"
+      description="北京九桥同步软件有限公司 — 专注于数据同步、数据容灾与信创迁移的企业级软件服务商。服务金融、政企、能源等行业客户。"
     >
+      <Head>
+        <title>九桥同步 | 国内领先的数据同步方案供应商</title>
+      </Head>
       <Hero />
       <main>
-        <Features />
-        <DatabaseSupport />
-        <CTA />
+        <Stats />
+        <WhatWeDo />
+        <Industries />
+        <Explore />
       </main>
     </Layout>
   );
