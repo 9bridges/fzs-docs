@@ -33,11 +33,6 @@ export default function AboutPage() {
     >
       <header className={styles.hero}>
         <div className={styles.heroInner}>
-          <img
-            src="/img/brand.png"
-            alt="九桥同步"
-            className={styles.heroBrand}
-          />
           <h1 className={styles.heroTitle}>关于我们</h1>
           <p className={styles.heroSubtitle}>
             北京九桥同步软件有限公司，专注于数据同步、容灾和数据集成。

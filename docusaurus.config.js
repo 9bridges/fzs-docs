@@ -41,7 +41,19 @@ const config = {
     },
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['zh', 'en'],
+        indexDocs: true,
+        indexPages: false,
+        docsRouteBasePath: '/docs',
+      },
+    ],
+  ],
 
   plugins: [
     'docusaurus-plugin-image-zoom',
@@ -61,13 +73,7 @@ const config = {
     ],
   ],
 
-  headTags: [
-    // Preconnect to Algolia search API (eliminates TCP+TLS setup delay on first search)
-    {
-      tagName: 'link',
-      attributes: { rel: 'preconnect', href: 'https://DJ0WND5D5M-dsn.algolia.net', crossorigin: 'anonymous' },
-    },
-  ],
+  headTags: [],
 
   presets: [
     [
@@ -172,14 +178,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: 'DJ0WND5D5M',
 
-        // Public API key: it is safe to commit it
-        apiKey: 'd328ec667f30577e8088b69a5294df27',
-        indexName: '9bridges',
-      },
       zoom: {
         selector: 'article img',
         background: {
