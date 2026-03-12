@@ -96,8 +96,12 @@
 .capCard {
   padding: 1.5rem;
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .capCard {
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 .capCardTitle {
@@ -136,6 +140,10 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .archCard {
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 .archTag {
@@ -223,6 +231,14 @@
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
   text-decoration: none;
   color: inherit;
+}
+
+[data-theme='dark'] .ctaCard {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .ctaCard:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
 .ctaCard:active {

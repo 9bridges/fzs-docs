@@ -70,6 +70,8 @@ function Hero() {
           src="/img/brand.png"
           alt="九桥同步"
           className={styles.heroBrand}
+          width="167"
+          height="48"
         />
         <h1 className={styles.heroTitle}>
           让企业数据流转
