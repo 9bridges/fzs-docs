@@ -1,41 +1,33 @@
-# Website
+# fzs-docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+官网与产品文档站，面向 [9bridges.cn](https://9bridges.cn)。基于 [Docusaurus](https://docusaurus.io/) 构建，中文（zh-Hans）。
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
+## 项目结构
 
 ```
-$ yarn start
+src/pages/          # 营销页面（首页、产品、案例、关于、联系）
+docs/               # 产品文档
+  intro/            # 产品介绍、背景、用例、部署架构
+  quick-start/      # 快速开始与部署指南
+  fzs-web/          # FZS Web 控制台操作手册
+  fzs-web-server/   # FZS Web Server API 参考与部署说明
+  changelog.md      # 版本更新记录
+static/             # 静态资源（图片、docker-compose 模板等）
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## 本地开发
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```bash
+yarn          # 安装依赖
+yarn start    # 启动开发服务器（热更新）
+yarn build    # 构建生产版本至 build/
+yarn serve    # 本地预览构建产物
 ```
 
-Not using SSH:
+## 部署
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+站点通过 GitHub Pages 托管，推送至 `gh-pages` 分支：
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+```bash
+GIT_USER=<GitHub 用户名> yarn deploy
+```
