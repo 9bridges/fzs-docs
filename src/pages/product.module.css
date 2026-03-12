@@ -98,6 +98,11 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
+  transition: border-color 180ms ease;
+}
+
+.capCard:hover {
+  border-color: var(--ifm-color-primary);
 }
 
 [data-theme='dark'] .capCard {
@@ -279,7 +284,8 @@
 @media (prefers-reduced-motion: reduce) {
   .textLink,
   .ctaCard,
-  .archCard {
+  .archCard,
+  .capCard {
     transition: none;
   }
 }

@@ -175,6 +175,10 @@ table th {
 [data-stagger] > *:nth-child(2) { --sd: 0.06s; }
 [data-stagger] > *:nth-child(3) { --sd: 0.12s; }
 [data-stagger] > *:nth-child(4) { --sd: 0.18s; }
+[data-stagger] > *:nth-child(5) { --sd: 0.24s; }
+[data-stagger] > *:nth-child(6) { --sd: 0.30s; }
+[data-stagger] > *:nth-child(7) { --sd: 0.36s; }
+[data-stagger] > *:nth-child(8) { --sd: 0.42s; }
 
 @media (prefers-reduced-motion: no-preference) {
   /* Single-element reveal */

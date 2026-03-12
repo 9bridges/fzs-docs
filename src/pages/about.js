@@ -45,7 +45,7 @@ export default function AboutPage() {
       <main>
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>我们的使命</h2>
+            <h2 className={styles.sectionTitle} data-reveal="">我们的使命</h2>
             <p className={styles.missionText} data-reveal="">
               让企业数据流转<strong>安全、可靠、实时</strong>。
               我们为证券、期货、基金、医疗等行业客户提供高性能、低侵入、易运维的数据同步基础设施，保障关键业务系统稳定连续地运行。
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
         <section className={styles.sectionBg}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>核心理念</h2>
+            <h2 className={styles.sectionTitle} data-reveal="">核心理念</h2>
             <div className={styles.valueGrid} data-reveal="" data-stagger="">
               {VALUES.map(({ title, desc }) => (
                 <div key={title} className={styles.valueCard}>
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>发展历程</h2>
+            <h2 className={styles.sectionTitle} data-reveal="">发展历程</h2>
             <div className={styles.timeline} data-reveal="">
               {MILESTONES.map(({ year, text }) => (
                 <div key={year} className={styles.timelineItem}>
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         <section className={styles.sectionBg}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>团队</h2>
+            <h2 className={styles.sectionTitle} data-reveal="">团队</h2>
             <p className={styles.teamPlaceholder} data-reveal="">
               九桥同步核心团队由来自 Oracle、IBM、OceanBase 等企业的数据库与数据同步领域资深工程师组成，
               累计超过 50 年的行业经验。

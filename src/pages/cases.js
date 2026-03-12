@@ -50,7 +50,7 @@ export default function CasesPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>客户案例</h1>
           <p className={styles.heroSubtitle}>
-            来自金融、政企、能源等行业的典型实施场景，了解 FZS 如何应对真实的数据同步挑战
+            来自证券、期货、基金与医疗等行业的典型实施场景，了解 FZS 如何应对真实的数据同步挑战
           </p>
         </div>
       </header>

@@ -113,7 +113,7 @@ function WhatWeDo() {
   return (
     <section className={styles.whatWeDo}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>我们做什么</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">我们做什么</h2>
         <p className={styles.sectionSubtitle}>
           围绕数据同步、容灾和迁移需求，提供企业级数据流转基础设施
         </p>
@@ -140,7 +140,7 @@ function Industries() {
   return (
     <section className={styles.industries}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>服务领域</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">服务领域</h2>
         <p className={styles.sectionSubtitle}>
           面向关键业务场景，为行业客户提供稳定可靠的数据同步能力
         </p>
@@ -162,7 +162,7 @@ function Explore() {
   return (
     <section className={styles.explore}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>深入了解</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">深入了解</h2>
         <p className={styles.sectionSubtitle}>
           从产品介绍到部署文档，找到您现在最需要的内容
         </p>

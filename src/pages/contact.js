@@ -29,7 +29,7 @@ export default function ContactPage() {
       <main>
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2 className={styles.sectionTitle}>商务咨询</h2>
+            <h2 className={styles.sectionTitle} data-reveal="">商务咨询</h2>
             <div className={styles.repGrid}>
               {REPS.map(({ name, img }) => (
                 <div key={name} className={styles.repCard}>
@@ -79,7 +79,7 @@ export default function ContactPage() {
               </div>
               <div className={styles.infoItem}>
                 <dt>官网</dt>
-                <dd><a href="https://9bridges.cn/" target="_blank" rel="noopener noreferrer">9bridges.cn</a></dd>
+                <dd><a href="https://9bridges.cn/" target="_blank" rel="noopener noreferrer" aria-label="9bridges.cn（在新标签页中打开）">9bridges.cn</a></dd>
               </div>
             </dl>
           </div>

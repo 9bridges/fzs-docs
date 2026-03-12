@@ -56,7 +56,7 @@ function CapabilitySection() {
   return (
     <section className={styles.capabilities}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>产品能力</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">产品能力</h2>
         <p className={styles.sectionSubtitle}>
           从数据迁移到日常运维，覆盖企业数据同步的核心环节
         </p>
@@ -82,7 +82,7 @@ function ArchitectureSection() {
   return (
     <section className={styles.architecture}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>部署架构</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">部署架构</h2>
         <p className={styles.sectionSubtitle}>
           三种部署方式，适配不同的 IT 架构与安全要求
         </p>
@@ -109,7 +109,7 @@ function BottomCTA() {
   return (
     <section className={styles.bottomCTA}>
       <div className={styles.sectionInner}>
-        <h2 className={styles.sectionTitle}>下一步</h2>
+        <h2 className={styles.sectionTitle} data-reveal="">下一步</h2>
         <div className={styles.ctaCards} data-reveal="" data-stagger="">
           <Link to="/docs/quick-start" className={styles.ctaCard}>
             <span className={styles.ctaCardIcon}>⚡</span>
