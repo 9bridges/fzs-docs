@@ -167,6 +167,46 @@ table th {
 }
 
 /* ============================================================
+   Scroll Reveal — shared across all marketing pages
+   ============================================================ */
+
+/* Stagger delay variables for nth children */
+[data-stagger] > *:nth-child(1) { --sd: 0s; }
+[data-stagger] > *:nth-child(2) { --sd: 0.06s; }
+[data-stagger] > *:nth-child(3) { --sd: 0.12s; }
+[data-stagger] > *:nth-child(4) { --sd: 0.18s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Single-element reveal */
+  [data-reveal='waiting']:not([data-stagger]) {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  [data-reveal='visible']:not([data-stagger]) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Staggered grid — children animate, parent is transparent */
+  [data-stagger][data-reveal='waiting'] > * {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s),
+                transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s);
+  }
+  [data-stagger][data-reveal='visible'] > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s),
+                transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s);
+  }
+}
+
+/* ============================================================
    10. Keyboard Navigation — Focus Visibility
    ============================================================ */
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './contact.module.css';
+import useReveal from '../hooks/useReveal';
 
 const REPS = [
   { name: '王勇', img: '/img/contact/王勇.png' },
@@ -10,6 +11,7 @@ const REPS = [
 ];
 
 export default function ContactPage() {
+  useReveal();
   return (
     <Layout
       title="联系我们"
@@ -47,7 +49,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className={styles.sectionBg}>
+        <section className={styles.sectionBg} data-reveal="">
           <div className={styles.sectionInner}>
             <div className={styles.docBanner}>
               <div className={styles.docBannerText}>
@@ -63,7 +65,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} data-reveal="">
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>公司信息</h2>
             <dl className={styles.infoList}>

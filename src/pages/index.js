@@ -4,6 +4,7 @@ import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './index.module.css';
+import useReveal from '../hooks/useReveal';
 
 const STATS = [
   { value: '30+', label: '支持数据库' },
@@ -93,7 +94,7 @@ function Hero() {
 
 function Stats() {
   return (
-    <section className={styles.stats}>
+    <section className={styles.stats} data-reveal="">
       <div className={styles.sectionInner}>
         <div className={styles.statGrid}>
           {STATS.map(({ value, label }) => (
@@ -116,7 +117,7 @@ function WhatWeDo() {
         <p className={styles.sectionSubtitle}>
           围绕数据同步、容灾和迁移需求，提供企业级数据流转基础设施
         </p>
-        <div className={styles.whatWeDoGrid}>
+        <div className={styles.whatWeDoGrid} data-reveal="" data-stagger="">
           <div className={styles.whatWeDoCard}>
             <h3>数据同步</h3>
             <p>基于日志捕获的全量＋增量一体化同步，支持 30+ 主流与国产数据库之间的异构实时流转。</p>
@@ -143,7 +144,7 @@ function Industries() {
         <p className={styles.sectionSubtitle}>
           面向关键业务场景，为行业客户提供稳定可靠的数据同步能力
         </p>
-        <div className={styles.industryGrid}>
+        <div className={styles.industryGrid} data-reveal="" data-stagger="">
           {VERTICALS.map(({ icon, title, desc }) => (
             <div key={title} className={styles.industryCard}>
               <span className={styles.industryIcon}>{icon}</span>
@@ -165,7 +166,7 @@ function Explore() {
         <p className={styles.sectionSubtitle}>
           从产品介绍到部署文档，找到您现在最需要的内容
         </p>
-        <div className={styles.navGrid}>
+        <div className={styles.navGrid} data-reveal="" data-stagger="">
           {NAVIGATIONS.map(({ icon, title, desc, to }) => (
             <Link key={title} to={to} className={styles.navCard}>
               <span className={styles.navIcon}>{icon}</span>
@@ -180,6 +181,7 @@ function Explore() {
 }
 
 export default function Home() {
+  useReveal();
   return (
     <Layout
       title="国内领先的数据同步方案供应商"

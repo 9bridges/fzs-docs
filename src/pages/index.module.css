@@ -193,10 +193,21 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.whatWeDoCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
 }
 
 [data-theme='dark'] .whatWeDoCard {
   border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .whatWeDoCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .whatWeDoCard h3 {
@@ -240,10 +251,21 @@
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.industryCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
 }
 
 [data-theme='dark'] .industryCard {
   border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .industryCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .industryIcon {
@@ -323,7 +345,9 @@
 @media (prefers-reduced-motion: reduce) {
   .ctaPrimary,
   .ctaSecondary,
-  .navCard {
+  .navCard,
+  .whatWeDoCard,
+  .industryCard {
     transition: none;
   }
 }

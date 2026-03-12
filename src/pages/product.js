@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './product.module.css';
+import useReveal from '../hooks/useReveal';
 
 const CAPABILITIES = [
   {
@@ -62,7 +63,7 @@ function CapabilitySection() {
         {CAPABILITIES.map(({ category, items }) => (
           <div key={category} className={styles.capGroup}>
             <h3 className={styles.capGroupTitle}>{category}</h3>
-            <div className={styles.capGrid}>
+            <div className={styles.capGrid} data-reveal="" data-stagger="">
               {items.map(({ title, desc }) => (
                 <div key={title} className={styles.capCard}>
                   <h4 className={styles.capCardTitle}>{title}</h4>
@@ -85,7 +86,7 @@ function ArchitectureSection() {
         <p className={styles.sectionSubtitle}>
           三种部署方式，适配不同的 IT 架构与安全要求
         </p>
-        <div className={styles.archGrid}>
+        <div className={styles.archGrid} data-reveal="" data-stagger="">
           {ARCHITECTURES.map(({ name, tag, desc }) => (
             <div key={name} className={styles.archCard}>
               <span className={styles.archTag}>{tag}</span>
@@ -109,7 +110,7 @@ function BottomCTA() {
     <section className={styles.bottomCTA}>
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle}>下一步</h2>
-        <div className={styles.ctaCards}>
+        <div className={styles.ctaCards} data-reveal="" data-stagger="">
           <Link to="/docs/quick-start" className={styles.ctaCard}>
             <span className={styles.ctaCardIcon}>⚡</span>
             <h3>快速开始</h3>
@@ -132,6 +133,7 @@ function BottomCTA() {
 }
 
 export default function ProductPage() {
+  useReveal();
   return (
     <Layout
       title="产品介绍"

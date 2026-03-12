@@ -140,10 +140,21 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.archCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
 }
 
 [data-theme='dark'] .archCard {
   border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .archCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .archTag {
@@ -267,7 +278,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .textLink,
-  .ctaCard {
+  .ctaCard,
+  .archCard {
     transition: none;
   }
 }

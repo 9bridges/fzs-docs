@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './cases.module.css';
+import useReveal from '../hooks/useReveal';
 
 /*
  * TODO: 替换为真实客户案例。以下为示例模板，展示页面结构。
@@ -39,6 +40,7 @@ const CASES = [
 ];
 
 export default function CasesPage() {
+  useReveal();
   return (
     <Layout
       title="客户案例"
@@ -56,7 +58,7 @@ export default function CasesPage() {
       <main>
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <div className={styles.caseList}>
+            <div className={styles.caseList} data-reveal="" data-stagger="">
               {CASES.map(({ industry, title, challenge, solution, result }) => (
                 <article key={title} className={styles.caseCard}>
                   <span className={styles.caseTag}>{industry}</span>
@@ -81,7 +83,7 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className={styles.sectionBg}>
+        <section className={styles.sectionBg} data-reveal="">
           <div className={styles.ctaInner}>
             <h2 className={styles.ctaTitle}>FZS 同样适用于您的场景</h2>
             <p className={styles.ctaDesc}>

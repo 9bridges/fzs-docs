@@ -45,7 +45,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 [data-theme='dark'] .caseCard {
@@ -54,6 +54,7 @@
 
 .caseCard:hover {
   border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
