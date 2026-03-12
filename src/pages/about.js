@@ -6,7 +6,7 @@ const MILESTONES = [
   { year: '2016', text: '九桥同步成立，核心团队深耕数据同步领域十余年' },
   { year: '2017', text: 'FZS 产品 1.0 发布，完成 Oracle 到 Oracle 的全增量同步验证' },
   { year: '2023', text: '信创数据库适配加速，覆盖达梦、金仓、OceanBase 等主流平台' },
-  { year: '2025', text: '支持 30+ 数据库，容器化部署上线，服务金融与政企客户' },
+  { year: '2025', text: '支持 30+ 数据库，容器化部署上线，服务证券、基金与医疗等行业客户' },
   /* TODO: 根据实际情况更新里程碑 */
 ];
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <h2 className={styles.sectionTitle}>我们的使命</h2>
             <p className={styles.missionText}>
               让企业数据流转<strong>安全、可靠、实时</strong>。
-              我们为金融、政企、能源等行业客户提供高性能、低侵入、易运维的数据同步基础设施，保障关键业务系统稳定连续地运行。
+              我们为证券、期货、基金、医疗等行业客户提供高性能、低侵入、易运维的数据同步基础设施，保障关键业务系统稳定连续地运行。
             </p>
           </div>
         </section>

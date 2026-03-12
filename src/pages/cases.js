@@ -9,25 +9,32 @@ import styles from './cases.module.css';
  */
 const CASES = [
   {
-    industry: '金融',
-    title: '某股份制银行核心系统灾备',
-    challenge: '核心交易系统需要从 Oracle 实时同步至异地 Oracle 灾备中心，RPO 要求小于 1 秒。',
-    solution: '采用 FZS 点对点部署模式，基于 Redo Log 捕获实现源备端实时增量同步。',
-    result: '同步延迟稳定在 500ms 以内，灾备切换演练 RTO 小于 30 秒。',
+    industry: '证券',
+    title: '某证券公司核心交易系统灾备',
+    challenge: '核心交易系统需从 Oracle 实时同步至同城灾备中心，RPO 要求小于 1 秒，日均处理数千万笔交易数据。',
+    solution: '采用 FZS 点对点部署模式，基于 Redo Log 捕获实现实时增量同步，通过专线直连确保极低延迟。',
+    result: '同步延迟稳定在 500ms 以内，灾备切换演练 RTO 小于 30 秒，满足监管合规要求。',
   },
   {
-    industry: '政企',
-    title: '某省级政务平台信创迁移',
-    challenge: '数百张核心业务表需从 Oracle 迁移至达梦 DM8，要求停机窗口不超过 2 小时。',
-    solution: '利用 FZS 全增量一体能力，先全量迁移，再增量追平，最终一键切换。',
-    result: '172 张表、8 亿行数据，实际停机仅 45 分钟完成切换。',
+    industry: '期货',
+    title: '某期货公司风控数据实时集成',
+    challenge: '交易所对接、清算、风控系统分别使用 MySQL 与 Oracle，风控系统需毫秒级感知各系统状态变化。',
+    solution: '采用 FZS 多链路并行模式，将多个源端数据实时汇聚至风控数据库，保障风控信号的实时性。',
+    result: '各链路同步延迟低于 200ms，异常仓位预警响应时间缩短 80%。',
   },
   {
-    industry: '能源',
-    title: '某电力集团数据集成平台',
-    challenge: '多个分公司使用不同数据库（Oracle、MySQL、PostgreSQL），需统一汇聚至分析平台。',
-    solution: '采用中间机部署模式，多链路并行同步至 GaussDB (DWS) 数据仓库。',
-    result: '6 条异构链路并行运行，日均同步 2000 万条记录，延迟低于 3 秒。',
+    industry: '基金',
+    title: '某基金管理公司估值数据实时同步',
+    challenge: '估值系统与报送平台之间数据孤岛严重，每日估值完成后依赖人工导入，数据滞后风险高。',
+    solution: '利用 FZS 全增量同步能力，建立估值数据库到报送平台的实时增量链路，消除人工干预环节。',
+    result: '日均同步 500 万条估值记录，数据就绪时间从 T+1 缩短至分钟级，人工导入步骤完全消除。',
+  },
+  {
+    industry: '医疗',
+    title: '某三甲医院跨院区 HIS 数据同步',
+    challenge: '集团下属 4 个院区 HIS 系统独立部署，需将数据实时汇聚至集团级数据中心，保障统一调度与管理。',
+    solution: '采用 FZS 中间机部署模式，4 条链路并行同步各院区 Oracle HIS 数据库至集团 PostgreSQL。',
+    result: '跨院区数据延迟低于 2 秒，集团级实时统计报表上线，日均同步记录超 300 万条。',
   },
 ];
 
@@ -35,7 +42,7 @@ export default function CasesPage() {
   return (
     <Layout
       title="客户案例"
-      description="九桥同步 FZS 数据同步平台客户案例 — 金融灾备、信创迁移、数据集成等实战场景。"
+      description="九桥同步 FZS 数据同步平台客户案例 — 证券容灾、期货风控集成、基金估值同步与医疗数据汇聚等实战场景。"
     >
       <header className={styles.hero}>
         <div className={styles.heroInner}>
