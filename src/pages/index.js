@@ -16,7 +16,7 @@ const VERTICALS = [
   {
     icon: '🏦',
     title: '金融',
-    desc: '灾备容灾、双活数据中心、监管数据报送',
+    desc: '数据库灾备、双活数据中心、监管数据报送',
   },
   {
     icon: '🏛️',
@@ -57,7 +57,7 @@ const NAVIGATIONS = [
   {
     icon: '📞',
     title: '联系我们',
-    desc: '获取试用授权、技术支持或商务合作',
+    desc: '获取试用授权或洽谈商务合作',
     to: '/contact',
   },
 ];
@@ -163,7 +163,7 @@ function Explore() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle}>深入了解</h2>
         <p className={styles.sectionSubtitle}>
-          从产品信息到实施资料，选择您现在最需要的内容
+          从产品介绍到部署文档，找到您现在最需要的内容
         </p>
         <div className={styles.navGrid}>
           {NAVIGATIONS.map(({ icon, title, desc, to }) => (

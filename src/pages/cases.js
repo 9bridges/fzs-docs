@@ -41,7 +41,7 @@ export default function CasesPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>客户案例</h1>
           <p className={styles.heroSubtitle}>
-            来自金融、政企、能源等行业的典型实施场景，看看 FZS 如何解决数据同步难题
+            来自金融、政企、能源等行业的典型实施场景，了解 FZS 如何应对真实的数据同步挑战
           </p>
         </div>
       </header>
@@ -76,7 +76,7 @@ export default function CasesPage() {
 
         <section className={styles.sectionBg}>
           <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>您的场景也可以</h2>
+            <h2 className={styles.ctaTitle}>FZS 同样适用于您的场景</h2>
             <p className={styles.ctaDesc}>
               无论您面对的是灾备切换、信创迁移还是数据集成需求，FZS 都能提供稳定可靠的技术支撑
             </p>

@@ -57,7 +57,7 @@ function CapabilitySection() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle}>产品能力</h2>
         <p className={styles.sectionSubtitle}>
-          从数据迁移到运行维护，覆盖企业数据同步的核心环节
+          从数据迁移到日常运维，覆盖企业数据同步的核心环节
         </p>
         {CAPABILITIES.map(({ category, items }) => (
           <div key={category} className={styles.capGroup}>

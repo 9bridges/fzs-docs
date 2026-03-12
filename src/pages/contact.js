@@ -53,7 +53,7 @@ export default function ContactPage() {
               <div className={styles.docBannerText}>
                 <h2 className={styles.docBannerTitle}>产品文档</h2>
                 <p className={styles.docBannerDesc}>
-                  查阅功能介绍与部署方案，评估是否符合您的业务需求
+                  深入了解产品功能与部署方案，找到最适合您的实施路径
                 </p>
               </div>
               <Link to="/docs" className={styles.docBannerLink}>

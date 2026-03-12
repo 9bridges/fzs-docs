@@ -3,10 +3,10 @@ import Layout from '@theme/Layout';
 import styles from './about.module.css';
 
 const MILESTONES = [
-  { year: '2018', text: '九桥同步成立，核心团队深耕数据同步领域十余年' },
-  { year: '2020', text: 'FZS 产品 1.0 发布，完成 Oracle 到 Oracle 的全增量同步验证' },
-  { year: '2022', text: '信创数据库适配加速，覆盖达梦、金仓、OceanBase 等主流平台' },
-  { year: '2024', text: '支持 30+ 数据库，容器化部署上线，服务金融与政企客户' },
+  { year: '2016', text: '九桥同步成立，核心团队深耕数据同步领域十余年' },
+  { year: '2017', text: 'FZS 产品 1.0 发布，完成 Oracle 到 Oracle 的全增量同步验证' },
+  { year: '2023', text: '信创数据库适配加速，覆盖达梦、金仓、OceanBase 等主流平台' },
+  { year: '2025', text: '支持 30+ 数据库，容器化部署上线，服务金融与政企客户' },
   /* TODO: 根据实际情况更新里程碑 */
 ];
 
@@ -17,7 +17,7 @@ const VALUES = [
   },
   {
     title: '客户至上',
-    desc: '从客户实际场景出发，提供灵活部署方案与贴身技术支持。',
+    desc: '从客户实际场景出发，提供灵活部署方案与专属技术支持。',
   },
   {
     title: '信创合规',
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <h2 className={styles.sectionTitle}>我们的使命</h2>
             <p className={styles.missionText}>
               让企业数据流转<strong>安全、可靠、实时</strong>。
-              我们为金融、政企、能源等行业客户提供高性能、低侵入、易运维的数据同步基础设施，帮助关键业务保持连续、让数据更高效地流转。
+              我们为金融、政企、能源等行业客户提供高性能、低侵入、易运维的数据同步基础设施，保障关键业务系统稳定连续地运行。
             </p>
           </div>
         </section>
@@ -83,8 +83,8 @@ export default function AboutPage() {
           <div className={styles.sectionInner}>
             <h2 className={styles.sectionTitle}>团队</h2>
             <p className={styles.teamPlaceholder}>
-              九桥同步核心团队由来自 Oracle、IBM、阿里云等企业的数据库与数据同步领域资深工程师组成，
-              累计拥有超过 50 年的行业积累。
+              九桥同步核心团队由来自 Oracle、IBM、OceanBase 等企业的数据库与数据同步领域资深工程师组成，
+              累计超过 50 年的行业经验。
             </p>
             {/* TODO: 添加团队成员照片与简介 */}
           </div>
