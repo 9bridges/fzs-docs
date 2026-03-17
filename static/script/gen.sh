@@ -3,9 +3,9 @@
 # 设置镜像版本
 WEB_VERSION=0.6.3
 DAEMON_VERSION=0.3.2
-QUERY_VERSION=0.5.25
-WEB_SERVER_VERSION=0.5.0
-CONNECT_VERSION=3.7.0
+QUERY_VERSION=0.5.32
+WEB_SERVER_VERSION=0.7.3
+CONNECT_VERSION=20260203-50
 
 # 设置 web 登录端口
 WEB_PORT=80
@@ -161,6 +161,7 @@ name: fzs
 services:
   web:
     image: ${REPOSITORY}/9bridges/fzs-web:${WEB_VERSION}
+    privileged: true
     ports:
       - "${WEB_PORT}:8080"
     volumes:
@@ -183,6 +184,7 @@ services:
 
   daemon:
     image: ${REPOSITORY}/9bridges/fzs-daemon:${DAEMON_VERSION}
+    privileged: true
     restart: unless-stopped
     depends_on:
       - web
@@ -193,6 +195,7 @@ services:
 
   query:
     image: ${REPOSITORY}/9bridges/synjq-query:${QUERY_VERSION}
+    privileged: true
     depends_on:
       - web
     restart: unless-stopped
@@ -228,6 +231,7 @@ if [ -z "$FOR_ORACLE" ]; then
     cat <<EOF >> docker-compose.yml
   kafka:
     image: ${REPOSITORY}/9bridges/bitnami/kafka:3.6
+    privileged: true
     ports:
       - "9094:9094"
     environment:
@@ -249,6 +253,7 @@ if [ -z "$FOR_ORACLE" ]; then
 
   connect:
     image: ${REPOSITORY}/9bridges/fzs-source-connector:${CONNECT_VERSION}
+    privileged: true
     depends_on:
      - kafka
     environment:
@@ -266,6 +271,7 @@ if [ -z "$FOR_ORACLE" ]; then
 
   kafka-ui:
     image: ${REPOSITORY}/9bridges/provectuslabs/kafka-ui:v0.7.2
+    privileged: true
     ports:
       - "${KAFKA_UI_PORT}:8080"
     depends_on:
