@@ -201,6 +201,7 @@ services:
     restart: unless-stopped
     environment:
       - WEB_URL=http://web:8080
+      - TZ=Asia/Shanghai
     networks:
       - fzs
 
