@@ -18,7 +18,7 @@ sidebar_position: 1
     ```shell
     obclient> show parameters like 'obconfig_url';
     ```
-3. 登录业务租户，为你想要监控的租户创建一个用户，这个用户用来读取快照数据。
+3. 登录业务租户，为您想要监控的租户创建一个用户，该用户用于读取快照数据。
    #### OceanBase 数据库 MySQL 租户
     ```shell
     obclient> CREATE USER __oceanbase_inner_drc_user IDENTIFIED BY '<password>';

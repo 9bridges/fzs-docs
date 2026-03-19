@@ -4,9 +4,9 @@ sidebar_position: 0
 
 # API 文档
 
-FZS Web Server 提供 API 功能，你可以通过 API 对 FZS 同步工具进行运维操作。
+FZS Web Server 提供 RESTful API，您可以通过 API 对 FZS 同步平台进行运维操作。
 
-你可以通过 API 完成 FZS 同步工具的如下运维操作：
+通过 API，您可以完成以下运维操作：
 
 ## 数据节点管理
 

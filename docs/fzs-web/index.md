@@ -34,6 +34,6 @@ sidebar_position: 3
 | Safari | 15.4+ | ⭐⭐⭐ |
 | Opera | 78+ | ⭐⭐⭐ |
 
-:::tip 注意
-使用的 FZS Web 版本应与 FZS Web Server 版本保持一致，以避免潜在的兼容性问题。
+:::tip 版本一致性
+FZS Web 与 FZS Web Server 的版本必须保持一致，否则可能出现兼容性问题。
 :::

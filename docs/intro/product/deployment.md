@@ -97,5 +97,5 @@ flowchart BT
 为了达到最佳的安全性与最低的业务侵入性，只需一个 [FZS Web Server](/docs/fzs-web-server/index.md) 部署在中间机上，它便可以对源端和备端的 FZS Agent 进行管理与资源调度，实现数据的远程抽取与装载，数据库源端和备端之间不直接通信。
 
 :::note
-使用中间机部署方式时，FZS 暂不支持配置以 `Oracle` 或者 `SUNDB` 作为源端的同步链路。
+使用中间机部署时，FZS 暂不支持以 Oracle 或 SUNDB 作为源端的同步链路，因为这些数据库需要在本地直接读取 redo 日志。
 :::

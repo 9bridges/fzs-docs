@@ -42,11 +42,11 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 - 升级项目依赖至最新版本，引入 shadcn/ui 组件库依赖
 
-## 0.6.2 版本更新日志 (Changelog)
+## 0.6.2
 
 > 发布日期：2026-01-16
 
-### ✨ 新增功能 (Features)
+### 新功能
 
 *   **TiDB 深度支持**
     *   新增 TiCDC 主机参数配置，增强对 TiDB 数据库的同步支持。
@@ -64,22 +64,22 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
     *   **导入功能**：支持在导入过程中将节点与链路关联至虚拟 Web Server。
     *   **网络可靠性**：新增 Axios 请求重试机制。
 
-### ♻️ 优化与重构 (Refactor & Improvements)
+### 优化与改进
 
 *   **代码清理**：移除了 `ConfirmAlert` 组件及未使用的数据库超时配置。
 *   **逻辑优化**：重构了同步对象的过滤与校验逻辑，提升代码可读性与执行效率。
 *   **依赖升级**：Prisma ORM 升级至 `v6.19.1`。
 
-### 🐛 问题修复 (Bug Fixes)
+### 问题修复
 
 *   **UI 修复**：修复了 `BigSelector` 组件中多余的样式类导致的显示问题。
 *   **逻辑修复**：修正了 `convertUserDefinedDict` 中的条件映射与 Schema 数据处理时的错误反馈机制。
 
-## 0.6.1 版本更新日志 (Changelog)
+## 0.6.1
 
 > 发布日期：2025-11-06
 
-### ✨ 新增功能 (Features)
+### 新功能
 
 *   **数据源与节点支持**
     *   **PolarDB**: 支持 PolarDB 的 MySQL 和 PostgreSQL 变体，并增加了对应图标。
@@ -100,7 +100,7 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
     *   **Schema 获取**: 获取 Schema 和 Table 数据时改用 POST 请求，以支持更复杂的查询参数。
     *   **进度展示**: `FullSync` 组件支持显示归属于特定数据任务的进度。
 
-### ♻️ 优化与重构 (Refactor & Improvements)
+### 优化与改进
 
 *   **依赖升级**: 升级 Prisma 及 Remix 相关依赖至最新版本（Prisma v6.12.0+）。
 *   **Docker 优化**: 重构 Dockerfile 构建阶段，精简依赖安装；生产环境镜像增加 `prisma.config.js`。
@@ -108,7 +108,7 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 *   **时间处理**: 重构了 Dayjs 的初始化逻辑，移除冗余时区设置，统一在 Root 组件中处理。
 *   **UI/UX**: 图表可视化由 `natural` 曲线改为 `bump` 类型；优化了数据任务与链路的关联选择界面。
 
-### 🐛 问题修复 (Bug Fixes)
+### 问题修复
 
 *   **数据库类型修正**: 修正了 TDSQL, Vastbase, GBase, StarRocks 等数据库类型的 `sinkOnly` 属性配置。
 *   **逻辑修复**: 修复了 `separateDatanodes` 函数中的判断逻辑；修复了 `upsert` 操作时的 Payload 清理问题。
@@ -511,7 +511,7 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 ### 新增功能
 
-- **数据链路新增源备端区分**：在创建数据链路时，一些节点只能作为，一些节点只能作为备端，此功能使得 FZS 在创建数据链路时，更加清晰的区分源备端。
+- **数据链路新增源端与目标端区分**：在创建数据链路时，系统会自动标识节点可作为源端或目标端的类型，避免配置错误。
 
 ### 功能优化
 
