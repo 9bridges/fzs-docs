@@ -154,6 +154,10 @@ if [ -z "$WEB_SERVER_HOST" ]; then
     exit 1
 fi
 
+# 创建必要的目录和文件
+mkdir -p fzs
+touch fzs/sn.txt fzs/hostid_persistent
+
 # 创建 docker-compose.yml 文件
 cat <<EOF > docker-compose.yml
 version: '3.8'
@@ -225,6 +229,8 @@ fi
 cat <<EOF >> docker-compose.yml
     volumes:
       - ./fzs:/opt/fzsweb/run/fzs
+      - ./fzs/sn.txt:/opt/fzsweb/bin/sn.txt
+      - ./fzs/hostid_persistent:/etc/hostid_persistent
     networks:
       - fzs
 EOF
