@@ -4,8 +4,8 @@
 WEB_VERSION=0.6.3
 DAEMON_VERSION=0.3.2
 QUERY_VERSION=0.5.32
-WEB_SERVER_VERSION=0.7.3
-CONNECT_VERSION=20260203-50
+WEB_SERVER_VERSION=0.7.4
+CONNECT_VERSION=20260428-53
 
 # 设置 web 登录端口
 WEB_PORT=80
@@ -35,6 +35,77 @@ REPOSITORY=192.168.0.198:880
 PLATFORM=
 TAR=
 FOR_ORACLE=
+UPDATE_URL="https://9bridges.cn/script/gen.sh"
+
+self_update() {
+  local script_path tmp_file backup_file
+  local connect_timeout=8
+  local max_time=30
+  local retry_count=2
+
+  script_path="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+  tmp_file="${script_path}.tmp.$$"
+  backup_file="${script_path}.bak.$$"
+
+  echo "开始更新脚本: ${UPDATE_URL}"
+
+  if command -v curl >/dev/null 2>&1; then
+    if ! curl -fsSL --connect-timeout "$connect_timeout" --max-time "$max_time" --retry "$retry_count" --retry-delay 1 "$UPDATE_URL" -o "$tmp_file"; then
+      echo "curl 下载失败，尝试使用 wget..." >&2
+      rm -f "$tmp_file"
+      if command -v wget >/dev/null 2>&1; then
+        if ! wget --quiet --tries="$retry_count" --timeout="$connect_timeout" -O "$tmp_file" "$UPDATE_URL"; then
+          echo "更新失败: 下载超时或网络不可达" >&2
+          rm -f "$tmp_file"
+          return 1
+        fi
+      else
+        echo "更新失败: 下载超时或网络不可达" >&2
+        return 1
+      fi
+    fi
+  elif command -v wget >/dev/null 2>&1; then
+    if ! wget --quiet --tries="$retry_count" --timeout="$connect_timeout" -O "$tmp_file" "$UPDATE_URL"; then
+      echo "更新失败: 下载超时或网络不可达" >&2
+      rm -f "$tmp_file"
+      return 1
+    fi
+  else
+    echo "更新失败: 系统未安装 curl 或 wget" >&2
+    return 1
+  fi
+
+  if [ ! -s "$tmp_file" ]; then
+    echo "更新失败: 下载内容为空" >&2
+    rm -f "$tmp_file"
+    return 1
+  fi
+
+  if ! grep -q "^#!/bin/bash" "$tmp_file"; then
+    echo "更新失败: 下载内容不是有效脚本" >&2
+    rm -f "$tmp_file"
+    return 1
+  fi
+
+  if ! cp "$script_path" "$backup_file"; then
+    echo "更新失败: 无法创建备份文件" >&2
+    rm -f "$tmp_file"
+    return 1
+  fi
+
+  if ! mv "$tmp_file" "$script_path"; then
+    echo "更新失败: 覆盖脚本失败，准备回滚" >&2
+    mv "$backup_file" "$script_path" 2>/dev/null || true
+    rm -f "$tmp_file"
+    return 1
+  fi
+
+  chmod +x "$script_path" 2>/dev/null || true
+  rm -f "$backup_file"
+
+  echo "更新成功: $script_path"
+  return 0
+}
 
 tar_image() {
     images=(
@@ -94,10 +165,11 @@ Options:
   -t                     Tar the images.
   -a                     Set tar platform to arm64.
   -o                     Oracle tar no need kafka/kafka-ui/connect.
+  -u                     Update script to latest version from ${UPDATE_URL}.
 EOF
 }
 
-while getopts ":p:m:h:s:r:b:e:d:k:tao" opt; do
+while getopts ":p:m:h:s:r:b:e:d:k:taou" opt; do
     case ${opt} in
         p)
             WEB_PORT=${OPTARG}
@@ -129,6 +201,12 @@ while getopts ":p:m:h:s:r:b:e:d:k:tao" opt; do
         o)
             FOR_ORACLE=true
             ;;
+        u)
+          if self_update; then
+            exit 0
+          fi
+          exit 1
+          ;;
         \?)
             echo "Invalid option: -${OPTARG}" >&2
             usage
