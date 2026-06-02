@@ -6,11 +6,11 @@
 .hero {
   padding: 5rem 2rem 4rem;
   text-align: center;
-  background: linear-gradient(168deg, #f0f9ff 0%, #e0f2fe 40%, #fff 100%);
+  background: linear-gradient(168deg, oklch(95.5% 0.010 25) 0%, oklch(97.5% 0.005 50) 55%, oklch(99.2% 0.003 50) 100%);
 }
 
 [data-theme='dark'] .hero {
-  background: linear-gradient(168deg, #0c1929 0%, #0f2942 40%, #111827 100%);
+  background: linear-gradient(168deg, oklch(12% 0.022 25) 0%, oklch(14% 0.010 30) 45%, oklch(15% 0.008 30) 100%);
 }
 
 .heroInner {
@@ -71,8 +71,6 @@
   letter-spacing: 0.06em;
   color: var(--ifm-color-primary);
   margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--ifm-color-primary);
 }
 
 .capGrid {
@@ -176,7 +174,7 @@
 }
 
 [data-theme='dark'] .archTag {
-  background: rgba(56, 189, 248, 0.15);
+  background: oklch(67% 0.14 25 / 0.18);
 }
 
 .archName {

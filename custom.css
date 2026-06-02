@@ -6,14 +6,14 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* Brand Color: Enterprise Blue (~#0ea5e9 to darker shades) */
-  --ifm-color-primary: #0284c7;  /* Sky 600 */
-  --ifm-color-primary-dark: #0369a1;
-  --ifm-color-primary-darker: #075985;
-  --ifm-color-primary-darkest: #0c4a6e;
-  --ifm-color-primary-light: #38bdf8;
-  --ifm-color-primary-lighter: #7dd3fc;
-  --ifm-color-primary-lightest: #bae6fd;
+  /* Brand Color: 九桥同步 — logo crimson (from DESIGN.md) */
+  --ifm-color-primary: oklch(40% 0.185 25);
+  --ifm-color-primary-dark: oklch(33% 0.170 25);
+  --ifm-color-primary-darker: oklch(27% 0.153 25);
+  --ifm-color-primary-darkest: oklch(22% 0.132 25);
+  --ifm-color-primary-light: oklch(52% 0.175 25);
+  --ifm-color-primary-lighter: oklch(65% 0.145 25);
+  --ifm-color-primary-lightest: oklch(95.5% 0.010 25);
   
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -30,13 +30,13 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #38bdf8; /* Sky 400 */
-  --ifm-color-primary-dark: #0ea5e9;
-  --ifm-color-primary-darker: #0284c7;
-  --ifm-color-primary-darkest: #0369a1;
-  --ifm-color-primary-light: #7dd3fc;
-  --ifm-color-primary-lighter: #bae6fd;
-  --ifm-color-primary-lightest: #e0f2fe;
+  --ifm-color-primary: oklch(67% 0.140 25);
+  --ifm-color-primary-dark: oklch(58% 0.160 25);
+  --ifm-color-primary-darker: oklch(50% 0.177 25);
+  --ifm-color-primary-darkest: oklch(42% 0.185 25);
+  --ifm-color-primary-light: oklch(74% 0.113 25);
+  --ifm-color-primary-lighter: oklch(82% 0.075 25);
+  --ifm-color-primary-lightest: oklch(93% 0.022 25);
   
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
@@ -48,12 +48,11 @@
   font-size: 0.95rem;
 }
 
-/* 2. Modern Admonitions (Alerts) */
+/* 2. Modern Admonitions (Alerts) — full-border box, no side stripe */
 .alert {
-  border: none;
-  border-left: 5px solid;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --ifm-alert-border-width: 1px;
+  --ifm-alert-border-left-width: 1px;
+  border-radius: 6px;
 }
 
 /* 3. Image Styling (Screenshots) */
