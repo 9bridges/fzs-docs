@@ -15,11 +15,11 @@
     "optimize-images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.0.0",
-    "@docusaurus/plugin-client-redirects": "^3.9.2",
-    "@docusaurus/preset-classic": "^3.0.0",
-    "@docusaurus/theme-mermaid": "^3.0.0",
-    "@easyops-cn/docusaurus-search-local": "^0.55.1",
+    "@docusaurus/core": "^3.10.1",
+    "@docusaurus/plugin-client-redirects": "^3.10.1",
+    "@docusaurus/preset-classic": "^3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
+    "@easyops-cn/docusaurus-search-local": "^0.55.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-plugin-image-zoom": "^3.0.1",
@@ -28,7 +28,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.0.0",
+    "@docusaurus/module-type-aliases": "^3.10.1",
     "sharp": "^0.34.5"
   },
   "browserslist": {
