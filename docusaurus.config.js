@@ -73,7 +73,56 @@ const config = {
     ],
   ],
 
-  headTags: [],
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: '北京九桥同步软件有限公司',
+        alternateName: ['九桥同步', '9bridges', 'FZS'],
+        url: 'https://9bridges.cn',
+        logo: 'https://9bridges.cn/img/brand.png',
+        description:
+          '专注于数据同步、数据容灾与信创迁移的企业级软件服务商，支持 Oracle、MySQL、PostgreSQL、达梦、金仓、OceanBase 等 30+ 数据库的全增量异构实时同步。',
+        email: 'contact@tb-soft.net',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          email: 'contact@tb-soft.net',
+          areaServed: 'CN',
+          availableLanguage: ['zh-Hans'],
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'CN',
+          addressLocality: '北京市',
+        },
+        sameAs: ['https://github.com/9bridges'],
+      }),
+    },
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: '九桥同步',
+        url: 'https://9bridges.cn',
+        inLanguage: 'zh-Hans',
+        publisher: { '@type': 'Organization', name: '北京九桥同步软件有限公司' },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://9bridges.cn/search?q={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      }),
+    },
+  ],
 
   presets: [
     [
@@ -89,6 +138,9 @@ const config = {
         },
         blog: false,
         pages: {},
+        sitemap: {
+          ignorePatterns: ['/404', '/search'],
+        },
         theme: {
           customCss: require.resolve('./custom.css'),
         },
@@ -101,8 +153,10 @@ const config = {
     ({
       metadata: [
         { name: 'keywords', content: '九桥同步, 数据同步, 容灾备份, 异构数据库, FZS, CDC, 数据库迁移' },
-        { name: 'description', content: '九桥同步 — 专业级实时数据同步与灾备解决方案。支持 Oracle、MySQL、PostgreSQL 等 30+ 数据库的全增量异构同步。' }
+        { name: 'description', content: '九桥同步 — 专业级实时数据同步与灾备解决方案。支持 Oracle、MySQL、PostgreSQL 等 30+ 数据库的全增量异构同步。' },
+        { property: 'og:type', content: 'website' }
       ],
+      image: 'img/brand.png',
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
