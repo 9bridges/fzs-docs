@@ -28,15 +28,24 @@
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode runs two distinct red roles instead of one shared token, because a
+   single token can't be both "serious" and contrast-safe on dark.
+   - TEXT role (--ifm-color-primary): inline red text/links/icons on dark must
+     stay light enough for WCAG AA (≥4.5:1). The card surface #242526 is the
+     binding constraint, so L is pinned at 66; chroma is pushed to the gamut-safe
+     0.185 so the red reads as saturated blood-red, NOT washed-out salmon.
+     Verified: surface 4.54 | page #1b1b1d 5.09 | stats #1c1e21 4.94.
+   - FILL role (the deep ramp + .ctaPrimary override below): solid red with white
+     text doesn't need to be light, so it goes deep crimson to mirror the
+     light-mode brand feeling (#8c1a20). See .ctaPrimary in index.module.css. */
 [data-theme='dark'] {
-  --ifm-color-primary: oklch(67% 0.140 25);
-  --ifm-color-primary-dark: oklch(58% 0.160 25);
-  --ifm-color-primary-darker: oklch(50% 0.177 25);
-  --ifm-color-primary-darkest: oklch(42% 0.185 25);
-  --ifm-color-primary-light: oklch(74% 0.113 25);
-  --ifm-color-primary-lighter: oklch(82% 0.075 25);
-  --ifm-color-primary-lightest: oklch(93% 0.022 25);
+  --ifm-color-primary: oklch(66% 0.185 25);
+  --ifm-color-primary-dark: oklch(59% 0.185 25);
+  --ifm-color-primary-darker: oklch(52% 0.185 25);
+  --ifm-color-primary-darkest: oklch(45% 0.185 25);
+  --ifm-color-primary-light: oklch(73% 0.150 25);
+  --ifm-color-primary-lighter: oklch(81% 0.105 25);
+  --ifm-color-primary-lightest: oklch(91% 0.048 25);
   
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
