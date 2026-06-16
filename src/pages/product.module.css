@@ -6,11 +6,11 @@
 .hero {
   padding: 5rem 2rem 4rem;
   text-align: center;
-  background: linear-gradient(168deg, #f0f9ff 0%, #e0f2fe 40%, #fff 100%);
+  background: linear-gradient(168deg, oklch(95.5% 0.010 25) 0%, oklch(97.5% 0.005 50) 55%, oklch(99.2% 0.003 50) 100%);
 }
 
 [data-theme='dark'] .hero {
-  background: linear-gradient(168deg, #0c1929 0%, #0f2942 40%, #111827 100%);
+  background: linear-gradient(168deg, oklch(12% 0.022 25) 0%, oklch(14% 0.010 30) 45%, oklch(15% 0.008 30) 100%);
 }
 
 .heroInner {
@@ -71,8 +71,6 @@
   letter-spacing: 0.06em;
   color: var(--ifm-color-primary);
   margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--ifm-color-primary);
 }
 
 .capGrid {
@@ -122,10 +120,58 @@
   margin: 0;
 }
 
+/* --- Databases --- */
+.databases {
+  padding: 5rem 2rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.dbGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.dbChip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.dbChip:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .dbChip {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.dbChipMore {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .dbChipMore {
+  background: oklch(67% 0.14 25 / 0.18);
+}
+
 /* --- Architecture --- */
 .architecture {
   padding: 5rem 2rem;
-  background: var(--ifm-color-emphasis-100);
 }
 
 .archGrid {
@@ -176,7 +222,7 @@
 }
 
 [data-theme='dark'] .archTag {
-  background: rgba(56, 189, 248, 0.15);
+  background: oklch(67% 0.14 25 / 0.18);
 }
 
 .archName {
@@ -211,6 +257,68 @@
 .ctaCard:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 40%, white);
   outline-offset: 3px;
+}
+
+/* --- FAQ --- */
+.faq {
+  padding: 5rem 2rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.faqList {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faqItem {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  padding: 0 1.25rem;
+  transition: border-color 180ms ease;
+}
+
+.faqItem[open] {
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .faqItem {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-size: 1.02rem;
+  font-weight: 600;
+  padding: 1.1rem 0;
+  list-style: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: '+';
+  float: right;
+  font-weight: 400;
+  color: var(--ifm-color-primary);
+  transition: transform 180ms ease;
+}
+
+.faqItem[open] .faqQuestion::after {
+  content: '\2212';
+}
+
+.faqAnswer {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 0 1.1rem;
 }
 
 /* --- Bottom CTA --- */
@@ -285,7 +393,10 @@
   .textLink,
   .ctaCard,
   .archCard,
-  .capCard {
+  .capCard,
+  .dbChip,
+  .faqItem,
+  .faqQuestion::after {
     transition: none;
   }
 }

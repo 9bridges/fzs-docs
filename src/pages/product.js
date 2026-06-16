@@ -1,8 +1,34 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import styles from './product.module.css';
 import useReveal from '../hooks/useReveal';
+
+const DATABASES = [
+  'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'DB2',
+  'OceanBase', 'TiDB', 'GaussDB', 'openGauss', '达梦 DM',
+  '人大金仓 Kingbase', 'LightDB', 'MogDB', 'SUNDB',
+];
+
+const FAQS = [
+  {
+    q: 'FZS 支持哪些数据库？',
+    a: 'FZS 支持 30+ 主流与国产信创数据库之间的异构同步，包括 Oracle、MySQL、PostgreSQL、SQL Server、DB2，以及 OceanBase、TiDB、GaussDB、openGauss、达梦 DM、人大金仓 Kingbase、LightDB、MogDB 等国产数据库。',
+  },
+  {
+    q: 'FZS 的同步延迟有多大？',
+    a: 'FZS 基于数据库 Redo Log 日志捕获（CDC）实现增量同步，典型场景下数据延迟在亚秒级（500ms 以内），并支持断点续传，保障同步过程中数据不丢失。',
+  },
+  {
+    q: 'FZS 有哪些部署方式？',
+    a: 'FZS 提供三种部署方式：点对点部署（性能最优）、中间机部署（对生产环境零侵入、满足安全合规）、以及基于 Docker Compose 的容器化部署（自动化程度最高，适合快速搭建）。',
+  },
+  {
+    q: 'FZS 是否适配信创环境？',
+    a: 'FZS 全面适配信创环境，支持龙芯、飞腾、鲲鹏、海光、兆芯等国产 CPU 架构，并适配达梦、人大金仓、OceanBase、GaussDB、openGauss 等主流国产数据库，可用于核心业务系统的国产化迁移与容灾。',
+  },
+];
 
 const CAPABILITIES = [
   {
@@ -105,6 +131,46 @@ function ArchitectureSection() {
   );
 }
 
+function DatabaseSection() {
+  return (
+    <section className={styles.databases}>
+      <div className={styles.sectionInner}>
+        <h2 className={styles.sectionTitle} data-reveal="">支持的数据库</h2>
+        <p className={styles.sectionSubtitle}>
+          覆盖主流商业数据库与国产信创数据库，支持 30+ 数据库之间的异构同步
+        </p>
+        <div className={styles.dbGrid} data-reveal="" data-stagger="">
+          {DATABASES.map((name) => (
+            <span key={name} className={styles.dbChip}>{name}</span>
+          ))}
+          <span className={styles.dbChipMore}>30+ 持续适配中</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <section className={styles.faq}>
+      <div className={styles.sectionInner}>
+        <h2 className={styles.sectionTitle} data-reveal="">常见问题</h2>
+        <p className={styles.sectionSubtitle}>
+          关于数据库支持、同步性能、部署与信创适配的常见疑问
+        </p>
+        <div className={styles.faqList} data-reveal="" data-stagger="">
+          {FAQS.map(({ q, a }) => (
+            <details key={q} className={styles.faqItem}>
+              <summary className={styles.faqQuestion}>{q}</summary>
+              <p className={styles.faqAnswer}>{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BottomCTA() {
   return (
     <section className={styles.bottomCTA}>
@@ -132,6 +198,48 @@ function BottomCTA() {
   );
 }
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'FZS 数据同步平台',
+  alternateName: ['FZS', '九桥同步'],
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: '数据同步 / 数据容灾',
+  operatingSystem: 'Linux, Windows',
+  url: 'https://9bridges.cn/product',
+  description:
+    'FZS 是九桥同步推出的企业级数据同步平台，基于数据库日志捕获（CDC）实现全量与增量一体化的异构实时同步，支持 Oracle、MySQL、PostgreSQL、OceanBase、TiDB、达梦 DM、人大金仓 Kingbase 等 30+ 数据库，适配国产信创环境。',
+  featureList: [
+    '全量＋增量一体化同步',
+    '基于 Redo Log 的亚秒级延迟',
+    'DDL 自动同步',
+    '数据比对与修复',
+    '灾备一键切换',
+    '可视化控制台与告警',
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'CNY',
+    price: '0',
+    description: '商业授权，提供免费试用',
+  },
+  provider: {
+    '@type': 'Organization',
+    name: '北京九桥同步软件有限公司',
+    url: 'https://9bridges.cn',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
 export default function ProductPage() {
   useReveal();
   return (
@@ -139,6 +247,14 @@ export default function ProductPage() {
       title="产品介绍"
       description="FZS 数据同步平台产品功能与架构介绍 — 全增量一体、异构同步、灾备切换、可视化管理。"
     >
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(softwareSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Head>
       <header className={styles.hero}>
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>FZS 数据同步平台</h1>
@@ -149,7 +265,9 @@ export default function ProductPage() {
       </header>
       <main>
         <CapabilitySection />
+        <DatabaseSection />
         <ArchitectureSection />
+        <FaqSection />
         <BottomCTA />
       </main>
     </Layout>
