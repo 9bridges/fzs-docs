@@ -26,14 +26,6 @@
   background: linear-gradient(168deg, oklch(12% 0.022 25) 0%, oklch(14% 0.010 30) 45%, oklch(15% 0.008 30) 100%);
 }
 
-/* Dark-mode "serious red" overrides — see custom.css for the two-role rationale.
-   The hero headline sits on the near-black hero gradient, so it can run deeper
-   and more saturated than the global text token (a true blood-red, not coral).
-   Verified ≥4.5:1 against the hero's lightest gradient stop. */
-[data-theme='dark'] .heroAccent {
-  color: oklch(61% 0.20 25);
-}
-
 .heroInner {
   max-width: 64rem;
   margin: 0 auto;
@@ -75,21 +67,6 @@
   color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px oklch(40% 0.185 25 / 0.22);
-}
-
-/* Dark mode: the primary CTA is a solid fill with white text, so it does NOT
-   need the light (contrast-driven) text token — it goes deep crimson to mirror
-   the light-mode brand feeling (#8c1a20) and read as serious, not salmon.
-   White-on-fill verified 7.86:1; hover lifts for affordance on the dark page. */
-[data-theme='dark'] .ctaPrimary {
-  background-color: oklch(46% 0.185 25);
-  border-color: oklch(46% 0.185 25);
-}
-
-[data-theme='dark'] .ctaPrimary:hover {
-  background-color: oklch(53% 0.185 25);
-  border-color: oklch(53% 0.185 25);
-  box-shadow: 0 10px 24px oklch(46% 0.185 25 / 0.35);
 }
 
 .ctaSecondary {

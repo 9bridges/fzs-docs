@@ -166,7 +166,7 @@
 }
 
 [data-theme='dark'] .dbChipMore {
-  background: oklch(66% 0.185 25 / 0.18);
+  background: oklch(66% 0.17 27 / 0.18);
 }
 
 /* --- Architecture --- */
@@ -222,7 +222,7 @@
 }
 
 [data-theme='dark'] .archTag {
-  background: oklch(66% 0.185 25 / 0.18);
+  background: oklch(66% 0.17 27 / 0.18);
 }
 
 .archName {
