@@ -17,7 +17,7 @@ colors:
   dark-ground:  "oklch(14% 0.010 30)"
   dark-surface: "oklch(19% 0.012 30)"
   dark-ink:     "oklch(93% 0.005 50)"
-  dark-brand:   "oklch(67% 0.14 25)"
+  dark-brand:   "oklch(66% 0.185 25)"
 typography:
   display:
     fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
@@ -111,7 +111,7 @@ This design explicitly rejects: SaaS-startup sky blue (the current fzs-docs defa
 - Single sans stack: PingFang SC / system-ui, weight contrast as the hierarchy engine
 - Flat elevation: surfaces are flat at rest; only product screenshots carry a light ambient shadow
 - Chinese-first typesetting: CJK line-break rules, wrap-word handling for inline code, strict line-length for prose
-- Full dark-mode: deep warm charcoal ground with a lightened brand crimson (`oklch(67% 0.14 25)`) as primary
+- Full dark-mode: deep warm charcoal ground with a two-role brand crimson — a contrast-lifted text token (`oklch(66% 0.185 25)`) and a deep crimson fill for solid CTAs (`oklch(46% 0.185 25)`)
 
 ## 2. Colors: The Logo Palette
 
@@ -133,7 +133,8 @@ A **Restrained** palette on the commitment axis: the brand crimson appears in st
 - **Dark Ground** `oklch(14% 0.010 30)` / approx. `#1f1917`: Deep warm charcoal page background. Tinted toward brand hue.
 - **Dark Surface** `oklch(19% 0.012 30)` / approx. `#2a2220`: Elevated surface in dark mode. Cards, sidebars, nav backgrounds.
 - **Dark Ink** `oklch(93% 0.005 50)` / approx. `#edeae5`: Primary text in dark mode. Warm near-white.
-- **Dark Brand** `oklch(67% 0.14 25)` / approx. `#d9716a`: Lightened brand crimson for dark mode. Maintains WCAG AA contrast on dark surfaces.
+- **Dark Brand (text role)** `oklch(66% 0.185 25)` / approx. `#ee5955`: Brand crimson for inline red *text*, links, icons and stat numbers in dark mode. A single token can't be both serious and contrast-safe on dark, so this text role is pinned at L66 (the floor that clears WCAG AA on the lightest card surface `#242526`) with chroma pushed to a gamut-safe 0.185 — saturated blood-red, not washed-out salmon. Same hue (25) as the light brand for a cool, serious read. Verified AA: 4.5:1 surface, 5.1:1 page, 4.9:1 stats.
+- **Dark Brand (fill role)** `oklch(46% 0.185 25)` / approx. `#a90017`: Deep crimson for solid CTA *fills* with white text (e.g. the primary button). Because the text on it is white, the fill does NOT need to be light — it goes deep to mirror the light-mode brand feeling (`#8c1a20`) and read as serious. White-on-fill 7.8:1; hover lifts to `oklch(53% 0.185 25)`. The hero headline accent sits on the near-black hero gradient and runs deeper still at `oklch(61% 0.20 25)` (4.9:1 on the hero bg).
 
 ### Status Colors (functional only)
 - **Status Red** `oklch(52% 0.20 25)`: Error, sync interrupted. Distinguishable from Brand Crimson (brighter, higher chroma).
@@ -238,7 +239,7 @@ This system is **flat by default**, identical to fzs-slides. Depth is conveyed t
 - **Do** use Brand Crimson in structural roles: navbar active link, hero section heading accent, primary buttons, doc table header rows, and CTA band backgrounds. Its presence is earned and structural.
 - **Do** use the warm near-white Ground (`oklch(97.5% 0.005 50)`) as the page background on marketing pages. The slight warmth matches the logo's hue family and distinguishes the site from generic "white" enterprise pages.
 - **Do** match fzs-slides: table headers in Brand Crimson, status colors (green/amber/red) for functional indicators only, no decorative gradients. A user who has seen the slides should recognize the same brand instantly on the site.
-- **Do** verify contrast at every step. Body text (Ink on Ground) must clear 4.5:1. Brand Crimson on Ground: check and compensate — deep crimson on warm near-white needs verification. The dark-mode brand (`oklch(67% 0.14 25)`) on dark ground must also clear 4.5:1.
+- **Do** verify contrast at every step. Body text (Ink on Ground) must clear 4.5:1. Brand Crimson on Ground: check and compensate — deep crimson on warm near-white needs verification. The dark-mode brand text token (`oklch(66% 0.185 25)`) on dark ground must also clear 4.5:1.
 - **Do** keep all borders 1px. Table cells, card outlines, admonition boxes: 1px in Divider color.
 - **Do** use Fira Code for all code contexts — same as fzs-slides. Consistency across both surfaces.
 - **Do** keep marketing page headings at `text-wrap: balance` and body text at `text-wrap: pretty`.

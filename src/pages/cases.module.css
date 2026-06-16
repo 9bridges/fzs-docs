@@ -76,7 +76,7 @@
 }
 
 [data-theme='dark'] .caseTag {
-  background: oklch(67% 0.14 25 / 0.18);
+  background: oklch(66% 0.185 25 / 0.18);
 }
 
 .caseTitle {
