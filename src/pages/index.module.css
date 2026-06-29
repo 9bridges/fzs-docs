@@ -39,6 +39,7 @@
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
+  text-wrap: balance;
   color: var(--ifm-heading-color);
   margin-bottom: 2.5rem;
 }
@@ -59,8 +60,11 @@
   border-color: var(--ifm-color-primary);
   color: #fff;
   font-weight: 600;
-  padding: 0.75rem 2rem;
-  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  padding: 0.75rem 0.85rem 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  transition: transform 360ms cubic-bezier(0.32, 0.72, 0, 1), background-color 360ms cubic-bezier(0.32, 0.72, 0, 1), border-color 360ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 360ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .ctaPrimary:hover {
@@ -68,7 +72,22 @@
   border-color: var(--ifm-color-primary-dark);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px oklch(40% 0.185 25 / 0.22);
+  box-shadow: var(--fzs-shadow-lg);
+}
+
+.ctaArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  transition: transform 360ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.ctaPrimary:hover .ctaArrow {
+  transform: translate(2px, -1px);
 }
 
 .ctaSecondary {
@@ -96,7 +115,7 @@
 .ctaPrimary:active,
 .ctaSecondary:active,
 .navCard:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
 }
 
 /* --- Shared Section --- */
@@ -162,7 +181,7 @@
 
 /* --- What We Do --- */
 .whatWeDo {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   content-visibility: auto;
   contain-intrinsic-size: auto 600px;
 }
@@ -182,7 +201,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .whatWeDoCard:hover {
@@ -214,7 +233,7 @@
 
 /* --- Industries --- */
 .industries {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: var(--ifm-color-emphasis-100);
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
@@ -240,7 +259,7 @@
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .industryCard:hover {
@@ -278,7 +297,7 @@
 
 /* --- Explore / Navigation Cards --- */
 .explore {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
@@ -305,7 +324,7 @@
   background: var(--ifm-background-surface-color);
   text-decoration: none;
   color: inherit;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .navCard:hover {
@@ -334,6 +353,7 @@
 @media (prefers-reduced-motion: reduce) {
   .ctaPrimary,
   .ctaSecondary,
+  .ctaArrow,
   .navCard,
   .whatWeDoCard,
   .industryCard {

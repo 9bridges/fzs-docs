@@ -83,6 +83,9 @@ function Hero() {
         <div className={styles.heroCTA}>
           <Link className={clsx('button button--lg', styles.ctaPrimary)} to="/product">
             了解产品
+            <span className={styles.ctaArrow} aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14 M13 6l6 6-6 6" /></svg>
+            </span>
           </Link>
           <Link className={clsx('button button--lg', styles.ctaSecondary)} to="/contact">
             联系我们

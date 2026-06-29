@@ -196,32 +196,41 @@ table th {
 [data-stagger] > *:nth-child(8) { --sd: 0.42s; }
 
 @media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
   /* Single-element reveal */
   [data-reveal='waiting']:not([data-stagger]) {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(22px);
+    filter: blur(6px);
+    transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+                transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+                filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
   }
   [data-reveal='visible']:not([data-stagger]) {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    filter: blur(0);
+    transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+                transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+                filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   /* Staggered grid — children animate, parent is transparent */
   [data-stagger][data-reveal='waiting'] > * {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s),
-                transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s);
+    transform: translateY(22px);
+    filter: blur(6px);
+    transition: opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
+                transform 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
+                filter 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s);
   }
   [data-stagger][data-reveal='visible'] > * {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s),
-                transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) var(--sd, 0s);
+    filter: blur(0);
+    transition: opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
+                transform 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
+                filter 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s);
   }
 }
 
