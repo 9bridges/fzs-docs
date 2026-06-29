@@ -4,6 +4,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import styles from './product.module.css';
 import useReveal from '../hooks/useReveal';
+import Icon from '../components/Icon';
 
 const DATABASES = [
   'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'DB2',
@@ -178,17 +179,17 @@ function BottomCTA() {
         <h2 className={styles.sectionTitle} data-reveal="">下一步</h2>
         <div className={styles.ctaCards} data-reveal="" data-stagger="">
           <Link to="/docs/quick-start" className={styles.ctaCard}>
-            <span className={styles.ctaCardIcon}>⚡</span>
+            <span className={styles.ctaCardIcon}><Icon name="bolt" /></span>
             <h3>快速开始</h3>
             <p>按步骤完成部署，快速搭建第一条同步链路</p>
           </Link>
           <Link to="/docs/intro/appendix/db-support" className={styles.ctaCard}>
-            <span className={styles.ctaCardIcon}>🔗</span>
+            <span className={styles.ctaCardIcon}><Icon name="link" /></span>
             <h3>支持列表</h3>
             <p>查看当前已适配的数据库和平台</p>
           </Link>
           <Link to="/contact" className={styles.ctaCard}>
-            <span className={styles.ctaCardIcon}>💬</span>
+            <span className={styles.ctaCardIcon}><Icon name="chat" /></span>
             <h3>联系我们</h3>
             <p>咨询试用、采购方案或技术支持</p>
           </Link>

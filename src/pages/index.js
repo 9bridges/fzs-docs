@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './index.module.css';
 import useReveal from '../hooks/useReveal';
+import Icon from '../components/Icon';
 
 const STATS = [
   { value: '30+', label: '支持数据库' },
@@ -15,22 +16,22 @@ const STATS = [
 
 const VERTICALS = [
   {
-    icon: '📈',
+    icon: 'trend',
     title: '证券',
     desc: '交易系统容灾、行情数据实时同步、监管数据报送',
   },
   {
-    icon: '🔄',
+    icon: 'swap',
     title: '期货',
     desc: '核心系统灾备、多系统风控数据实时集成',
   },
   {
-    icon: '💹',
+    icon: 'fund',
     title: '基金',
     desc: '估值数据实时同步、多系统数据汇聚',
   },
   {
-    icon: '🏥',
+    icon: 'pulse',
     title: '医疗',
     desc: '业务连续性保障、跨院区数据同步',
   },
@@ -38,25 +39,25 @@ const VERTICALS = [
 
 const NAVIGATIONS = [
   {
-    icon: '🚀',
+    icon: 'spark',
     title: '产品介绍',
     desc: '查看 FZS 的核心能力、部署方式和适用场景',
     to: '/product',
   },
   {
-    icon: '📖',
+    icon: 'book',
     title: '技术文档',
     desc: '查看部署指南、操作手册和 API 参考，快速上手',
     to: '/docs/quick-start',
   },
   {
-    icon: '💼',
+    icon: 'briefcase',
     title: '客户案例',
     desc: '了解证券容灾、基金数据同步与医疗集成等典型场景',
     to: '/cases',
   },
   {
-    icon: '📞',
+    icon: 'chat',
     title: '联系我们',
     desc: '获取试用授权或洽谈商务合作',
     to: '/contact',
@@ -147,7 +148,7 @@ function Industries() {
         <div className={styles.industryGrid} data-reveal="" data-stagger="">
           {VERTICALS.map(({ icon, title, desc }) => (
             <div key={title} className={styles.industryCard}>
-              <span className={styles.industryIcon}>{icon}</span>
+              <span className={styles.industryIcon}><Icon name={icon} /></span>
               <h3 className={styles.industryTitle}>{title}</h3>
               <p className={styles.industryDesc}>{desc}</p>
             </div>
@@ -169,7 +170,7 @@ function Explore() {
         <div className={styles.navGrid} data-reveal="" data-stagger="">
           {NAVIGATIONS.map(({ icon, title, desc, to }) => (
             <Link key={title} to={to} className={styles.navCard}>
-              <span className={styles.navIcon}>{icon}</span>
+              <span className={styles.navIcon}><Icon name={icon} /></span>
               <h3 className={styles.navTitle}>{title}</h3>
               <p className={styles.navDesc}>{desc}</p>
             </Link>

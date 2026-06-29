@@ -4,10 +4,13 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  /* Brand Color: 九桥同步 — logo crimson (from DESIGN.md) */
-  --ifm-color-primary: oklch(40% 0.185 25);
+  /* Brand Color: 九桥同步 — logo crimson (from DESIGN.md).
+     Chroma 0.16 = sRGB ceiling at L40/H25; 0.185 clipped, this is the honest in-gamut value. */
+  --ifm-color-primary: oklch(40% 0.16 25);
   --ifm-color-primary-dark: oklch(33% 0.170 25);
   --ifm-color-primary-darker: oklch(27% 0.153 25);
   --ifm-color-primary-darkest: oklch(22% 0.132 25);
@@ -19,14 +22,23 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Typography Enhancements */
-  --ifm-font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-font-family-base: "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fzs-font-display: "Outfit", "Noto Sans SC", system-ui, sans-serif;
   --ifm-heading-font-weight: 600;
   --ifm-font-weight-semibold: 600;
+
+  /* Tinted shadows — crimson-hued, single light source, not pure black */
+  --fzs-shadow-sm: 0 1px 2px oklch(40% 0.06 25 / 0.06);
+  --fzs-shadow-md: 0 8px 20px oklch(40% 0.08 25 / 0.10);
+  --fzs-shadow-lg: 0 14px 36px oklch(40% 0.10 25 / 0.14);
 
   /* Card & UI Polish */
   --ifm-card-border-radius: 8px;
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
+
+/* Display font for marketing headlines; tabular numerals for data */
+h1, h2, .hero__title { font-family: var(--fzs-font-display); }
 
 /* For readability concerns, you should choose a lighter palette in dark mode.
    Dark-mode red runs warmer (hue 27) with higher chroma than a naive lightening

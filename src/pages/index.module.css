@@ -5,8 +5,10 @@
 /* --- Hero --- */
 .hero {
   position: relative;
-  padding: 6rem 2rem 5rem;
-  background: linear-gradient(168deg, oklch(95.5% 0.010 25) 0%, oklch(97.5% 0.005 50) 55%, oklch(99.2% 0.003 50) 100%);
+  padding: 6rem 2rem 5.5rem;
+  background:
+    radial-gradient(60% 80% at 78% 8%, oklch(65% 0.145 25 / 0.10), transparent 60%),
+    linear-gradient(168deg, oklch(95.5% 0.010 25) 0%, oklch(97.5% 0.005 50) 55%, oklch(99.2% 0.003 50) 100%);
   overflow: hidden;
 }
 
@@ -149,6 +151,7 @@
   font-weight: 800;
   color: var(--ifm-color-primary);
   line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
 
 .statLabel {
@@ -185,7 +188,7 @@
 .whatWeDoCard:hover {
   border-color: var(--ifm-color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+  box-shadow: var(--fzs-shadow-md);
 }
 
 [data-theme='dark'] .whatWeDoCard {
@@ -243,7 +246,7 @@
 .industryCard:hover {
   border-color: var(--ifm-color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+  box-shadow: var(--fzs-shadow-md);
 }
 
 [data-theme='dark'] .industryCard {
@@ -255,8 +258,8 @@
 }
 
 .industryIcon {
-  font-size: 2rem;
-  display: block;
+  color: var(--ifm-color-primary);
+  display: inline-flex;
   margin-bottom: 0.75rem;
 }
 
@@ -323,8 +326,8 @@
 }
 
 .navIcon {
-  font-size: 1.75rem;
-  display: block;
+  color: var(--ifm-color-primary);
+  display: inline-flex;
   margin-bottom: 0.75rem;
 }
 
