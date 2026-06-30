@@ -74,6 +74,7 @@ function Hero() {
           className={styles.heroBrand}
           width="167"
           height="48"
+          fetchpriority="high"
         />
         <h1 className={styles.heroTitle}>
           让企业数据流转

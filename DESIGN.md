@@ -20,30 +20,30 @@ colors:
   dark-brand:   "oklch(66% 0.17 27)"
 typography:
   display:
-    fontFamily: "'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "clamp(2.4rem, 5vw, 3.8rem)"
     fontWeight: 800
     lineHeight: 1.15
     letterSpacing: "-0.03em"
   headline:
-    fontFamily: "'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "clamp(1.75rem, 3.5vw, 2.4rem)"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "1.25rem"
     fontWeight: 600
     lineHeight: 1.35
     letterSpacing: "-0.01em"
   body:
-    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.7
   label:
-    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.5
@@ -102,14 +102,14 @@ Where the fzs-slides deck is "The Instrument Panel" — a calibrated readout for
 
 The color system derives from the 九桥同步 logo's brushstroke: a deep crimson at `oklch(40% 0.16 25)` (the in-gamut sRGB value; the theoretical `oklch(40% 0.185 25)` clips and is documented but not used in production CSS). Brand Crimson anchors every structural landmark — the navbar brand mark, hero section heading accent, primary buttons, table headers in the docs, and CTA bands. This is not a marketing-accent blue; it is the brand's actual color used with structural intent. The warm near-white ground (`oklch(97.5% 0.005 50)`) prevents clinical whiteness and reads as authoritative rather than sterile.
 
-Typography uses a two-font system: **Outfit** for display/headline hierarchy (geometric sans with tight spacing for marketing impact) and **Noto Sans SC** for body, titles, and labels (pragmatic CJK legibility for long-form documentation). The weight range carries hierarchy: 800 for hero display, 700 for section headlines, 600 for component titles, 400 for body. Fira Code is the single mono voice across both systems. This pairing was chosen over the original PingFang SC-only stack: Outfit brings deliberate geometric character to marketing headings that a system sans cannot, while Noto Sans SC provides reliable CJK rendering across platforms.
+Typography uses a **single native CJK system stack**: PingFang SC (macOS/iOS), Microsoft YaHei (Windows), and Noto Sans CJK SC (Linux fallback). No Google Fonts downloads — zero network dependency, OS-native hinting for sharper rendering, instant first paint with no FOUT/FOIT. The weight range carries all hierarchy: 800 for hero display, 700 for section headlines, 600 for component titles, 400 for body. Fira Code is the single mono voice. This single-family approach was chosen over the previous Outfit + Noto Sans SC pairing: on a CJK-first site, a Latin display font only renders numbers and occasional English in headings while adding a 400KB download. The native system stack is both more performant and visually sharper — PingFang SC at weight 800 reads as deliberately designed, not as a system default fallback.
 
 This design explicitly rejects: SaaS-startup sky blue (the current fzs-docs default was inherited from Docusaurus — it is not the brand); decorative gradients on backgrounds or hero text (`background-clip: text` is banned); border-left accent stripes on admonitions; the ghost-card pattern (1px border plus wide shadow); and the DSG Data aesthetic of cluttered banner sliders with no hierarchy.
 
 **Key Characteristics:**
 - Brand crimson as structural color: navbar, hero accent, primary CTA, table headers, active nav indicators
 - Warm near-white ground: `oklch(97.5% 0.005 50)` throughout — never pure `#fff`, never sky-tinted
-- Dual-font system: Outfit (display + headlines) paired with Noto Sans SC (body + UI). Geometric-meets-pragmatic.
+- Single native CJK system stack: PingFang SC / Microsoft YaHei / Noto Sans CJK SC. Weight contrast (800/700/600/400) carries all hierarchy. Zero download.
 - Flat at rest, intentional shadows on interaction: crimson-tinted shadow tokens lift cards on hover only
 - Full dark-mode: deep warm charcoal ground with a lightened brand crimson (`oklch(66% 0.17 27)`) as primary
 - Chinese-first typesetting: CJK line-break rules, wrap-word handling for inline code, strict line-length for prose
@@ -151,13 +151,11 @@ A **Restrained** palette on the commitment axis: the brand crimson appears in st
 
 ## 3. Typography
 
-**Display Font:** Outfit (`'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif`). A geometric sans with tight spacing and strong weight contrast. Used for hero H1s and section headlines on marketing pages. Loaded from Google Fonts (weight 500–800).
+**Font Stack:** Single native CJK system stack — PingFang SC (macOS/iOS, 6 weights, Apple's premium screen-optimized CJK sans), Microsoft YaHei (Windows, standard Chinese enterprise UI font), Noto Sans CJK SC (Linux fallback). Zero download, zero FOUT/FOIT, OS-native hinting for maximum sharpness.
 
-**Body / UI Font:** Noto Sans SC (`'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`). A pragmatic CJK-first sans with reliable rendering across platforms. Used for body text, card titles, labels, navigation, and all documentation prose. Loaded from Google Fonts (weight 400–700).
+**Mono Font:** Fira Code (`'Fira Code', 'Cascadia Code', 'Consolas', monospace`). All code samples, database identifiers, configuration values, version strings, and CLI commands.
 
-**Mono Font:** Fira Code (`'Fira Code', 'Cascadia Code', 'Consolas', monospace`). Identical to fzs-slides. All code samples, database identifiers, configuration values, version strings, and CLI commands.
-
-**Character:** A geometric-display + pragmatic-body pairing. Outfit brings deliberate character to marketing headings — the geometric letterforms read as designed rather than default-system. Noto Sans SC handles CJK body text with proper glyph coverage and weight range. The contrast is geometric vs. humanist-pragmatic, not two similar sans families. Fira Code provides the only texture contrast — code samples feel technically distinct.
+**Character:** A single typeface at multiple weights, not a paired multi-family system. Weight contrast alone (400/600/700/800) generates clear hierarchy without the overhead of a second font download. PingFang SC at weight 800 reads as deliberately designed — its geometric proportions and tight spacing carry the same precision message that a Latin display font would, but with perfect CJK rendering. The mono font provides the only texture contrast — code samples feel technically distinct.
 
 ### Hierarchy
 - **Display** (weight 800, `clamp(2.4rem, 5vw, 3.8rem)`, line-height 1.15, letter-spacing −0.03em): Hero H1 on marketing pages only. One per page. `text-wrap: balance` to prevent orphaned words on narrow viewports.

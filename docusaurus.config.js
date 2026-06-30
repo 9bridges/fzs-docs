@@ -74,6 +74,17 @@ const config = {
   ],
 
   headTags: [
+    // Preload LCP hero image — start download before CSS parses
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: '/img/brand.png',
+        as: 'image',
+        type: 'image/png',
+        fetchpriority: 'high',
+      },
+    },
     {
       tagName: 'script',
       attributes: { type: 'application/ld+json' },

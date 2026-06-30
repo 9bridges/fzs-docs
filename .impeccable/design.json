@@ -74,19 +74,19 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero H1 on marketing pages. One per page. Outfit geometric sans."
+        "purpose": "Hero H1 on marketing pages. One per page. PingFang SC weight 800."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings (H2). Outfit for marketing, Noto Sans SC for docs."
+        "purpose": "Section headings (H2). PingFang SC weight 700."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Sub-section headings (H3), card titles, nav section headers."
+        "purpose": "Sub-section headings (H3), card titles, nav headers. PingFang SC weight 600."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Marketing prose and documentation body. Max line length 65–75ch."
+        "purpose": "Marketing prose and documentation body. Max line length 65–75ch. PingFang SC weight 400."
       }
     },
     "shadows": [
@@ -182,11 +182,11 @@
   ],
   "narrative": {
     "northStar": "The Precision Platform",
-    "overview": "Where the fzs-slides deck is \"The Instrument Panel\" — a calibrated readout for a meeting-room projector — the website is the same instrument made browsable. A financial IT director evaluating data synchronization infrastructure opens this site at a desk, probably with two tabs open and a half-formed opinion about the vendor already. The design must clear that bar in under five seconds: technical depth is evident, claims are specific, and the visual system communicates the same precision as the product itself.\n\nThe color system derives from the 九桥同步 logo's brushstroke: a deep crimson at oklch(40% 0.16 25) anchors every structural landmark. Typography uses a two-font system: Outfit for display/headline hierarchy and Noto Sans SC for body and UI. This design explicitly rejects: SaaS-startup sky blue, decorative gradients, border-left accent stripes, the ghost-card pattern, and the DSG Data / info2soft aesthetic of cluttered enterprise catalogs.",
+    "overview": "Where the fzs-slides deck is \"The Instrument Panel\" — a calibrated readout for a meeting-room projector — the website is the same instrument made browsable. A financial IT director evaluating data synchronization infrastructure opens this site at a desk, probably with two tabs open and a half-formed opinion about the vendor already. The design must clear that bar in under five seconds: technical depth is evident, claims are specific, and the visual system communicates the same precision as the product itself.\n\nThe color system derives from the 九桥同步 logo's brushstroke: a deep crimson at oklch(40% 0.16 25) anchors every structural landmark. Typography uses a single native CJK system stack — PingFang SC (macOS), Microsoft YaHei (Windows), Noto Sans CJK SC (Linux) — with weight contrast carrying all hierarchy. Zero Google Fonts downloads, zero FOUT. This design explicitly rejects: SaaS-startup sky blue, decorative gradients, border-left accent stripes, the ghost-card pattern, and the DSG Data / info2soft aesthetic of cluttered enterprise catalogs.",
     "keyCharacteristics": [
       "Brand crimson as structural color: navbar, hero accent, primary CTA, table headers, active nav indicators",
       "Warm near-white ground: oklch(97.5% 0.005 50) — never pure #fff, never sky-tinted",
-      "Dual-font system: Outfit (display + headlines) paired with Noto Sans SC (body + UI)",
+      "Single native CJK system stack: PingFang SC / Microsoft YaHei / Noto Sans CJK SC. Weight contrast (800/700/600/400) carries all hierarchy. Zero download.",
       "Flat at rest, intentional shadows on interaction: crimson-tinted shadow tokens lift cards on hover only",
       "Full dark-mode: deep warm charcoal ground with lightened brand crimson as primary",
       "Chinese-first typesetting: CJK line-break rules, strict line-length for prose"
