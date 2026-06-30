@@ -13,16 +13,16 @@ const MILESTONES = [
 
 const VALUES = [
   {
-    title: '技术驱动',
-    desc: '以日志解析与 CDC 技术为核心，持续打磨产品性能与稳定性。',
+    title: '技术为本',
+    desc: '以日志解析与 CDC 技术为核心，在亚秒级延迟与数据一致性之间持续逼近最优解。',
   },
   {
-    title: '客户至上',
-    desc: '从客户实际场景出发，提供灵活部署方案与专属技术支持。',
+    title: '场景驱动',
+    desc: '从客户实际部署环境出发 — 点对点、中间机或容器化，方案随架构而定，不要求客户迁就产品。',
   },
   {
-    title: '信创合规',
-    desc: '深度适配国产数据库与国产硬件平台，助力企业信创转型。',
+    title: '信创就绪',
+    desc: '已完成对达梦、金仓、OceanBase、GaussDB 及龙芯、飞腾、鲲鹏等国产平台的全面适配与生产验证。',
   },
 ];
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>关于我们</h1>
           <p className={styles.heroSubtitle}>
-            北京九桥同步软件有限公司，专注于数据同步、容灾和数据集成。
+            深耕数据同步领域十余年，为关键业务系统提供从灾备到信创迁移的基础设施支撑
           </p>
         </div>
       </header>
@@ -48,7 +48,7 @@ export default function AboutPage() {
             <h2 className={styles.sectionTitle} data-reveal="">我们的使命</h2>
             <p className={styles.missionText} data-reveal="">
               让企业数据流转<strong>安全、可靠、实时</strong>。
-              我们为证券、期货、基金、医疗等行业客户提供高性能、低侵入、易运维的数据同步基础设施，保障关键业务系统稳定连续地运行。
+              我们为证券、期货、基金、医疗行业构建高性能、低侵入、易运维的数据同步系统，确保关键业务在灾难场景下持续运行。
             </p>
           </div>
         </section>

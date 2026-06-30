@@ -143,40 +143,44 @@
 
 /* --- Stats Bar --- */
 .stats {
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   background: var(--ifm-color-emphasis-100);
 }
 
 .statGrid {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  align-items: center;
+  gap: 0;
   flex-wrap: wrap;
-}
-
-@media (max-width: 576px) {
-  .statGrid { gap: 2rem; }
+  font-size: 1.05rem;
 }
 
 .statItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
 }
 
 .statValue {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ifm-color-primary);
-  line-height: 1.2;
   font-variant-numeric: tabular-nums;
 }
 
 .statLabel {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
-  margin-top: 0.25rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.statDivider {
+  color: var(--ifm-color-emphasis-400);
+  margin: 0 1.25rem;
+  user-select: none;
+}
+
+@media (max-width: 576px) {
+  .statGrid { gap: 0.5rem; }
+  .statDivider { margin: 0 0.75rem; }
 }
 
 /* --- What We Do --- */
@@ -207,15 +211,10 @@
 .whatWeDoCard:hover {
   border-color: var(--ifm-color-primary);
   transform: translateY(-2px);
-  box-shadow: var(--fzs-shadow-md);
 }
 
 [data-theme='dark'] .whatWeDoCard {
   border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .whatWeDoCard:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .whatWeDoCard h3 {
@@ -239,60 +238,62 @@
   contain-intrinsic-size: auto 500px;
 }
 
-.industryGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.industryList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.industryRow {
+  display: flex;
+  align-items: flex-start;
   gap: 1.5rem;
-}
-
-@media (max-width: 996px) {
-  .industryGrid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 576px) {
-  .industryGrid { grid-template-columns: 1fr; }
-}
-
-.industryCard {
-  padding: 2rem;
-  text-align: center;
+  padding: 1.5rem 2rem;
   border-radius: 10px;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1);
+  transition: border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), transform 320ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-.industryCard:hover {
+.industryRow:hover {
   border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--fzs-shadow-md);
+  transform: translateX(4px);
 }
 
-[data-theme='dark'] .industryCard {
+[data-theme='dark'] .industryRow {
   border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .industryCard:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .industryIcon {
   color: var(--ifm-color-primary);
-  display: inline-flex;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.industryBody {
+  flex: 1;
 }
 
 .industryTitle {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .industryDesc {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
   line-height: 1.6;
   margin: 0;
+}
+
+@media (max-width: 576px) {
+  .industryRow {
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+  }
 }
 
 /* --- Explore / Navigation Cards --- */
@@ -356,7 +357,7 @@
   .ctaArrow,
   .navCard,
   .whatWeDoCard,
-  .industryCard {
+  .industryRow {
     transition: none;
   }
 }

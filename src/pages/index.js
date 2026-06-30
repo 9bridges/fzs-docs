@@ -8,10 +8,10 @@ import useReveal from '../hooks/useReveal';
 import Icon from '../components/Icon';
 
 const STATS = [
-  { value: '30+', label: '支持数据库' },
-  { value: '10+', label: '年深耕经验' },
+  { value: '30+', label: '数据库适配' },
+  { value: '10+', label: '年行业深耕' },
   { value: '亚秒级', label: '同步延迟' },
-  { value: '7×24', label: '技术支持' },
+  { value: '7×24', label: '应急响应' },
 ];
 
 const VERTICALS = [
@@ -41,25 +41,25 @@ const NAVIGATIONS = [
   {
     icon: 'spark',
     title: '产品介绍',
-    desc: '查看 FZS 的核心能力、部署方式和适用场景',
+    desc: '核心能力、部署架构与数据库兼容性一览',
     to: '/product',
   },
   {
     icon: 'book',
     title: '技术文档',
-    desc: '查看部署指南、操作手册和 API 参考，快速上手',
+    desc: '部署指南、操作手册与 API 参考，按步骤完成配置',
     to: '/docs/quick-start',
   },
   {
     icon: 'briefcase',
     title: '客户案例',
-    desc: '了解证券容灾、基金数据同步与医疗集成等典型场景',
+    desc: '证券容灾、基金同步、医疗集成 — 真实场景下的实现路径与效果',
     to: '/cases',
   },
   {
     icon: 'chat',
     title: '联系我们',
-    desc: '获取试用授权或洽谈商务合作',
+    desc: '申请试用授权或洽谈商务合作',
     to: '/contact',
   },
 ];
@@ -100,14 +100,17 @@ function Stats() {
   return (
     <section className={styles.stats} data-reveal="">
       <div className={styles.sectionInner}>
-        <div className={styles.statGrid}>
-          {STATS.map(({ value, label }) => (
-            <div key={label} className={styles.statItem}>
-              <span className={styles.statValue}>{value}</span>
-              <span className={styles.statLabel}>{label}</span>
-            </div>
+        <p className={styles.statGrid}>
+          {STATS.map(({ value, label }, i) => (
+            <span key={label}>
+              {i > 0 && <span className={styles.statDivider} aria-hidden="true">·</span>}
+              <span className={styles.statItem}>
+                <span className={styles.statValue}>{value}</span>
+                <span className={styles.statLabel}>{label}</span>
+              </span>
+            </span>
           ))}
-        </div>
+        </p>
       </div>
     </section>
   );
@@ -119,12 +122,12 @@ function WhatWeDo() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle} data-reveal="">我们做什么</h2>
         <p className={styles.sectionSubtitle}>
-          围绕数据同步、容灾和迁移需求，提供企业级数据流转基础设施
+          从实时同步到灾备切换，覆盖企业数据流转的核心场景
         </p>
         <div className={styles.whatWeDoGrid} data-reveal="" data-stagger="">
           <div className={styles.whatWeDoCard}>
             <h3>数据同步</h3>
-            <p>基于日志捕获的全量＋增量一体化同步，支持 30+ 主流与国产数据库之间的异构实时流转。</p>
+            <p>基于日志捕获的全量＋增量同步，支持 30+ 主流与国产数据库之间的异构实时流转。</p>
           </div>
           <div className={styles.whatWeDoCard}>
             <h3>容灾备份</h3>
@@ -132,7 +135,7 @@ function WhatWeDo() {
           </div>
           <div className={styles.whatWeDoCard}>
             <h3>信创迁移</h3>
-            <p>深度适配达梦、金仓、OceanBase 等国产数据库，助力企业平滑完成信创替代。</p>
+            <p>深度适配达梦、金仓、OceanBase 等国产数据库，在线完成从商业数据库到信创平台的无中断迁移。</p>
           </div>
         </div>
       </div>
@@ -146,14 +149,16 @@ function Industries() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle} data-reveal="">服务领域</h2>
         <p className={styles.sectionSubtitle}>
-          面向关键业务场景，为行业客户提供稳定可靠的数据同步能力
+          面向关键业务场景，为证券、期货、基金与医疗行业客户提供经过生产验证的数据同步能力
         </p>
-        <div className={styles.industryGrid} data-reveal="" data-stagger="">
+        <div className={styles.industryList} data-reveal="" data-stagger="">
           {VERTICALS.map(({ icon, title, desc }) => (
-            <div key={title} className={styles.industryCard}>
-              <span className={styles.industryIcon}><Icon name={icon} /></span>
-              <h3 className={styles.industryTitle}>{title}</h3>
-              <p className={styles.industryDesc}>{desc}</p>
+            <div key={title} className={styles.industryRow}>
+              <span className={styles.industryIcon}><Icon name={icon} size={32} /></span>
+              <div className={styles.industryBody}>
+                <h3 className={styles.industryTitle}>{title}</h3>
+                <p className={styles.industryDesc}>{desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -168,7 +173,7 @@ function Explore() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle} data-reveal="">深入了解</h2>
         <p className={styles.sectionSubtitle}>
-          从产品介绍到部署文档，找到您现在最需要的内容
+          从产品能力到部署文档，选择您关注的内容
         </p>
         <div className={styles.navGrid} data-reveal="" data-stagger="">
           {NAVIGATIONS.map(({ icon, title, desc, to }) => (
@@ -188,11 +193,11 @@ export default function Home() {
   useReveal();
   return (
     <Layout
-      title="国内领先的数据同步方案供应商"
-      description="北京九桥同步软件有限公司 — 专注于数据同步、数据容灾与信创迁移的企业级软件服务商。服务证券、期货、基金与医疗等行业客户。"
+      title="企业级数据同步与容灾平台"
+      description="FZS 数据同步平台 — 基于日志捕获的异构数据库实时同步，支持 Oracle、MySQL、达梦、金仓等 30+ 数据库，服务证券、期货、基金与医疗行业。"
     >
       <Head>
-        <title>九桥同步 | 国内领先的数据同步方案供应商</title>
+        <title>九桥同步 | 企业级数据同步与容灾平台</title>
       </Head>
       <Hero />
       <main>

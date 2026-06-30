@@ -6,10 +6,19 @@ import styles from './product.module.css';
 import useReveal from '../hooks/useReveal';
 import Icon from '../components/Icon';
 
-const DATABASES = [
-  'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'DB2',
-  'OceanBase', 'TiDB', 'GaussDB', 'openGauss', '达梦 DM',
-  '人大金仓 Kingbase', 'LightDB', 'MogDB', 'SUNDB',
+const DATABASE_GROUPS = [
+  {
+    label: '商业数据库',
+    items: ['Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'DB2'],
+  },
+  {
+    label: '国产数据库',
+    items: ['达梦 DM', '人大金仓 Kingbase', 'LightDB', 'MogDB', 'SUNDB'],
+  },
+  {
+    label: '分布式 / NewSQL',
+    items: ['OceanBase', 'TiDB', 'GaussDB', 'openGauss'],
+  },
 ];
 
 const FAQS = [
@@ -111,7 +120,7 @@ function ArchitectureSection() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionTitle} data-reveal="">部署架构</h2>
         <p className={styles.sectionSubtitle}>
-          三种部署方式，适配不同的 IT 架构与安全要求
+          三种部署模式，对应不同的 IT 架构与安全合规要求
         </p>
         <div className={styles.archGrid} data-reveal="" data-stagger="">
           {ARCHITECTURES.map(({ name, tag, desc }) => (
@@ -140,11 +149,18 @@ function DatabaseSection() {
         <p className={styles.sectionSubtitle}>
           覆盖主流商业数据库与国产信创数据库，支持 30+ 数据库之间的异构同步
         </p>
-        <div className={styles.dbGrid} data-reveal="" data-stagger="">
-          {DATABASES.map((name) => (
-            <span key={name} className={styles.dbChip}>{name}</span>
+        <div className={styles.dbGroups} data-reveal="" data-stagger="">
+          {DATABASE_GROUPS.map(({ label, items }) => (
+            <div key={label} className={styles.dbGroup}>
+              <h3 className={styles.dbGroupLabel}>{label}</h3>
+              <div className={styles.dbGrid}>
+                {items.map((name) => (
+                  <span key={name} className={styles.dbChip}>{name}</span>
+                ))}
+              </div>
+            </div>
           ))}
-          <span className={styles.dbChipMore}>30+ 持续适配中</span>
+          <p className={styles.dbMore}>30+ 持续适配中</p>
         </div>
       </div>
     </section>
@@ -260,7 +276,7 @@ export default function ProductPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>FZS 数据同步平台</h1>
           <p className={styles.heroSubtitle}>
-            基于日志捕获的全量加增量一体化引擎，支持 30+ 数据库之间的实时异构同步。
+            基于数据库日志捕获，全量迁移与增量实时同步一体化运行。支持 30+ 数据库之间的异构流转。
           </p>
         </div>
       </header>

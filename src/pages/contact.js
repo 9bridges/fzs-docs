@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className={styles.heroInner}>
           <h1 className={styles.heroTitle}>联系我们</h1>
           <p className={styles.heroSubtitle}>
-            了解 FZS 数据同步平台、申请试用授权或洽谈合作，我们的商务团队随时为您服务
+            申请试用授权、咨询商务合作或获取技术支持 — 我们的团队快速响应您的需求
           </p>
         </div>
       </header>
