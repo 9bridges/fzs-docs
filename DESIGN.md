@@ -2,7 +2,7 @@
 name: FZS 数据同步平台 Documentation & Marketing Site
 description: Company website and product docs for FZS by 九桥同步 — precision branding for enterprise financial infrastructure.
 colors:
-  brand:        "oklch(40% 0.185 25)"
+  brand:        "oklch(40% 0.16 25)"
   brand-deep:   "oklch(30% 0.155 25)"
   brand-pale:   "oklch(95.5% 0.010 25)"
   ground:       "oklch(97.5% 0.005 50)"
@@ -20,30 +20,30 @@ colors:
   dark-brand:   "oklch(66% 0.17 27)"
 typography:
   display:
-    fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "clamp(2.4rem, 5vw, 3.8rem)"
     fontWeight: 800
     lineHeight: 1.15
     letterSpacing: "-0.03em"
   headline:
-    fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "clamp(1.75rem, 3.5vw, 2.4rem)"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "1.25rem"
     fontWeight: 600
     lineHeight: 1.35
     letterSpacing: "-0.01em"
   body:
-    fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.7
   label:
-    fontFamily: "'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
+    fontFamily: "'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.5
@@ -99,26 +99,26 @@ components:
 
 Where the fzs-slides deck is "The Instrument Panel" — a calibrated readout for a meeting-room projector — the website is the same instrument made browsable. A financial IT director evaluating data synchronization infrastructure opens this site at a desk, probably with two tabs open and a half-formed opinion about the vendor already. The design must clear that bar in under five seconds: technical depth is evident, claims are specific, and the visual system communicates the same precision as the product itself.
 
-The color system, typographic rationale, and elevation philosophy are identical to fzs-slides. The palette derives from the 九桥同步 logo's brushstroke: a deep crimson at `oklch(40% 0.185 25)` (approximately `#8c1a20`) anchors every structural landmark — the navbar brand mark, hero section heading accent, primary buttons, table headers in the docs, and CTA bands. This is not a marketing-accent blue; it is the brand's actual color used with structural intent. The warm near-white ground (`oklch(97.5% 0.005 50)`) prevents clinical whiteness and reads as authoritative rather than sterile.
+The color system derives from the 九桥同步 logo's brushstroke: a deep crimson at `oklch(40% 0.16 25)` (the in-gamut sRGB value; the theoretical `oklch(40% 0.185 25)` clips and is documented but not used in production CSS). Brand Crimson anchors every structural landmark — the navbar brand mark, hero section heading accent, primary buttons, table headers in the docs, and CTA bands. This is not a marketing-accent blue; it is the brand's actual color used with structural intent. The warm near-white ground (`oklch(97.5% 0.005 50)`) prevents clinical whiteness and reads as authoritative rather than sterile.
 
-Typography uses PingFang SC (or the system sans stack) at every level — no Kaiti SC on web, where long-form prose and dense documentation favor legibility over calligraphic texture. The font weight range carries all hierarchy: 800 for hero display, 700 for section headlines, 600 for component titles, 400 for body. Fira Code is the single mono voice across both systems.
+Typography uses a two-font system: **Outfit** for display/headline hierarchy (geometric sans with tight spacing for marketing impact) and **Noto Sans SC** for body, titles, and labels (pragmatic CJK legibility for long-form documentation). The weight range carries hierarchy: 800 for hero display, 700 for section headlines, 600 for component titles, 400 for body. Fira Code is the single mono voice across both systems. This pairing was chosen over the original PingFang SC-only stack: Outfit brings deliberate geometric character to marketing headings that a system sans cannot, while Noto Sans SC provides reliable CJK rendering across platforms.
 
 This design explicitly rejects: SaaS-startup sky blue (the current fzs-docs default was inherited from Docusaurus — it is not the brand); decorative gradients on backgrounds or hero text (`background-clip: text` is banned); border-left accent stripes on admonitions; the ghost-card pattern (1px border plus wide shadow); and the DSG Data aesthetic of cluttered banner sliders with no hierarchy.
 
 **Key Characteristics:**
 - Brand crimson as structural color: navbar, hero accent, primary CTA, table headers, active nav indicators
 - Warm near-white ground: `oklch(97.5% 0.005 50)` throughout — never pure `#fff`, never sky-tinted
-- Single sans stack: PingFang SC / system-ui, weight contrast as the hierarchy engine
-- Flat elevation: surfaces are flat at rest; only product screenshots carry a light ambient shadow
-- Chinese-first typesetting: CJK line-break rules, wrap-word handling for inline code, strict line-length for prose
+- Dual-font system: Outfit (display + headlines) paired with Noto Sans SC (body + UI). Geometric-meets-pragmatic.
+- Flat at rest, intentional shadows on interaction: crimson-tinted shadow tokens lift cards on hover only
 - Full dark-mode: deep warm charcoal ground with a lightened brand crimson (`oklch(66% 0.17 27)`) as primary
+- Chinese-first typesetting: CJK line-break rules, wrap-word handling for inline code, strict line-length for prose
 
 ## 2. Colors: The Logo Palette
 
 A **Restrained** palette on the commitment axis: the brand crimson appears in structural roles (navbar, CTAs, table headers, active indicators) covering roughly 5–15% of any given page surface. The near-white ground and ink carry the rest. No second decorative accent is defined.
 
 ### Primary
-- **Brand Crimson** `oklch(40% 0.185 25)` / approx. `#8c1a20`: The identity anchor, taken from the 九桥同步 logo's brushstroke hue. Used in: navbar active indicator, hero heading accent text, primary buttons, doc table header backgrounds, CTA section backgrounds, the `--ifm-color-primary` Docusaurus token. Dark, authoritative, never aggressive.
+- **Brand Crimson** `oklch(40% 0.16 25)` / approx. `#8c1a20`: The identity anchor, taken from the 九桥同步 logo's brushstroke hue. Used in: navbar active indicator, hero heading accent text, primary buttons, doc table header backgrounds, CTA section backgrounds, the `--ifm-color-primary` Docusaurus token. Dark, authoritative, never aggressive. Note: the theoretical `oklch(40% 0.185 25)` exceeds the sRGB gamut and is clipped by browsers; `0.16` is the honest in-gamut value used in production CSS.
 - **Brand Deep** `oklch(30% 0.155 25)` / approx. `#5e0f13`: Hover and pressed state for brand-colored interactive elements. The same hue family, pushed toward near-black.
 - **Brand Pale** `oklch(95.5% 0.010 25)` / approx. `#f9f3f3`: A barely-visible tint of the brand hue. Used as background for highlighted grid cells, hovered table rows, and tag/badge backgrounds.
 
@@ -150,11 +150,13 @@ A **Restrained** palette on the commitment axis: the brand crimson appears in st
 
 ## 3. Typography
 
-**Body / UI Font:** PingFang SC (`'PingFang SC', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif`). The system sans stack for Chinese + Latin. On macOS this renders as PingFang SC; on Windows as Segoe UI + system Chinese. Six weight variants on macOS enable genuine weight hierarchy with no network dependency.
+**Display Font:** Outfit (`'Outfit', 'PingFang SC', system-ui, -apple-system, 'Segoe UI', sans-serif`). A geometric sans with tight spacing and strong weight contrast. Used for hero H1s and section headlines on marketing pages. Loaded from Google Fonts (weight 500–800).
+
+**Body / UI Font:** Noto Sans SC (`'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`). A pragmatic CJK-first sans with reliable rendering across platforms. Used for body text, card titles, labels, navigation, and all documentation prose. Loaded from Google Fonts (weight 400–700).
 
 **Mono Font:** Fira Code (`'Fira Code', 'Cascadia Code', 'Consolas', monospace`). Identical to fzs-slides. All code samples, database identifiers, configuration values, version strings, and CLI commands.
 
-**Character:** A single humanist sans at multiple weights, not a paired multi-family system. Weight contrast alone (400/600/700/800) generates hierarchy clearly enough for this register. The mono font provides the only texture contrast — code samples feel technically distinct without a second display typeface.
+**Character:** A geometric-display + pragmatic-body pairing. Outfit brings deliberate character to marketing headings — the geometric letterforms read as designed rather than default-system. Noto Sans SC handles CJK body text with proper glyph coverage and weight range. The contrast is geometric vs. humanist-pragmatic, not two similar sans families. Fira Code provides the only texture contrast — code samples feel technically distinct.
 
 ### Hierarchy
 - **Display** (weight 800, `clamp(2.4rem, 5vw, 3.8rem)`, line-height 1.15, letter-spacing −0.03em): Hero H1 on marketing pages only. One per page. `text-wrap: balance` to prevent orphaned words on narrow viewports.
@@ -171,23 +173,26 @@ A **Restrained** palette on the commitment axis: the brand crimson appears in st
 
 ## 4. Elevation
 
-This system is **flat by default**, identical to fzs-slides. Depth is conveyed through:
+This system is **flat at rest, with intentional shadows on interaction**. Depth is conveyed through:
 
-1. **Background tinting**: Surface (`oklch(99.2% 0.003 50)`) reads as elevated against Ground (`oklch(97.5% 0.005 50)`) through a ~2.5L lightness difference — subtle but effective.
+1. **Background tinting**: Surface (`oklch(99.2% 0.003 50)`) reads as elevated against Ground (`oklch(97.5% 0.005 50)`) through a ~2.5L lightness difference.
 2. **Type scale contrast**: Large display text draws the eye before smaller body text.
 3. **Divider lines**: 1px borders in Divider color (`oklch(91% 0.007 50)`) for cards, table cells, sidebar separators.
-4. **Dark mode inversion**: Dark Surface (`oklch(19% 0.012 30)`) reads as elevated against Dark Ground (`oklch(14% 0.010 30)`).
-
-**Shadows are prohibited except for product screenshots.** Documentation screenshots embedded in articles may carry a light ambient shadow (`box-shadow: 0 4px 12px rgba(0,0,0,0.08)`) to distinguish them from the page surface. This is functional, not decorative. Buttons and cards must not use wide shadows (blur ≥ 16px).
+4. **Crimson-tinted hover shadows**: Cards and interactive surfaces lift on hover with brand-tinted shadows (not pure black). Shadows are crimson-hued to feel integrated with the palette rather than floating on top of it.
+5. **Dark mode inversion**: Dark Surface (`oklch(19% 0.012 30)`) reads as elevated against Dark Ground (`oklch(14% 0.010 30)`).
 
 ### Shadow Vocabulary
-- **Screenshot ambient** (`box-shadow: 0 4px 12px rgba(0,0,0,0.08)`): Product screenshots in documentation articles only.
-- **Hover lift on interactive cards** (`box-shadow: 0 2px 8px rgba(0,0,0,0.06)`): Cards that are links (nav cards, etc.) may use a tight 8px-max shadow on hover only — not at rest.
+- **`--fzs-shadow-sm`** (`0 1px 2px oklch(40% 0.06 25 / 0.06)`): Subtle ambient lift for small interactive elements.
+- **`--fzs-shadow-md`** (`0 8px 20px oklch(40% 0.08 25 / 0.10)`): Card hover lift. The primary interaction shadow.
+- **`--fzs-shadow-lg`** (`0 14px 36px oklch(40% 0.10 25 / 0.14)`): Elevated panels, dropdowns, modal surfaces.
+- **Screenshot ambient** (`box-shadow: 0 4px 12px rgba(0,0,0,0.08)`): Product screenshots in documentation articles only. Functional, not decorative.
 
 ### Named Rules
-**The Flat-By-Default Rule.** All surfaces are flat at rest. Shadows appear only on product screenshots (functional distinction) and as hover state on link-cards (affordance). Any resting shadow on a card or button is a design error.
+**The Crimson-Shadow Rule.** All shadows are tinted toward the brand hue, not pure black. `fzs-shadow-md` uses `oklch(40% 0.08 25 / 0.10)` — crimson, not neutral gray. This keeps shadows feeling like part of the palette rather than generic UI chrome.
 
-**The Ghost-Card Ban.** `border: 1px solid X` and `box-shadow` with blur ≥ 16px on the same element is prohibited. Pick one: a single solid border at Brand Crimson or Divider, OR a defined shadow at max 8px blur. Never both.
+**The Flat-At-Rest Rule.** Surfaces are flat at rest. Shadows appear only on hover (`fzs-shadow-md` on cards) or for functional layering (`fzs-shadow-lg` on dropdowns/modals). Any resting shadow on a card or button is a design error.
+
+**The Ghost-Card Ban.** `border: 1px solid X` and `box-shadow` with blur ≥ 16px on the same element is prohibited. Pick one: a single solid border at Brand Crimson or Divider, OR a defined shadow at max 8px blur (for hover). Never both as decoration.
 
 ## 5. Components
 
@@ -200,16 +205,19 @@ This system is **flat by default**, identical to fzs-slides. Depth is conveyed t
 
 ### Buttons
 - **Shape:** 6px radius (`{rounded.sm}`). Not pill, not square. Small functional radius only.
-- **Primary:** Background `{colors.brand}`, text `{colors.surface}`, padding 12px 32px. Hover: `{colors.brand-deep}`, `translateY(-1px)`. Active: `translateY(0)`. No wide drop shadow.
-- **Secondary:** Transparent background, `{colors.ink}` text, 2px solid `{colors.divider}` border. Hover: border-color shifts to `{colors.brand}`, text shifts to `{colors.brand}`.
-- **Focus ring:** `outline: 2px solid {colors.brand}`, `outline-offset: 3px`. Always visible on `:focus-visible`.
+- **Primary (ctaPrimary):** Background `{colors.brand}`, text `{colors.surface}`, padding `0.75rem 0.85rem 0.75rem 2rem` (asymmetric: left-heavy for icon-on-right layout). Includes a rounded arrow container (999px pill, rgba white 0.16 background). Hover: `{colors.brand-deep}`, `translateY(-1px)`, `{fzs-shadow-lg}`. Arrow translates `(2px, -1px)` on hover. Active: `translateY(0) scale(0.98)`. Transition: `360ms cubic-bezier(0.32, 0.72, 0, 1)`.
+- **Secondary (ctaSecondary):** Transparent background, `{colors.ink}` text, 2px solid Divider border, padding `0.75rem 2rem`. Hover: border-color shifts to `{colors.brand}`, text shifts to `{colors.brand}`, `translateY(-1px)`. Transition: `180ms ease`.
+- **Focus ring:** `outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 40%, white)`, `outline-offset: 3px`. On `:focus-visible` for both variants.
+- **Reduced motion:** All transitions disabled. `transition: none`.
 
 ### Cards
-- **Shape:** 8px radius (`{rounded.md}`). Maximum. No 12px+, no pill-shaped cards.
-- **Rest state:** Background `{colors.surface}`, 1px solid `{colors.divider}` border. No resting shadow.
-- **Hover state (link cards only):** `translateY(-2px)`, shadow max 8px blur.
-- **Padding:** `{spacing.xl}` (40px) on desktop, `{spacing.lg}` (24px) on mobile.
+- **Shape:** 10px radius (actual code value). Cards top out at 12px max.
+- **Rest state:** Background Surface color, 1px solid Divider border. No resting shadow.
+- **Hover state (link/interactive cards only):** `translateY(-2px)`, border-color shifts to Brand Crimson, `fzs-shadow-md` applied. Transition: `320ms cubic-bezier(0.32, 0.72, 0, 1)`.
+- **Padding:** 2rem (32px) on desktop.
+- **Dark mode:** Border changes to Emphasis-300; hover shadow shifts to `rgba(0,0,0,0.3)` (neutral black instead of crimson-tinted — avoids warm-on-warm washout).
 - **No nested cards.** A card inside a card is always wrong.
+- **Variety mandate.** Industry cards, nav cards, value cards, and case cards each use distinct internal layouts. Never repeat the same icon-heading-text card grid across multiple sections.
 
 ### Data Tables (Documentation)
 - **Header row:** Background `{colors.brand}`, text `{colors.surface}`, Fira Code or PingFang SC Semibold, 12px padding. Consistent with fzs-slides table headers.
@@ -249,5 +257,6 @@ This system is **flat by default**, identical to fzs-slides. Depth is conveyed t
 - **Don't** use `border-left` or `border-right` greater than 1px as a colored accent on any card, alert, admonition, or list item. The current custom.css admonition style (`border-left: 5px solid`) is explicitly banned. Rewrite with tinted backgrounds and full borders.
 - **Don't** use wide drop shadows (blur ≥ 16px) on buttons or cards at rest. The ghost-card pattern (1px border + wide shadow) is banned.
 - **Don't** use `border-radius` greater than 12px on cards. The system tops out at 8px (`{rounded.md}`) for cards. Pill shapes are reserved for tags and badges only.
-- **Don't** use SaaS startup aesthetics: no pastel-tinted panel sections (soft blue background sections), no hero-metric stat grids, no identical icon-heading-text card grids repeated section after section.
+- **Don't** use SaaS startup aesthetics: no pastel-tinted panel sections (soft blue background sections), no hero-metric stat grids, no identical icon-heading-text card grids repeated section after section. Specifically avoid the info2soft.cn pattern: dense product catalogs, metric-counter hero sections, competing CTA bands, and blue-accented enterprise SaaS defaults.
 - **Don't** use pure `#ffffff` or `#000000`. Every neutral is warm-tinted toward the brand hue. Ground is `oklch(97.5% 0.005 50)`, not `#fff`. Ink is `oklch(18% 0.012 30)`, not `#000`.
+- **Don't** use the DSG Data aesthetic (dsgdata.com): cluttered banner sliders, competing visual elements with no hierarchy, dated enterprise visual language.

@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T00:00:00.000Z",
+  "title": "Design System: FZS 数据同步平台 Documentation & Marketing Site",
+  "extensions": {
+    "colorMeta": {
+      "brand": {
+        "role": "primary",
+        "displayName": "Brand Crimson",
+        "canonical": "oklch(40% 0.16 25)",
+        "theoretical": "oklch(40% 0.185 25)",
+        "tonalRamp": [
+          "oklch(15% 0.08 25)",
+          "oklch(22% 0.132 25)",
+          "oklch(27% 0.153 25)",
+          "oklch(33% 0.170 25)",
+          "oklch(40% 0.16 25)",
+          "oklch(52% 0.175 25)",
+          "oklch(65% 0.145 25)",
+          "oklch(95.5% 0.010 25)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Warm Ground",
+        "canonical": "oklch(97.5% 0.005 50)",
+        "tonalRamp": [
+          "oklch(14% 0.010 30)",
+          "oklch(19% 0.012 30)",
+          "oklch(91% 0.007 50)",
+          "oklch(93% 0.005 50)",
+          "oklch(95.5% 0.010 25)",
+          "oklch(97.5% 0.005 50)",
+          "oklch(99.2% 0.003 50)",
+          "oklch(99.8% 0.001 50)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "oklch(18% 0.012 30)",
+        "tonalRamp": [
+          "oklch(12% 0.008 30)",
+          "oklch(18% 0.012 30)",
+          "oklch(28% 0.012 30)",
+          "oklch(38% 0.010 30)",
+          "oklch(52% 0.010 35)",
+          "oklch(66% 0.008 40)",
+          "oklch(80% 0.005 50)",
+          "oklch(93% 0.005 50)"
+        ]
+      },
+      "s-red": {
+        "role": "status",
+        "displayName": "Status Red",
+        "canonical": "oklch(52% 0.20 25)"
+      },
+      "s-amber": {
+        "role": "status",
+        "displayName": "Status Amber",
+        "canonical": "oklch(70% 0.14 72)"
+      },
+      "s-blue": {
+        "role": "status",
+        "displayName": "Status Blue",
+        "canonical": "oklch(52% 0.14 245)"
+      },
+      "s-green": {
+        "role": "status",
+        "displayName": "Status Green",
+        "canonical": "oklch(48% 0.13 155)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero H1 on marketing pages. One per page. Outfit geometric sans."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings (H2). Outfit for marketing, Noto Sans SC for docs."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-section headings (H3), card titles, nav section headers."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Marketing prose and documentation body. Max line length 65–75ch."
+      }
+    },
+    "shadows": [
+      {
+        "name": "fzs-shadow-sm",
+        "value": "0 1px 2px oklch(40% 0.06 25 / 0.06)",
+        "purpose": "Subtle ambient lift for small interactive elements."
+      },
+      {
+        "name": "fzs-shadow-md",
+        "value": "0 8px 20px oklch(40% 0.08 25 / 0.10)",
+        "purpose": "Card hover lift. The primary interaction shadow."
+      },
+      {
+        "name": "fzs-shadow-lg",
+        "value": "0 14px 36px oklch(40% 0.10 25 / 0.14)",
+        "purpose": "Elevated panels, dropdowns, modal surfaces, primary CTA hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.32, 0.72, 0, 1)",
+        "purpose": "Primary easing for card hover transforms, CTA transitions (320–360ms)."
+      },
+      {
+        "name": "ease-standard",
+        "value": "ease",
+        "purpose": "Default easing for secondary button state changes (180ms)."
+      },
+      {
+        "name": "entrance-fadeUp",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Hero entrance animation (600ms, staggered 80ms offsets)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "576px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "996px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hero and section-level primary call-to-action. Asymmetric padding with arrow pill on right.",
+      "html": "<a class=\"ds-cta-primary\" href=\"#\">了解产品<div class=\"ds-cta-arrow\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 5l7 7-7 7\"/></svg></div></a>",
+      "css": ".ds-cta-primary { background-color: oklch(40% 0.16 25); border: 1px solid oklch(40% 0.16 25); color: #fff; font-weight: 600; font-family: 'Noto Sans SC', system-ui, sans-serif; font-size: 1rem; padding: 0.75rem 0.85rem 0.75rem 2rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.85rem; cursor: pointer; text-decoration: none; transition: transform 360ms cubic-bezier(0.32, 0.72, 0, 1), background-color 360ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 360ms cubic-bezier(0.32, 0.72, 0, 1); } .ds-cta-primary:hover { background-color: oklch(33% 0.170 25); border-color: oklch(33% 0.170 25); transform: translateY(-1px); box-shadow: 0 14px 36px oklch(40% 0.10 25 / 0.14); } .ds-cta-primary:active { transform: translateY(0) scale(0.98); } .ds-cta-primary:focus-visible { outline: 3px solid color-mix(in srgb, oklch(40% 0.16 25) 40%, white); outline-offset: 3px; } .ds-cta-arrow { display: inline-flex; align-items: center; justify-content: center; width: 1.9rem; height: 1.9rem; border-radius: 999px; background: rgba(255,255,255,0.16); transition: transform 360ms cubic-bezier(0.32, 0.72, 0, 1); } .ds-cta-primary:hover .ds-cta-arrow { transform: translate(2px, -1px); }"
+    },
+    {
+      "name": "Secondary CTA Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary call-to-action. Ghost style with border that reveals brand color on hover.",
+      "html": "<a class=\"ds-cta-secondary\" href=\"#\">查看文档</a>",
+      "css": ".ds-cta-secondary { background-color: transparent; border: 2px solid oklch(91% 0.007 50); color: oklch(18% 0.012 30); font-weight: 600; font-family: 'Noto Sans SC', system-ui, sans-serif; font-size: 1rem; padding: 0.75rem 2rem; border-radius: 6px; display: inline-block; cursor: pointer; text-decoration: none; transition: transform 180ms ease, border-color 180ms ease, color 180ms ease; } .ds-cta-secondary:hover { border-color: oklch(40% 0.16 25); color: oklch(40% 0.16 25); transform: translateY(-1px); } .ds-cta-secondary:active { transform: translateY(0) scale(0.98); } .ds-cta-secondary:focus-visible { outline: 3px solid color-mix(in srgb, oklch(40% 0.16 25) 40%, white); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Interactive link card used in the Explore section. Icon + title + description.",
+      "html": "<a class=\"ds-nav-card\" href=\"#\"><svg class=\"ds-nav-icon\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"oklch(40% 0.16 25)\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v6M12 15v6M3 12h6M15 12h6\"/></svg><div class=\"ds-nav-title\">产品介绍</div><p class=\"ds-nav-desc\">查看 FZS 的核心能力、部署方式和适用场景</p></a>",
+      "css": ".ds-nav-card { display: block; padding: 2rem; border-radius: 10px; border: 1px solid oklch(91% 0.007 50); background: oklch(99.2% 0.003 50); text-decoration: none; color: inherit; font-family: 'Noto Sans SC', system-ui, sans-serif; transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1); } .ds-nav-card:hover { border-color: oklch(40% 0.16 25); transform: translateY(-2px); box-shadow: 0 8px 20px oklch(40% 0.08 25 / 0.10); text-decoration: none; color: inherit; } .ds-nav-card:focus-visible { outline: 3px solid color-mix(in srgb, oklch(40% 0.16 25) 40%, white); outline-offset: 3px; } .ds-nav-card:active { transform: translateY(0) scale(0.98); } .ds-nav-icon { color: oklch(40% 0.16 25); display: inline-flex; margin-bottom: 0.75rem; } .ds-nav-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; color: oklch(18% 0.012 30); } .ds-nav-desc { font-size: 0.9rem; color: oklch(52% 0.010 35); line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Industry Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Industry vertical card with centered icon, title, and description. Used in the industries section.",
+      "html": "<div class=\"ds-industry-card\"><svg class=\"ds-industry-icon\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 17l5-5 4 4 7-8M16 8h4v4\"/></svg><div class=\"ds-industry-title\">证券</div><p class=\"ds-industry-desc\">交易系统容灾、行情数据实时同步、监管数据报送</p></div>",
+      "css": ".ds-industry-card { padding: 2rem; text-align: center; border-radius: 10px; background: oklch(99.2% 0.003 50); border: 1px solid oklch(91% 0.007 50); font-family: 'Noto Sans SC', system-ui, sans-serif; transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1), border-color 320ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 320ms cubic-bezier(0.32, 0.72, 0, 1); } .ds-industry-card:hover { border-color: oklch(40% 0.16 25); transform: translateY(-2px); box-shadow: 0 8px 20px oklch(40% 0.08 25 / 0.10); } .ds-industry-icon { color: oklch(40% 0.16 25); display: inline-flex; margin-bottom: 0.75rem; } .ds-industry-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; color: oklch(18% 0.012 30); } .ds-industry-desc { font-size: 0.9rem; color: oklch(52% 0.010 35); line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Stats Bar Item",
+      "kind": "custom",
+      "refersTo": "custom",
+      "description": "Individual stat item in the hero stats bar. Big crimson number + small muted label.",
+      "html": "<div class=\"ds-stat-item\"><span class=\"ds-stat-value\">30+</span><span class=\"ds-stat-label\">支持数据库</span></div>",
+      "css": ".ds-stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Noto Sans SC', system-ui, sans-serif; } .ds-stat-value { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: oklch(40% 0.16 25); line-height: 1.2; font-variant-numeric: tabular-nums; } .ds-stat-label { font-size: 0.9rem; color: oklch(52% 0.010 35); margin-top: 0.25rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Platform",
+    "overview": "Where the fzs-slides deck is \"The Instrument Panel\" — a calibrated readout for a meeting-room projector — the website is the same instrument made browsable. A financial IT director evaluating data synchronization infrastructure opens this site at a desk, probably with two tabs open and a half-formed opinion about the vendor already. The design must clear that bar in under five seconds: technical depth is evident, claims are specific, and the visual system communicates the same precision as the product itself.\n\nThe color system derives from the 九桥同步 logo's brushstroke: a deep crimson at oklch(40% 0.16 25) anchors every structural landmark. Typography uses a two-font system: Outfit for display/headline hierarchy and Noto Sans SC for body and UI. This design explicitly rejects: SaaS-startup sky blue, decorative gradients, border-left accent stripes, the ghost-card pattern, and the DSG Data / info2soft aesthetic of cluttered enterprise catalogs.",
+    "keyCharacteristics": [
+      "Brand crimson as structural color: navbar, hero accent, primary CTA, table headers, active nav indicators",
+      "Warm near-white ground: oklch(97.5% 0.005 50) — never pure #fff, never sky-tinted",
+      "Dual-font system: Outfit (display + headlines) paired with Noto Sans SC (body + UI)",
+      "Flat at rest, intentional shadows on interaction: crimson-tinted shadow tokens lift cards on hover only",
+      "Full dark-mode: deep warm charcoal ground with lightened brand crimson as primary",
+      "Chinese-first typesetting: CJK line-break rules, strict line-length for prose"
+    ],
+    "rules": [
+      {
+        "name": "The Logo Rule",
+        "body": "Brand Crimson is the 九桥同步 logo color, not a UX accent chosen for sky-blue \"tech\" associations. Any element that currently uses the Docusaurus sky blue is using an inherited default, not a brand color.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Accent Rule",
+        "body": "There is no second decorative accent color. Status colors (green/amber/red/blue) are functional only — sync state, severity indicators. Never use them for decoration or brand emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Gradient Rule",
+        "body": "No background-clip: text gradient fills on headings. No decorative linear-gradient hero backgrounds. Background gradients may appear only as a very subtle structural layering tool (max two stops, same hue family, ≤10% lightness difference).",
+        "section": "colors"
+      },
+      {
+        "name": "The Chinese-First Rule",
+        "body": "Font sizing, line-height, and weight decisions are calibrated for Simplified Chinese glyphs, then verified for Latin fallback. No typeface chosen for Latin appeal and treating Chinese as an afterthought.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight-Contrast Rule",
+        "body": "Hierarchy is expressed through weight jumps of ≥100 between adjacent levels. 800→700→600→400 for the full marketing stack.",
+        "section": "typography"
+      },
+      {
+        "name": "The Crimson-Shadow Rule",
+        "body": "All shadows are tinted toward the brand hue, not pure black. fzs-shadow-md uses oklch(40% 0.08 25 / 0.10) — crimson, not neutral gray.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "Surfaces are flat at rest. Shadows appear only on hover or for functional layering (dropdowns/modals). Any resting shadow on a card or button is a design error.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ghost-Card Ban",
+        "body": "border: 1px solid X and box-shadow with blur ≥ 16px on the same element is prohibited. Pick one: a single solid border, OR a defined shadow at max 8px blur (for hover). Never both as decoration.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Brand Crimson in structural roles: navbar active link, hero heading accent, primary buttons, doc table header rows, CTA band backgrounds.",
+      "Do use the warm near-white Ground (oklch(97.5% 0.005 50)) as the page background on marketing pages.",
+      "Do match fzs-slides: table headers in Brand Crimson, status colors functional only, no decorative gradients.",
+      "Do verify contrast at every step. Body text (Ink on Ground) must clear 4.5:1. Dark-mode brand on dark ground must also clear 4.5:1.",
+      "Do keep all borders 1px in Divider color.",
+      "Do use Fira Code for all code contexts — same as fzs-slides.",
+      "Do keep marketing page headings at text-wrap: balance and body text at text-wrap: pretty."
+    ],
+    "donts": [
+      "Don't use sky blue (#0284c7 or any Docusaurus Sky palette value) as a brand color. Replace with Brand Crimson.",
+      "Don't use background-clip: text with a gradient on headings.",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe.",
+      "Don't use wide drop shadows (blur ≥ 16px) on buttons or cards at rest. The ghost-card pattern is banned.",
+      "Don't use border-radius greater than 12px on cards. Pill shapes reserved for tags and badges only.",
+      "Don't use SaaS startup aesthetics: pastel-tinted sections, hero-metric grids, identical card grids. Avoid info2soft.cn patterns.",
+      "Don't use pure #ffffff or #000000. Every neutral is warm-tinted toward the brand hue.",
+      "Don't use the DSG Data aesthetic (dsgdata.com): cluttered banner sliders, no hierarchy, dated enterprise language."
+    ]
+  }
+}

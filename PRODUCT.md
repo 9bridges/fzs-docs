@@ -34,7 +34,8 @@ Emotional goals for a visitor after 30 seconds: confident (this company clearly 
 
 ## Anti-references
 
-- **dsgdata.com** — the direct anti-reference. Cluttered layouts, low-information-density banner sliders, competing visual elements with no clear hierarchy, dated "enterprise software" visual language. The site reads as complex; FZS should read as precise.
+- **dsgdata.com** — cluttered layouts, low-information-density banner sliders, competing visual elements with no clear hierarchy, dated "enterprise software" visual language. The site reads as complex; FZS should read as precise.
+- **info2soft.cn** — dense product-catalog landing page that buries differentiation under metric counters, carousel sections, and a sprawling product taxonomy. The "SaaS enterprise" reflex: blue accents, buzzword-heavy hero, competing CTA bands. FZS avoids this by leading with specific technical outcomes, not a feature catalog.
 - Generic "enterprise data" websites that lead with large abstract diagrams and buzzword stacks rather than specific technical outcomes.
 
 ## Design Principles
