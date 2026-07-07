@@ -1,8 +1,8 @@
 import React from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import styles from './cases.module.css';
-import useReveal from '../hooks/useReveal';
+import useReveal, { STAGGER } from '../hooks/useReveal';
 
 /*
  * TODO: 替换为真实客户案例。以下为示例模板，展示页面结构。
@@ -46,35 +46,48 @@ export default function CasesPage() {
       title="客户案例"
       description="九桥同步 FZS 数据同步平台客户案例 — 证券容灾、期货风控集成、基金估值同步与医疗数据汇聚等实战场景。"
     >
-      <header className={styles.hero}>
-        <div className={styles.heroInner}>
-          <h1 className={styles.heroTitle}>客户案例</h1>
-          <p className={styles.heroSubtitle}>
+      <header
+        className={clsx(
+          'px-8 pb-[4.5rem] pt-20 text-center',
+          'bg-[radial-gradient(55%_75%_at_12%_5%,oklch(65%_0.145_25/0.10),transparent_60%),linear-gradient(168deg,oklch(95.5%_0.010_25)_0%,oklch(97.5%_0.005_50)_55%,oklch(99.2%_0.003_50)_100%)]',
+          'dark:bg-[linear-gradient(168deg,oklch(12%_0.022_25)_0%,oklch(14%_0.010_30)_45%,oklch(15%_0.008_30)_100%)]',
+        )}
+      >
+        <div className="mx-auto max-w-[48rem]">
+          <h1 className="mb-4 text-[clamp(2rem,4.5vw,3rem)] font-extrabold tracking-[-0.02em] motion-safe:animate-fade-up">客户案例</h1>
+          <p className="text-[clamp(1.05rem,2vw,1.2rem)] leading-[1.7] text-emphasis-700 motion-safe:animate-fade-up motion-safe:[animation-delay:0.1s]">
             证券、期货、基金与医疗行业的典型实施场景 — 具体架构、真实指标、可验证的效果
           </p>
         </div>
       </header>
 
       <main>
-        <section className={styles.section}>
-          <div className={styles.sectionInner}>
-            <div className={styles.caseList} data-reveal="" data-stagger="">
+        <section className="px-8 py-20">
+          <div className="mx-auto max-w-[56rem] px-6">
+            <div className={clsx('flex flex-col gap-10', STAGGER)} data-reveal="" data-stagger="">
               {CASES.map(({ industry, title, challenge, solution, result }) => (
-                <article key={title} className={styles.caseCard}>
-                  <span className={styles.caseTag}>{industry}</span>
-                  <h2 className={styles.caseTitle}>{title}</h2>
-                  <div className={styles.caseBody}>
-                    <div className={styles.caseBlock}>
-                      <h3>业务挑战</h3>
-                      <p>{challenge}</p>
+                <article
+                  key={title}
+                  className={clsx(
+                    'rounded-[10px] border border-emphasis-200 bg-surface p-10 dark:border-emphasis-300',
+                    'motion-safe:transition-[transform,border-color,box-shadow] motion-safe:duration-[180ms]',
+                    'hover:-translate-y-0.5 hover:border-brand hover:shadow-fzs-lg dark:hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)]',
+                  )}
+                >
+                  <span className="mb-3 inline-block rounded text-[0.78rem] font-semibold uppercase tracking-[0.04em] text-brand bg-brand-lightest px-[0.65rem] py-[0.2rem] dark:bg-[oklch(66%_0.17_27/0.18)]">{industry}</span>
+                  <h2 className="mb-6 text-[1.35rem] font-bold">{title}</h2>
+                  <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-8">
+                    <div>
+                      <h3 className="mb-[0.35rem] text-[0.85rem] font-semibold uppercase tracking-[0.04em] text-emphasis-600">业务挑战</h3>
+                      <p className="text-[0.95rem] leading-[1.65] text-emphasis-800">{challenge}</p>
                     </div>
-                    <div className={styles.caseBlock}>
-                      <h3>解决方案</h3>
-                      <p>{solution}</p>
+                    <div>
+                      <h3 className="mb-[0.35rem] text-[0.85rem] font-semibold uppercase tracking-[0.04em] text-emphasis-600">解决方案</h3>
+                      <p className="text-[0.95rem] leading-[1.65] text-emphasis-800">{solution}</p>
                     </div>
-                    <div className={styles.caseBlock}>
-                      <h3>实施效果</h3>
-                      <p>{result}</p>
+                    <div>
+                      <h3 className="mb-[0.35rem] text-[0.85rem] font-semibold uppercase tracking-[0.04em] text-emphasis-600">实施效果</h3>
+                      <p className="text-[0.95rem] leading-[1.65] text-emphasis-800">{result}</p>
                     </div>
                   </div>
                 </article>
@@ -83,17 +96,23 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className={styles.sectionBg} data-reveal="">
-          <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>FZS 同样适用于您的场景</h2>
-            <p className={styles.ctaDesc}>
+        <section className="bg-emphasis-100 px-8 py-20">
+          <div className="mx-auto max-w-[56rem] px-6 text-center">
+            <h2 className="mb-2 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-[-0.02em]">FZS 同样适用于您的场景</h2>
+            <p className="mb-8 text-[1.05rem] text-emphasis-600">
               无论灾备切换、信创迁移还是数据集成 — FZS 提供经过生产验证的技术方案
             </p>
-            <div className={styles.ctaButtons}>
-              <Link className="button button--primary button--lg" to="/contact">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                className="button button--primary button--lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-px active:scale-[0.98]"
+                to="/contact"
+              >
                 联系我们
               </Link>
-              <Link className="button button--secondary button--lg" to="/docs/quick-start">
+              <Link
+                className="button button--secondary button--lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-px active:scale-[0.98]"
+                to="/docs/quick-start"
+              >
                 快速开始
               </Link>
             </div>
@@ -103,3 +122,4 @@ export default function CasesPage() {
     </Layout>
   );
 }
+

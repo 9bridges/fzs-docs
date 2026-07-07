@@ -5,36 +5,22 @@ import Link from '@docusaurus/Link';
 export default function NotFound() {
   return (
     <Layout title="页面未找到">
-      <main
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '60vh',
-          padding: '2rem',
-          textAlign: 'center',
-        }}
-      >
-        <h1 style={{ fontSize: '6rem', fontWeight: 800, lineHeight: 1, marginBottom: '0.5rem' }}>
-          404
-        </h1>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '1rem' }}>
-          页面未找到
-        </h2>
-        <p style={{ maxWidth: '36rem', color: 'var(--ifm-color-emphasis-600)', marginBottom: '2rem' }}>
+      <main className="flex min-h-[60vh] flex-col items-center justify-center px-8 py-8 text-center">
+        <h1 className="mb-2 text-[6rem] font-extrabold leading-none tracking-[-0.02em]">404</h1>
+        <h2 className="mb-4 text-2xl font-semibold">页面未找到</h2>
+        <p className="mb-8 max-w-[36rem] text-emphasis-600">
           您访问的页面不存在，或者链接已经更新。您可以返回首页，或从快速开始重新进入文档。
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/"
-            className="button button--primary button--lg"
+            className="button button--primary button--lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-px active:scale-[0.98]"
           >
             返回首页
           </Link>
           <Link
             to="/docs/quick-start"
-            className="button button--secondary button--lg"
+            className="button button--secondary button--lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-px active:scale-[0.98]"
           >
             快速开始
           </Link>
@@ -43,3 +29,4 @@ export default function NotFound() {
     </Layout>
   );
 }
+

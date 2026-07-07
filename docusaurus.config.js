@@ -5,6 +5,18 @@ const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
+/** Registers Tailwind + Autoprefixer into Docusaurus's PostCSS pipeline. */
+function tailwindPlugin() {
+  return {
+    name: 'tailwind-plugin',
+    configurePostCss(postcssOptions) {
+      postcssOptions.plugins.push(require('tailwindcss'));
+      postcssOptions.plugins.push(require('autoprefixer'));
+      return postcssOptions;
+    },
+  };
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '九桥同步',
@@ -57,6 +69,7 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-image-zoom',
+    tailwindPlugin,
     [
       '@docusaurus/plugin-client-redirects',
       {

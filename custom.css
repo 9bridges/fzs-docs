@@ -4,6 +4,13 @@
  * work well for content-centric websites.
  */
 
+/* Tailwind utilities only (preflight disabled in tailwind.config.js) —
+   used selectively for motion/spacing utilities, layered on top of the
+   existing Infima + brand token system below. Does not replace it. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Typography: native CJK system stack.
    PingFang SC (macOS/iOS) — 6 weights, Apple's premium screen-optimized CJK sans.
    Microsoft YaHei (Windows) — standard Chinese enterprise UI font.
@@ -186,56 +193,14 @@ table th {
 }
 
 /* ============================================================
-   Scroll Reveal — shared across all marketing pages
+   Scroll Reveal — smooth anchor scrolling site-wide.
+   Per-element reveal animations now live in Tailwind utility classes
+   (see src/utils/reveal.js), driven by the same data-reveal attribute
+   toggled by src/hooks/useReveal.js.
    ============================================================ */
-
-/* Stagger delay variables for nth children */
-[data-stagger] > *:nth-child(1) { --sd: 0s; }
-[data-stagger] > *:nth-child(2) { --sd: 0.06s; }
-[data-stagger] > *:nth-child(3) { --sd: 0.12s; }
-[data-stagger] > *:nth-child(4) { --sd: 0.18s; }
-[data-stagger] > *:nth-child(5) { --sd: 0.24s; }
-[data-stagger] > *:nth-child(6) { --sd: 0.30s; }
-[data-stagger] > *:nth-child(7) { --sd: 0.36s; }
-[data-stagger] > *:nth-child(8) { --sd: 0.42s; }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
-  /* Single-element reveal */
-  [data-reveal='waiting']:not([data-stagger]) {
-    opacity: 0;
-    transform: translateY(22px);
-    filter: blur(6px);
-    transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
-                transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
-                filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-  [data-reveal='visible']:not([data-stagger]) {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-    transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1),
-                transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
-                filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-
-  /* Staggered grid — children animate, parent is transparent */
-  [data-stagger][data-reveal='waiting'] > * {
-    opacity: 0;
-    transform: translateY(22px);
-    filter: blur(6px);
-    transition: opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
-                transform 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
-                filter 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s);
-  }
-  [data-stagger][data-reveal='visible'] > * {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-    transition: opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
-                transform 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s),
-                filter 0.7s cubic-bezier(0.32, 0.72, 0, 1) var(--sd, 0s);
-  }
 }
 
 /* ============================================================
