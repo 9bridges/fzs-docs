@@ -6,12 +6,6 @@ import useReveal from '../hooks/useReveal';
 
 const LEAD_REP = { name: '黄博康', img: '/img/contact/黄博康.png', position: '总经理助理' };
 
-const REPS = [
-  { name: '王勇', img: '/img/contact/王勇.png', position: '商务经理' },
-  { name: '王雪峰', img: '/img/contact/王雪峰.png', position: '商务经理' },
-  { name: '田雨', img: '/img/contact/田雨.png', position: '商务经理' },
-];
-
 export default function ContactPage() {
   useReveal();
   return (
@@ -46,23 +40,6 @@ export default function ContactPage() {
                 <p className={styles.repName}>{LEAD_REP.name}</p>
                 <p className={styles.repPosition}>{LEAD_REP.position}</p>
               </div>
-            </div>
-            <div className={styles.repGrid}>
-              {REPS.map(({ name, img, position }) => (
-                <div key={name} className={styles.repCard}>
-                  <img
-                    src={img}
-                    alt={`${name} 企业微信二维码`}
-                    className={styles.repQr}
-                    width="160"
-                    height="160"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <p className={styles.repName}>{name}</p>
-                  <p className={styles.repPosition}>{position}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
