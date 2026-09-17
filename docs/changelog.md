@@ -13,6 +13,55 @@ FZS 部署脚本下载：<a target="_blank" href="/script/gen.sh" download="gen.
 
 此页记录自 `v0.3.0` 以来 FZS 的版本发布信息，包括新增功能、功能优化、功能修复等。
 
+## 0.7.0
+
+> 日期：2026-09-16
+
+### 新功能
+
+- **AI 智能助手 (AI Agent)**
+  - 集成内置 AI 交互面板，支持自由拖拽缩放（Resizable）、尺寸记忆与遮罩联动自动收起
+  - 支持多模型切换与搜索筛选
+  - 集成链路运维工具调用（executeTool），支持直接通过自然语言查询链路状态、执行启动/停止/重置等操作
+  - 新增全量同步进度与链路指标压缩摘要机制，支持工具结果智能截断以适配大模型上下文
+  - 内置敏感字段自动脱敏（Data Redaction），保障系统运维与数据安全
+  - 支持系统诊断报告生成与导出下载
+- **数据源与目的地支持拓展**
+  - **HDFS 节点支持**：新增 HDFS 数据节点类型，支持目标端 Base Path、表格式配置及 Kerberos 认证
+  - **SFTP 存储目的地**：SinkConfig 新增 SFTP Base Path 配置支持
+  - **数据库前置要求指引 (DbPrerequisites)**：新增前置配置指引组件，动态展示达梦、Doris、MySQL、OceanBase、SelectDB、StarRocks 等数据库的前置部署说明与配置要求
+  - **Oracle ODBC 模式**：SourceConfig 新增 `oracleUseOdbc` 参数支持
+  - **新增数据库标识**：新增 Apache Iceberg、Apache Paimon、SelectDB 等数据库类型专属图标与资源
+- **同步与对象管理增强**
+  - **视图同步选择**：针对 Oracle 和 OceanBase 源端新增视图选择支持（基于 `export.map_view` 参数）
+  - **CSV 批量导入**：支持上传 CSV 文件批量导入同步表，提供实时格式校验与错误提示
+  - **按 Schema 列选择**：重构列选择逻辑，支持按 Schema 范围隔离与检索表列
+  - **排除表黑名单**：BigSelector 与链路表单支持黑名单（`mapNotTable`）配置，优先过滤无需同步的对象
+  - **目标端建表与清理模式**：SinkConfig 新增 `cleanTableMode` 配置项，支持按需定制目标端清理策略
+  - **源端缺失表容错**：SourceConfig 新增 `syncTableMissingIgnore` 配置项，避免因源端删表导致链路中断
+  - **Cron 表达式可视化组件**：新增可视化 Cron 表达式输入与实时校验组件，优化同步周期的配置体验
+- **高级参数 (Extra Configs)**
+  - GaussDB：新增 `enable_session_reporiginid` 参数以支持 GaussDB 会话复制处理
+  - Doris / StarRocks：新增 `drp_use_streamload` 等流加载与多值导入配置参数
+- **告警与系统运维**
+  - **告警频次与流控**：邮件和 Webhook 告警支持基于告警类型的频度限制（Throttling）与消息内容模式配置
+  - **Web Server 编辑**：支持直接在线编辑 Web Server IP 与端口并进行合法性校验
+  - **构建脱敏与品牌定制**：构建脚本支持品牌脱敏定制（Scrub brand）及静态资源 Hash 指纹化
+
+### 优化与改进
+
+- **链路启动自愈 (Boot Reconciliation)**：系统重启时自动核对 DataLinks 状态，清理过渡态并自动恢复 Cron 定时调度
+- **链路生命周期管控**：链路启动、停止、重置操作加入二次确认生命周期弹窗；列表支持批量操作栏（Bulk action bar）及高度自适应
+- **HTTP 客户端现代化**：全面使用轻量现代的 `ky` 替换 `axios` 发起 API 请求
+- **图标系统定制化**：使用自建 `components/icons` 统一替换外部图标库，视觉风格更一致
+- **表格与图表体验**：图表增加空数据安全防护，DataTable 搜索时自动重置分页页码
+- **日志下载优化**：优化日志下载链路，增强 Content-Type 校验与错误提示反馈
+
+### 依赖更新
+
+- 升级 Prisma ORM 依赖至 7.x 版本
+- 升级项目各项核心依赖至最新版本
+
 ## 0.6.3
 
 > 日期：2026-03-11
